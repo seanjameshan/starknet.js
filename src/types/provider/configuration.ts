@@ -12,6 +12,7 @@ export type RpcProviderOptions = {
   specVersion?: string;
   default?: boolean;
   waitMode?: boolean;
+  baseFetch?: WindowOrWorkerGlobalScope['fetch'];
   feeMarginPercentage?: {
     l1BoundMaxAmount: number;
     l1BoundMaxPricePerUnit: number;

@@ -40,21 +40,31 @@ export class RpcChannel {
 
   public headers: object;
 
-  readonly retries: number;
-
   public requestId: number;
 
   readonly blockIdentifier: BlockIdentifier;
+
+  readonly retries: number;
+
+  readonly waitMode: boolean; // behave like web2 rpc and return when tx is processed
 
   private chainId?: StarknetChainId;
 
   private specVersion?: string;
 
-  readonly waitMode: Boolean; // behave like web2 rpc and return when tx is processed
+  private baseFetch: NonNullable<RpcProviderOptions['baseFetch']>;
 
   constructor(optionsOrProvider?: RpcProviderOptions) {
-    const { nodeUrl, retries, headers, blockIdentifier, chainId, specVersion, waitMode } =
-      optionsOrProvider || {};
+    const {
+      baseFetch,
+      blockIdentifier,
+      chainId,
+      headers,
+      nodeUrl,
+      retries,
+      specVersion,
+      waitMode,
+    } = optionsOrProvider || {};
     if (Object.values(NetworkName).includes(nodeUrl as NetworkName)) {
       this.nodeUrl = getDefaultNodeUrl(nodeUrl as NetworkName, optionsOrProvider?.default);
     } else if (nodeUrl) {
@@ -62,12 +72,14 @@ export class RpcChannel {
     } else {
       this.nodeUrl = getDefaultNodeUrl(undefined, optionsOrProvider?.default);
     }
-    this.retries = retries || defaultOptions.retries;
-    this.headers = { ...defaultOptions.headers, ...headers };
-    this.blockIdentifier = blockIdentifier || defaultOptions.blockIdentifier;
+    this.baseFetch = baseFetch ?? fetch;
+    this.blockIdentifier = blockIdentifier ?? defaultOptions.blockIdentifier;
     this.chainId = chainId;
+    this.headers = { ...defaultOptions.headers, ...headers };
+    this.retries = retries ?? defaultOptions.retries;
     this.specVersion = specVersion;
-    this.waitMode = waitMode || false;
+    this.waitMode = waitMode ?? false;
+
     this.requestId = 0;
   }
 
@@ -82,7 +94,7 @@ export class RpcChannel {
       method,
       ...(params && { params }),
     };
-    return fetch(this.nodeUrl, {
+    return this.baseFetch(this.nodeUrl, {
       method: 'POST',
       body: stringify(rpcRequestBody),
       headers: this.headers as Record<string, string>,

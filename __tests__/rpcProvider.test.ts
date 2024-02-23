@@ -46,6 +46,14 @@ describeIfRpc('RPCProvider', () => {
     await createBlockForDevnet();
   });
 
+  test('baseFetch override', async () => {
+    const { nodeUrl } = rpcProvider.channel;
+    const baseFetch = jest.fn();
+    const fetchProvider = new RpcProvider({ nodeUrl, baseFetch });
+    (fetchProvider.fetch as any)();
+    expect(baseFetch.mock.calls.length).toBe(1);
+  });
+
   test('getChainId', async () => {
     const fetchSpy = jest.spyOn(rpcProvider.channel as any, 'fetchEndpoint');
     (rpcProvider as any).chainId = undefined as unknown as StarknetChainId;
