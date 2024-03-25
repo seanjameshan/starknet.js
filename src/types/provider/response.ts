@@ -1,6 +1,7 @@
 /**
- * Common interface response
- * Intersection (sequencer response ∩ (∪ rpc responses))
+ * Provider interface responses
+ * DEV NOTE: For stability ensure this types do not change with minor versions
+ * aka. when rpc spec change update parser so this types can stay the same
  */
 
 import { CompiledSierra, LegacyContractClass } from '../lib';
@@ -9,8 +10,10 @@ import {
   BLOCK_NUMBER,
   DECLARE_TXN_RECEIPT,
   DEPLOY_ACCOUNT_TXN_RECEIPT,
+  DeclaredTransaction,
   FELT,
   INVOKE_TXN_RECEIPT,
+  InvokedTransaction,
   L1_HANDLER_TXN_RECEIPT,
   PENDING_DECLARE_TXN_RECEIPT,
   PENDING_DEPLOY_ACCOUNT_TXN_RECEIPT,
@@ -18,16 +21,14 @@ import {
   PENDING_L1_HANDLER_TXN_RECEIPT,
   PENDING_STATE_UPDATE,
   PRICE_UNIT,
-  RESOURCE_PRICE,
-  SIMULATION_FLAG,
-  STATE_UPDATE,
-  TXN_HASH,
-  DeclaredTransaction,
-  InvokedTransaction,
   PendingReceipt,
+  RESOURCE_PRICE,
   Receipt,
   ResourceBounds,
+  SIMULATION_FLAG,
+  STATE_UPDATE,
   SimulateTransaction,
+  TXN_HASH,
   TransactionWithHash,
 } from './spec';
 
@@ -115,3 +116,10 @@ export type PendingStateUpdate = PENDING_STATE_UPDATE;
 export type ContractClassResponse =
   | LegacyContractClass
   | Omit<CompiledSierra, 'sierra_program_debug_info'>;
+
+/* RE-Export from RPC */
+
+export type BlockHashAndNumber = {
+  block_hash: string;
+  block_number: number;
+};

@@ -1,11 +1,12 @@
-import { NetworkName, RPC_NODES } from '../constants';
+/* eslint-disable no-console */
+import { DEFAULT_NETWORK_NAME, NetworkName, RPC_NODES } from '../constants';
 import {
   BigNumberish,
   BlockIdentifier,
-  BlockTag,
   CompiledContract,
   CompiledSierra,
   ContractClass,
+  EBlockTag,
   GetBlockResponse,
   GetTransactionReceiptResponse,
   InvocationsDetailsWithNonce,
@@ -17,13 +18,13 @@ import {
   StateUpdateResponse,
   V3TransactionDetails,
 } from '../types';
-import { ETransactionVersion } from '../types/api';
+import { ERPCVersion, ETransactionVersion } from '../types/api';
 import { isSierra } from './contract';
 import { formatSpaces } from './hash';
 import { parse, stringify } from './json';
 import { isBigInt, isHex, isNumber, toHex } from './num';
-import { compressProgram } from './stark';
 import { isString } from './shortString';
+import { compressProgram } from './stark';
 
 /**
  * Helper - Async Sleep for 'delay' time
@@ -72,13 +73,16 @@ export function parseContract(contract: CompiledContract | string): ContractClas
  * @param mute mute public node warning
  * @returns default node url
  */
-export const getDefaultNodeUrl = (networkName?: NetworkName, mute: boolean = false): string => {
+export const getDefaultNodeUrl = (
+  networkName?: NetworkName,
+  rpcVersion?: ERPCVersion,
+  mute: boolean = false
+): string => {
   if (!mute)
-    // eslint-disable-next-line no-console
     console.warn('Using default public node url, please provide nodeUrl in provider options!');
-  const nodes = RPC_NODES[networkName ?? NetworkName.SN_GOERLI]; // TODO: when goerli deprecated switch default to sepolia
-  const randIdx = Math.floor(Math.random() * nodes.length);
-  return nodes[randIdx];
+  const network = networkName ?? DEFAULT_NETWORK_NAME;
+  const randIdx = Math.floor(Math.random() * RPC_NODES[network].length);
+  return RPC_NODES.getNode(network, randIdx, rpcVersion);
 };
 
 /**
@@ -101,7 +105,7 @@ export function txIdentifier(txHash?: BigNumberish, txId?: BigNumberish): string
   return `transactionHash=${hashString}`;
 }
 
-export const validBlockTags = Object.values(BlockTag);
+export const validBlockTags = Object.values(EBlockTag);
 
 export class Block {
   hash: BlockIdentifier = null;
@@ -114,7 +118,7 @@ export class Block {
     if (isString(__identifier)) {
       if (isHex(__identifier)) {
         this.hash = __identifier;
-      } else if (validBlockTags.includes(__identifier as BlockTag)) {
+      } else if (validBlockTags.includes(__identifier as EBlockTag)) {
         this.tag = __identifier;
       }
     } else if (isBigInt(__identifier)) {
@@ -122,7 +126,7 @@ export class Block {
     } else if (isNumber(__identifier)) {
       this.number = __identifier;
     } else {
-      this.tag = BlockTag.pending;
+      this.tag = EBlockTag.PENDING;
     }
   }
 
@@ -176,7 +180,7 @@ export function isV3Tx(details: InvocationsDetailsWithNonce): details is V3Trans
   return version === ETransactionVersion.V3 || version === ETransactionVersion.F3;
 }
 
-export function isVersion(version: '0.5' | '0.6' | '0.7', response: string) {
+export function isVersion(version: string, response: string) {
   const [majorS, minorS] = version.split('.');
   const [majorR, minorR] = response.split('.');
 

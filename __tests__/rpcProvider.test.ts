@@ -5,11 +5,12 @@ import {
   Block,
   CallData,
   Contract,
+  ETransactionExecutionStatus,
+  ETransactionStatus,
   FeeEstimate,
   RPC,
   RPC06,
   RpcProvider,
-  TransactionExecutionStatus,
   stark,
   waitForTransactionOptions,
 } from '../src';
@@ -142,8 +143,8 @@ describeIfRpc('RPCProvider', () => {
 
     const generateOptions = (o: waitForTransactionOptions) => ({ retryInterval: 10, ...o });
     const generateTransactionStatus = (
-      finality_status: RPC.SPEC.TXN_STATUS,
-      execution_status?: RPC.SPEC.TXN_EXECUTION_STATUS
+      finality_status: `${ETransactionStatus}`,
+      execution_status?: `${ETransactionExecutionStatus}`
     ): RPC.TransactionStatus => ({
       finality_status,
       execution_status,
@@ -183,7 +184,7 @@ describeIfRpc('RPCProvider', () => {
 
     test('reverted - as error state', async () => {
       transactionStatusSpy.mockResolvedValueOnce(response.reverted);
-      const options = generateOptions({ errorStates: [TransactionExecutionStatus.REVERTED] });
+      const options = generateOptions({ errorStates: [ETransactionExecutionStatus.REVERTED] });
       await expect(rpcProvider.waitForTransaction(0, options)).rejects.toThrow(
         `${RPC.ETransactionExecutionStatus.REVERTED}: ${RPC.ETransactionStatus.ACCEPTED_ON_L2}`
       );

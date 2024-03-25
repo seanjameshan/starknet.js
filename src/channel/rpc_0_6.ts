@@ -5,19 +5,19 @@ import {
   AccountInvocations,
   BigNumberish,
   BlockIdentifier,
-  BlockTag,
   Call,
   DeclareContractTransaction,
   DeployAccountContractTransaction,
+  EBlockTag,
   Invocation,
   InvocationsDetailsWithNonce,
-  RpcProviderOptions,
+  RpcChannelOptions,
   TransactionType,
   getEstimateFeeBulkOptions,
   getSimulateTransactionOptions,
   waitForTransactionOptions,
 } from '../types';
-import { JRPC, RPCSPEC06 as RPC } from '../types/api';
+import { ERPCVersion, JRPC, RPCSPEC06 as RPC } from '../types/api';
 import { CallData } from '../utils/calldata';
 import { isSierra } from '../utils/contract';
 import fetch from '../utils/fetchPonyfill';
@@ -30,7 +30,7 @@ import { getVersionsByType } from '../utils/transaction';
 
 const defaultOptions = {
   headers: { 'Content-Type': 'application/json' },
-  blockIdentifier: BlockTag.pending,
+  blockIdentifier: EBlockTag.PENDING,
   retries: 200,
 };
 
@@ -51,23 +51,31 @@ export class RpcChannel {
 
   readonly waitMode: Boolean; // behave like web2 rpc and return when tx is processed
 
-  constructor(optionsOrProvider?: RpcProviderOptions) {
+  constructor(optionsOrProvider?: RpcChannelOptions) {
     const { nodeUrl, retries, headers, blockIdentifier, chainId, specVersion, waitMode } =
       optionsOrProvider || {};
     if (Object.values(NetworkName).includes(nodeUrl as NetworkName)) {
-      this.nodeUrl = getDefaultNodeUrl(nodeUrl as NetworkName, optionsOrProvider?.default);
+      this.nodeUrl = getDefaultNodeUrl(
+        nodeUrl as NetworkName,
+        optionsOrProvider?.rpcVersion,
+        optionsOrProvider?.default
+      );
     } else if (nodeUrl) {
       this.nodeUrl = nodeUrl;
     } else {
-      this.nodeUrl = getDefaultNodeUrl(undefined, optionsOrProvider?.default);
+      this.nodeUrl = getDefaultNodeUrl(
+        undefined,
+        optionsOrProvider?.rpcVersion,
+        optionsOrProvider?.default
+      );
     }
     this.retries = retries || defaultOptions.retries;
     this.headers = { ...defaultOptions.headers, ...headers };
     this.blockIdentifier = blockIdentifier || defaultOptions.blockIdentifier;
     this.chainId = chainId;
-    this.specVersion = specVersion;
     this.waitMode = waitMode || false;
     this.requestId = 0;
+    this.specVersion = specVersion;
   }
 
   public setChainId(chainId: StarknetChainId) {
@@ -378,7 +386,7 @@ export class RpcChannel {
   ) {
     const block_id = new Block(blockIdentifier).identifier;
     let flags = {};
-    if (!isVersion('0.5', await this.getSpecVersion())) {
+    if (!isVersion(ERPCVersion.V0_5, await this.getSpecVersion())) {
       flags = {
         simulation_flags: skipValidate ? [RPC.ESimulationFlag.SKIP_VALIDATE] : [],
       };

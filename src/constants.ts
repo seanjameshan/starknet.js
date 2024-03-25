@@ -59,19 +59,28 @@ export const UDC = {
   ENTRYPOINT: 'deployContract',
 };
 
+export const DEFAULT_TRANSACTION_VERSION = ETransactionVersion.V2; // TODO: Discuss this, set to v2 for backward compatibility
 export const RPC_DEFAULT_VERSION = 'v0_7';
 
+export const DEFAULT_NETWORK_NAME = NetworkName.SN_GOERLI; // TODO: when goerli deprecated switch default to sepolia
+export const RPC_DEFAULT_VERSION_TAG = 'v0_6';
 export const RPC_NODES = {
   SN_GOERLI: [
-    `https://starknet-testnet.public.blastapi.io/rpc/${RPC_DEFAULT_VERSION}`,
-    `https://free-rpc.nethermind.io/goerli-juno/${RPC_DEFAULT_VERSION}`,
+    `https://starknet-testnet.public.blastapi.io/rpc/${RPC_DEFAULT_VERSION_TAG}`,
+    `https://free-rpc.nethermind.io/goerli-juno/${RPC_DEFAULT_VERSION_TAG}`,
   ],
   SN_MAIN: [
-    `https://starknet-mainnet.public.blastapi.io/rpc/${RPC_DEFAULT_VERSION}`,
-    `https://free-rpc.nethermind.io/mainnet-juno/${RPC_DEFAULT_VERSION}`,
+    `https://starknet-mainnet.public.blastapi.io/rpc/${RPC_DEFAULT_VERSION_TAG}`,
+    `https://free-rpc.nethermind.io/mainnet-juno/${RPC_DEFAULT_VERSION_TAG}`,
   ],
   SN_SEPOLIA: [
-    `https://starknet-sepolia.public.blastapi.io/rpc/${RPC_DEFAULT_VERSION}`,
-    `https://free-rpc.nethermind.io/sepolia-juno/${RPC_DEFAULT_VERSION}`,
+    `https://starknet-sepolia.public.blastapi.io/rpc/${RPC_DEFAULT_VERSION_TAG}`,
+    `https://free-rpc.nethermind.io/sepolia-juno/${RPC_DEFAULT_VERSION_TAG}`,
   ],
+  getNode(network: NetworkName, index: number, rpcVersion?: string) {
+    const defRpcUrl = this[network][index];
+    return rpcVersion
+      ? `${defRpcUrl.substring(0, defRpcUrl.lastIndexOf('/') + 1)}v${rpcVersion.replace('.', '_')}`
+      : defRpcUrl;
+  },
 };

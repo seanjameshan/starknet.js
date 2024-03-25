@@ -76,11 +76,6 @@ export type SimulateTransactionDetails = {
   skipExecute?: boolean;
 } & Partial<V3TransactionDetails>;
 
-export enum SIMULATION_FLAG {
-  SKIP_VALIDATE = 'SKIP_VALIDATE',
-  SKIP_EXECUTE = 'SKIP_EXECUTE',
-}
-
 export type EstimateFeeAction =
   | {
       type: TransactionType.INVOKE;

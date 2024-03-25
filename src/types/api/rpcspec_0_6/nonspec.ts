@@ -120,6 +120,7 @@ export enum ESimulationFlag {
   SKIP_FEE_CHARGE = 'SKIP_FEE_CHARGE',
 }
 
+// TXN_STATUS
 export enum ETransactionStatus {
   RECEIVED = 'RECEIVED',
   REJECTED = 'REJECTED',
@@ -131,6 +132,8 @@ export enum ETransactionFinalityStatus {
   ACCEPTED_ON_L2 = 'ACCEPTED_ON_L2',
   ACCEPTED_ON_L1 = 'ACCEPTED_ON_L1',
 }
+
+// TXN_EXECUTION_STATUS
 export enum ETransactionExecutionStatus {
   SUCCEEDED = 'SUCCEEDED',
   REVERTED = 'REVERTED',

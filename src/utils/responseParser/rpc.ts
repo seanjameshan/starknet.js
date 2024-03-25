@@ -6,20 +6,20 @@ import {
   BlockWithTxHashes,
   ContractClassPayload,
   ContractClassResponse,
-  TransactionReceipt,
   EstimateFeeResponse,
   EstimateFeeResponseBulk,
+  FeeEstimate,
   GetBlockResponse,
   GetTransactionReceiptResponse,
-  FeeEstimate,
+  RpcProviderOptions,
   SimulateTransactionResponse,
   SimulatedTransaction,
-  RpcProviderOptions,
+  TransactionReceipt,
 } from '../../types/provider';
 import { toBigInt } from '../num';
+import { isString } from '../shortString';
 import { estimateFeeToBounds, estimatedFeeToMaxFee } from '../stark';
 import { ResponseParser } from '.';
-import { isString } from '../shortString';
 
 export class RPCResponseParser
   implements

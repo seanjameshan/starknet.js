@@ -1,4 +1,4 @@
-import { UDC, ZERO } from '../constants';
+import { DEFAULT_TRANSACTION_VERSION, UDC, ZERO } from '../constants';
 import { Provider, ProviderInterface } from '../provider';
 import { Signer, SignerInterface } from '../signer';
 import {
@@ -72,9 +72,12 @@ export class Account extends Provider implements AccountInterface {
     address: string,
     pkOrSigner: Uint8Array | string | SignerInterface,
     cairoVersion?: CairoVersion,
-    transactionVersion: ETransactionVersion.V2 | ETransactionVersion.V3 = ETransactionVersion.V2 // TODO: Discuss this, set to v2 for backward compatibility
+    transactionVersion:
+      | ETransactionVersion.V2
+      | ETransactionVersion.V3 = DEFAULT_TRANSACTION_VERSION,
+    instance?: boolean
   ) {
-    super(providerOrOptions);
+    super(providerOrOptions, instance);
     this.address = address.toLowerCase();
     this.signer =
       isString(pkOrSigner) || pkOrSigner instanceof Uint8Array

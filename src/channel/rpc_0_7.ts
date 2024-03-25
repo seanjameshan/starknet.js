@@ -5,13 +5,13 @@ import {
   AccountInvocations,
   BigNumberish,
   BlockIdentifier,
-  BlockTag,
   Call,
   DeclareContractTransaction,
   DeployAccountContractTransaction,
+  EBlockTag,
   Invocation,
   InvocationsDetailsWithNonce,
-  RpcProviderOptions,
+  RpcChannelOptions,
   TransactionType,
   getEstimateFeeBulkOptions,
   getSimulateTransactionOptions,
@@ -30,7 +30,7 @@ import { getVersionsByType } from '../utils/transaction';
 
 const defaultOptions = {
   headers: { 'Content-Type': 'application/json' },
-  blockIdentifier: BlockTag.pending,
+  blockIdentifier: EBlockTag.PENDING,
   retries: 200,
 };
 
@@ -47,19 +47,27 @@ export class RpcChannel {
 
   private chainId?: StarknetChainId;
 
-  private speckVersion?: string;
+  private specVersion?: string;
 
   readonly waitMode: Boolean; // behave like web2 rpc and return when tx is processed
 
-  constructor(optionsOrProvider?: RpcProviderOptions) {
-    const { nodeUrl, retries, headers, blockIdentifier, chainId, waitMode } =
+  constructor(optionsOrProvider?: RpcChannelOptions) {
+    const { nodeUrl, retries, headers, blockIdentifier, chainId, specVersion, waitMode } =
       optionsOrProvider || {};
     if (Object.values(NetworkName).includes(nodeUrl as NetworkName)) {
-      this.nodeUrl = getDefaultNodeUrl(nodeUrl as NetworkName, optionsOrProvider?.default);
+      this.nodeUrl = getDefaultNodeUrl(
+        nodeUrl as NetworkName,
+        optionsOrProvider?.rpcVersion,
+        optionsOrProvider?.default
+      );
     } else if (nodeUrl) {
       this.nodeUrl = nodeUrl;
     } else {
-      this.nodeUrl = getDefaultNodeUrl(undefined, optionsOrProvider?.default);
+      this.nodeUrl = getDefaultNodeUrl(
+        undefined,
+        optionsOrProvider?.rpcVersion,
+        optionsOrProvider?.default
+      );
     }
     this.retries = retries || defaultOptions.retries;
     this.headers = { ...defaultOptions.headers, ...headers };
@@ -67,6 +75,7 @@ export class RpcChannel {
     this.chainId = chainId;
     this.waitMode = waitMode || false;
     this.requestId = 0;
+    this.specVersion = specVersion;
   }
 
   public setChainId(chainId: StarknetChainId) {
@@ -124,8 +133,8 @@ export class RpcChannel {
   }
 
   public async getSpecVersion() {
-    this.speckVersion ??= (await this.fetchEndpoint('starknet_specVersion')) as StarknetChainId;
-    return this.speckVersion;
+    this.specVersion ??= (await this.fetchEndpoint('starknet_specVersion')) as StarknetChainId;
+    return this.specVersion;
   }
 
   public getNonceForAddress(

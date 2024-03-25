@@ -1,16 +1,15 @@
-import { ProviderInterface } from './interface';
-import { LibraryError } from './errors';
-import { RpcChannel, RPC06, RPC07 } from '../channel';
+import { RPC06, RPC07, RpcChannel } from '../channel';
 import {
   AccountInvocations,
   BigNumberish,
   Block,
+  BlockHashAndNumber,
   BlockIdentifier,
-  BlockTag,
   Call,
   ContractVersion,
   DeclareContractTransaction,
   DeployAccountContractTransaction,
+  EBlockTag,
   GetBlockResponse,
   Invocation,
   InvocationsDetailsWithNonce,
@@ -29,19 +28,35 @@ import {
 import { getAbiContractVersion } from '../utils/calldata/cairo';
 import { isSierra } from '../utils/contract';
 import { RPCResponseParser } from '../utils/responseParser/rpc';
+import { LibraryError } from './errors';
+import { ProviderInterface } from './interface';
 
 export class RpcProvider implements ProviderInterface {
-  private responseParser: RPCResponseParser;
+  private responseParser = new RPCResponseParser();
 
   public channel: RPC07.RpcChannel | RPC06.RpcChannel;
 
-  constructor(optionsOrProvider?: RpcProviderOptions | ProviderInterface | RpcProvider) {
-    if (optionsOrProvider && 'channel' in optionsOrProvider) {
+  constructor(
+    optionsOrProvider?: RpcProviderOptions | ProviderInterface | RpcProvider,
+    instance?: boolean
+  ) {
+    if (optionsOrProvider && instance) {
+      // stop ts complains
+      this.channel = null as any;
+      // use provided instance
+      Object.setPrototypeOf(this, Object.getPrototypeOf(optionsOrProvider));
+      Object.assign(this, optionsOrProvider);
+    } else if (
+      optionsOrProvider &&
+      'channel' in optionsOrProvider &&
+      optionsOrProvider.channel !== undefined
+    ) {
       this.channel = optionsOrProvider.channel;
       this.responseParser = (optionsOrProvider as any).responseParser;
     } else {
       this.channel = new RpcChannel({ ...optionsOrProvider, waitMode: false });
-      this.responseParser = new RPCResponseParser(optionsOrProvider?.feeMarginPercentage);
+      // TODO: check this hotfix (optionsOrProvider as any)? why required ?
+      this.responseParser = new RPCResponseParser((optionsOrProvider as any)?.feeMarginPercentage);
     }
   }
 
@@ -77,7 +92,7 @@ export class RpcProvider implements ProviderInterface {
   /**
    * Get the most recent accepted block hash and number
    */
-  public async getBlockLatestAccepted() {
+  public async getBlockLatestAccepted(): Promise<BlockHashAndNumber> {
     return this.channel.getBlockLatestAccepted();
   }
 
@@ -129,7 +144,7 @@ export class RpcProvider implements ProviderInterface {
    * Utility method, same result can be achieved using getBlockWithTxHashes(BlockTag.pending);
    */
   public async getPendingTransactions() {
-    const { transactions } = await this.getBlockWithTxHashes(BlockTag.pending).then(
+    const { transactions } = await this.getBlockWithTxHashes(EBlockTag.PENDING).then(
       this.responseParser.parseGetBlockResponse
     );
     return Promise.all(transactions.map((it: any) => this.getTransactionByHash(it)));
