@@ -107,7 +107,7 @@ export class CairoUint256 {
 
   /**
    * Return Uint256 structure with HexString props
-   * {low: HexString, high: HexString}
+   * `{low: HexString, high: HexString}`
    */
   toUint256HexString() {
     return {
@@ -118,7 +118,7 @@ export class CairoUint256 {
 
   /**
    * Return Uint256 structure with DecimalString props
-   * {low: DecString, high: DecString}
+   * `{low: DecString, high: DecString}`
    */
   toUint256DecimalString() {
     return {

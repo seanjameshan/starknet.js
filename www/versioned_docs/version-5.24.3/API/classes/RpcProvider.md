@@ -90,11 +90,11 @@ custom_edit_url: null
 
 ### getBlockHashAndNumber
 
-• **getBlockHashAndNumber**: () => `Promise`<[`BlockHashAndNumber`](../namespaces/types.RPC.md#blockhashandnumber)\>
+• **getBlockHashAndNumber**: () => `Promise`\<[`BlockHashAndNumber`](../namespaces/types.RPC.md#blockhashandnumber)\>
 
 #### Type declaration
 
-▸ (): `Promise`<[`BlockHashAndNumber`](../namespaces/types.RPC.md#blockhashandnumber)\>
+▸ (): `Promise`\<[`BlockHashAndNumber`](../namespaces/types.RPC.md#blockhashandnumber)\>
 
 **`Deprecated`**
 
@@ -102,7 +102,7 @@ renamed to getBlockLatestAccepted(); (will be removed in next minor version)
 
 ##### Returns
 
-`Promise`<[`BlockHashAndNumber`](../namespaces/types.RPC.md#blockhashandnumber)\>
+`Promise`\<[`BlockHashAndNumber`](../namespaces/types.RPC.md#blockhashandnumber)\>
 
 #### Defined in
 
@@ -112,11 +112,11 @@ renamed to getBlockLatestAccepted(); (will be removed in next minor version)
 
 ### getStateUpdate
 
-• **getStateUpdate**: (`blockIdentifier`: [`BlockIdentifier`](../namespaces/types.md#blockidentifier)) => `Promise`<[`PENDING_STATE_UPDATE`](../namespaces/types.RPC.SPEC.md#pending_state_update) \| [`STATE_UPDATE`](../namespaces/types.RPC.SPEC.md#state_update)\>
+• **getStateUpdate**: (`blockIdentifier`: [`BlockIdentifier`](../namespaces/types.md#blockidentifier)) => `Promise`\<[`PENDING_STATE_UPDATE`](../namespaces/types.RPC.SPEC.md#pending_state_update) \| [`STATE_UPDATE`](../namespaces/types.RPC.SPEC.md#state_update)\>
 
 #### Type declaration
 
-▸ (`blockIdentifier?`): `Promise`<[`PENDING_STATE_UPDATE`](../namespaces/types.RPC.SPEC.md#pending_state_update) \| [`STATE_UPDATE`](../namespaces/types.RPC.SPEC.md#state_update)\>
+▸ (`blockIdentifier?`): `Promise`\<[`PENDING_STATE_UPDATE`](../namespaces/types.RPC.SPEC.md#pending_state_update) \| [`STATE_UPDATE`](../namespaces/types.RPC.SPEC.md#state_update)\>
 
 **`Deprecated`**
 
@@ -130,7 +130,7 @@ renamed to getBlockStateUpdate();
 
 ##### Returns
 
-`Promise`<[`PENDING_STATE_UPDATE`](../namespaces/types.RPC.SPEC.md#pending_state_update) \| [`STATE_UPDATE`](../namespaces/types.RPC.SPEC.md#state_update)\>
+`Promise`\<[`PENDING_STATE_UPDATE`](../namespaces/types.RPC.SPEC.md#pending_state_update) \| [`STATE_UPDATE`](../namespaces/types.RPC.SPEC.md#state_update)\>
 
 #### Implementation of
 
@@ -144,11 +144,11 @@ renamed to getBlockStateUpdate();
 
 ### traceBlockTransactions
 
-• **traceBlockTransactions**: (`blockIdentifier`: [`BlockIdentifier`](../namespaces/types.md#blockidentifier)) => `Promise`<[`BlockTransactionsTraces`](../namespaces/types.RPC.md#blocktransactionstraces)\>
+• **traceBlockTransactions**: (`blockIdentifier`: [`BlockIdentifier`](../namespaces/types.md#blockidentifier)) => `Promise`\<[`BlockTransactionsTraces`](../namespaces/types.RPC.md#blocktransactionstraces)\>
 
 #### Type declaration
 
-▸ (`blockIdentifier?`): `Promise`<[`BlockTransactionsTraces`](../namespaces/types.RPC.md#blocktransactionstraces)\>
+▸ (`blockIdentifier?`): `Promise`\<[`BlockTransactionsTraces`](../namespaces/types.RPC.md#blocktransactionstraces)\>
 
 Returns the execution traces of all transactions included in the given block
 
@@ -164,7 +164,7 @@ renamed to getBlockTransactionsTraces()
 
 ##### Returns
 
-`Promise`<[`BlockTransactionsTraces`](../namespaces/types.RPC.md#blocktransactionstraces)\>
+`Promise`\<[`BlockTransactionsTraces`](../namespaces/types.RPC.md#blocktransactionstraces)\>
 
 #### Defined in
 
@@ -174,11 +174,11 @@ renamed to getBlockTransactionsTraces()
 
 ### getTransactionCount
 
-• **getTransactionCount**: (`blockIdentifier`: [`BlockIdentifier`](../namespaces/types.md#blockidentifier)) => `Promise`<`number`\>
+• **getTransactionCount**: (`blockIdentifier`: [`BlockIdentifier`](../namespaces/types.md#blockidentifier)) => `Promise`\<`number`\>
 
 #### Type declaration
 
-▸ (`blockIdentifier?`): `Promise`<`number`\>
+▸ (`blockIdentifier?`): `Promise`\<`number`\>
 
 Get the number of transactions in a block given a block id
 
@@ -194,7 +194,7 @@ renamed to getBlockTransactionCount()
 
 ##### Returns
 
-`Promise`<`number`\>
+`Promise`\<`number`\>
 
 Number of transactions
 
@@ -206,11 +206,11 @@ Number of transactions
 
 ### traceTransaction
 
-• **traceTransaction**: (`txHash`: [`BigNumberish`](../namespaces/types.md#bignumberish)) => `Promise`<[`TRANSACTION_TRACE`](../namespaces/types.RPC.SPEC.md#transaction_trace)\>
+• **traceTransaction**: (`txHash`: [`BigNumberish`](../namespaces/types.md#bignumberish)) => `Promise`\<[`TRANSACTION_TRACE`](../namespaces/types.RPC.SPEC.md#transaction_trace)\>
 
 #### Type declaration
 
-▸ (`txHash`): `Promise`<[`TRANSACTION_TRACE`](../namespaces/types.RPC.SPEC.md#transaction_trace)\>
+▸ (`txHash`): `Promise`\<[`TRANSACTION_TRACE`](../namespaces/types.RPC.SPEC.md#transaction_trace)\>
 
 **`Deprecated`**
 
@@ -225,7 +225,7 @@ For a given executed transaction, return the trace of its execution, including i
 
 ##### Returns
 
-`Promise`<[`TRANSACTION_TRACE`](../namespaces/types.RPC.SPEC.md#transaction_trace)\>
+`Promise`\<[`TRANSACTION_TRACE`](../namespaces/types.RPC.SPEC.md#transaction_trace)\>
 
 #### Defined in
 
@@ -235,11 +235,11 @@ For a given executed transaction, return the trace of its execution, including i
 
 ### getSimulateTransaction
 
-• **getSimulateTransaction**: (`invocations`: [`AccountInvocations`](../namespaces/types.md#accountinvocations), `__namedParameters`: [`getSimulateTransactionOptions`](../namespaces/types.md#getsimulatetransactionoptions)) => `Promise`<[`SimulateTransactionResponse`](../namespaces/types.md#simulatetransactionresponse)\>
+• **getSimulateTransaction**: (`invocations`: [`AccountInvocations`](../namespaces/types.md#accountinvocations), `__namedParameters`: [`getSimulateTransactionOptions`](../namespaces/types.md#getsimulatetransactionoptions)) => `Promise`\<[`SimulateTransactionResponse`](../namespaces/types.md#simulatetransactionresponse)\>
 
 #### Type declaration
 
-▸ (`invocations`, `«destructured»`): `Promise`<[`SimulateTransactionResponse`](../namespaces/types.md#simulatetransactionresponse)\>
+▸ (`invocations`, `«destructured»`): `Promise`\<[`SimulateTransactionResponse`](../namespaces/types.md#simulatetransactionresponse)\>
 
 **`Deprecated`**
 
@@ -254,7 +254,7 @@ renamed to simulateTransaction();
 
 ##### Returns
 
-`Promise`<[`SimulateTransactionResponse`](../namespaces/types.md#simulatetransactionresponse)\>
+`Promise`\<[`SimulateTransactionResponse`](../namespaces/types.md#simulatetransactionresponse)\>
 
 #### Implementation of
 
@@ -268,7 +268,7 @@ renamed to simulateTransaction();
 
 ### fetch
 
-▸ **fetch**(`method`, `params?`, `id?`): `Promise`<`Response`\>
+▸ **fetch**(`method`, `params?`, `id?`): `Promise`\<`Response`\>
 
 #### Parameters
 
@@ -280,7 +280,7 @@ renamed to simulateTransaction();
 
 #### Returns
 
-`Promise`<`Response`\>
+`Promise`\<`Response`\>
 
 #### Defined in
 
@@ -313,7 +313,7 @@ renamed to simulateTransaction();
 
 ### fetchEndpoint
 
-▸ `Protected` **fetchEndpoint**<`T`\>(`method`, `params?`): `Promise`<[`Methods`](../namespaces/types.RPC.md#methods)[`T`][``"result"``]\>
+▸ `Protected` **fetchEndpoint**\<`T`\>(`method`, `params?`): `Promise`\<[`Methods`](../namespaces/types.RPC.md#methods)[`T`][``"result"``]\>
 
 #### Type parameters
 
@@ -330,7 +330,7 @@ renamed to simulateTransaction();
 
 #### Returns
 
-`Promise`<[`Methods`](../namespaces/types.RPC.md#methods)[`T`][``"result"``]\>
+`Promise`\<[`Methods`](../namespaces/types.RPC.md#methods)[`T`][``"result"``]\>
 
 #### Defined in
 
@@ -340,13 +340,13 @@ renamed to simulateTransaction();
 
 ### getChainId
 
-▸ **getChainId**(): `Promise`<[`StarknetChainId`](../enums/constants.StarknetChainId.md)\>
+▸ **getChainId**(): `Promise`\<[`StarknetChainId`](../enums/constants.StarknetChainId.md)\>
 
 Gets the Starknet chain Id
 
 #### Returns
 
-`Promise`<[`StarknetChainId`](../enums/constants.StarknetChainId.md)\>
+`Promise`\<[`StarknetChainId`](../enums/constants.StarknetChainId.md)\>
 
 the chain Id
 
@@ -362,13 +362,13 @@ the chain Id
 
 ### getSpecVersion
 
-▸ **getSpecVersion**(): `Promise`<`string`\>
+▸ **getSpecVersion**(): `Promise`\<`string`\>
 
 NEW: Returns the version of the Starknet JSON-RPC specification being used
 
 #### Returns
 
-`Promise`<`string`\>
+`Promise`\<`string`\>
 
 #### Defined in
 
@@ -378,7 +378,7 @@ NEW: Returns the version of the Starknet JSON-RPC specification being used
 
 ### getNonceForAddress
 
-▸ **getNonceForAddress**(`contractAddress`, `blockIdentifier?`): `Promise`<`string`\>
+▸ **getNonceForAddress**(`contractAddress`, `blockIdentifier?`): `Promise`\<`string`\>
 
 Returns the nonce associated with the given address in the given block
 
@@ -391,7 +391,7 @@ Returns the nonce associated with the given address in the given block
 
 #### Returns
 
-`Promise`<`string`\>
+`Promise`\<`string`\>
 
 the hex nonce
 
@@ -407,7 +407,7 @@ the hex nonce
 
 ### getBlock
 
-▸ **getBlock**(`blockIdentifier?`): `Promise`<[`GetBlockResponse`](../interfaces/types.GetBlockResponse.md)\>
+▸ **getBlock**(`blockIdentifier?`): `Promise`\<[`GetBlockResponse`](../interfaces/types.GetBlockResponse.md)\>
 
 **`Deprecated`**
 
@@ -421,7 +421,7 @@ use getBlockWithTxHashes or getBlockWithTxs (will be removed on sequencer deprec
 
 #### Returns
 
-`Promise`<[`GetBlockResponse`](../interfaces/types.GetBlockResponse.md)\>
+`Promise`\<[`GetBlockResponse`](../interfaces/types.GetBlockResponse.md)\>
 
 #### Implementation of
 
@@ -435,13 +435,13 @@ use getBlockWithTxHashes or getBlockWithTxs (will be removed on sequencer deprec
 
 ### getBlockLatestAccepted
 
-▸ **getBlockLatestAccepted**(): `Promise`<[`BlockHashAndNumber`](../namespaces/types.RPC.md#blockhashandnumber)\>
+▸ **getBlockLatestAccepted**(): `Promise`\<[`BlockHashAndNumber`](../namespaces/types.RPC.md#blockhashandnumber)\>
 
 Get the most recent accepted block hash and number
 
 #### Returns
 
-`Promise`<[`BlockHashAndNumber`](../namespaces/types.RPC.md#blockhashandnumber)\>
+`Promise`\<[`BlockHashAndNumber`](../namespaces/types.RPC.md#blockhashandnumber)\>
 
 #### Defined in
 
@@ -451,7 +451,7 @@ Get the most recent accepted block hash and number
 
 ### getBlockNumber
 
-▸ **getBlockNumber**(): `Promise`<`number`\>
+▸ **getBlockNumber**(): `Promise`\<`number`\>
 
 **`Deprecated`**
 
@@ -460,7 +460,7 @@ Get the most recent accepted block number
 
 #### Returns
 
-`Promise`<`number`\>
+`Promise`\<`number`\>
 
 Number of the latest block
 
@@ -472,7 +472,7 @@ Number of the latest block
 
 ### getBlockWithTxHashes
 
-▸ **getBlockWithTxHashes**(`blockIdentifier?`): `Promise`<[`BlockWithTxHashes`](../namespaces/types.RPC.md#blockwithtxhashes)\>
+▸ **getBlockWithTxHashes**(`blockIdentifier?`): `Promise`\<[`BlockWithTxHashes`](../namespaces/types.RPC.md#blockwithtxhashes)\>
 
 #### Parameters
 
@@ -482,7 +482,7 @@ Number of the latest block
 
 #### Returns
 
-`Promise`<[`BlockWithTxHashes`](../namespaces/types.RPC.md#blockwithtxhashes)\>
+`Promise`\<[`BlockWithTxHashes`](../namespaces/types.RPC.md#blockwithtxhashes)\>
 
 #### Defined in
 
@@ -492,7 +492,7 @@ Number of the latest block
 
 ### getBlockWithTxs
 
-▸ **getBlockWithTxs**(`blockIdentifier?`): `Promise`<[`BlockWithTxs`](../namespaces/types.RPC.md#blockwithtxs)\>
+▸ **getBlockWithTxs**(`blockIdentifier?`): `Promise`\<[`BlockWithTxs`](../namespaces/types.RPC.md#blockwithtxs)\>
 
 #### Parameters
 
@@ -502,7 +502,7 @@ Number of the latest block
 
 #### Returns
 
-`Promise`<[`BlockWithTxs`](../namespaces/types.RPC.md#blockwithtxs)\>
+`Promise`\<[`BlockWithTxs`](../namespaces/types.RPC.md#blockwithtxs)\>
 
 #### Defined in
 
@@ -512,7 +512,7 @@ Number of the latest block
 
 ### getBlockStateUpdate
 
-▸ **getBlockStateUpdate**(`blockIdentifier?`): `Promise`<[`PENDING_STATE_UPDATE`](../namespaces/types.RPC.SPEC.md#pending_state_update) \| [`STATE_UPDATE`](../namespaces/types.RPC.SPEC.md#state_update)\>
+▸ **getBlockStateUpdate**(`blockIdentifier?`): `Promise`\<[`PENDING_STATE_UPDATE`](../namespaces/types.RPC.SPEC.md#pending_state_update) \| [`STATE_UPDATE`](../namespaces/types.RPC.SPEC.md#state_update)\>
 
 #### Parameters
 
@@ -522,7 +522,7 @@ Number of the latest block
 
 #### Returns
 
-`Promise`<[`PENDING_STATE_UPDATE`](../namespaces/types.RPC.SPEC.md#pending_state_update) \| [`STATE_UPDATE`](../namespaces/types.RPC.SPEC.md#state_update)\>
+`Promise`\<[`PENDING_STATE_UPDATE`](../namespaces/types.RPC.SPEC.md#pending_state_update) \| [`STATE_UPDATE`](../namespaces/types.RPC.SPEC.md#state_update)\>
 
 #### Defined in
 
@@ -532,7 +532,7 @@ Number of the latest block
 
 ### getBlockTransactionsTraces
 
-▸ **getBlockTransactionsTraces**(`blockIdentifier?`): `Promise`<[`BlockTransactionsTraces`](../namespaces/types.RPC.md#blocktransactionstraces)\>
+▸ **getBlockTransactionsTraces**(`blockIdentifier?`): `Promise`\<[`BlockTransactionsTraces`](../namespaces/types.RPC.md#blocktransactionstraces)\>
 
 #### Parameters
 
@@ -542,7 +542,7 @@ Number of the latest block
 
 #### Returns
 
-`Promise`<[`BlockTransactionsTraces`](../namespaces/types.RPC.md#blocktransactionstraces)\>
+`Promise`\<[`BlockTransactionsTraces`](../namespaces/types.RPC.md#blocktransactionstraces)\>
 
 #### Defined in
 
@@ -552,7 +552,7 @@ Number of the latest block
 
 ### getBlockTransactionCount
 
-▸ **getBlockTransactionCount**(`blockIdentifier?`): `Promise`<`number`\>
+▸ **getBlockTransactionCount**(`blockIdentifier?`): `Promise`\<`number`\>
 
 #### Parameters
 
@@ -562,7 +562,7 @@ Number of the latest block
 
 #### Returns
 
-`Promise`<`number`\>
+`Promise`\<`number`\>
 
 #### Defined in
 
@@ -572,7 +572,7 @@ Number of the latest block
 
 ### getPendingTransactions
 
-▸ **getPendingTransactions**(): `Promise`<[`TransactionWithHash`](../namespaces/types.RPC.md#transactionwithhash)[]\>
+▸ **getPendingTransactions**(): `Promise`\<[`TransactionWithHash`](../namespaces/types.RPC.md#transactionwithhash)[]\>
 
 Return transactions from pending block
 
@@ -582,7 +582,7 @@ Instead use getBlock(BlockTag.pending); (will be removed in next minor version)
 
 #### Returns
 
-`Promise`<[`TransactionWithHash`](../namespaces/types.RPC.md#transactionwithhash)[]\>
+`Promise`\<[`TransactionWithHash`](../namespaces/types.RPC.md#transactionwithhash)[]\>
 
 #### Defined in
 
@@ -592,7 +592,7 @@ Instead use getBlock(BlockTag.pending); (will be removed in next minor version)
 
 ### getTransaction
 
-▸ **getTransaction**(`txHash`): `Promise`<[`InvokeTransactionResponse`](../interfaces/types.InvokeTransactionResponse.md) \| [`DeclareTransactionResponse`](../interfaces/types.DeclareTransactionResponse.md) \| [`RejectedTransactionResponse`](../namespaces/types.md#rejectedtransactionresponse)\>
+▸ **getTransaction**(`txHash`): `Promise`\<[`InvokeTransactionResponse`](../interfaces/types.InvokeTransactionResponse.md) \| [`DeclareTransactionResponse`](../interfaces/types.DeclareTransactionResponse.md) \| [`RejectedTransactionResponse`](../namespaces/types.md#rejectedtransactionresponse)\>
 
 **`Deprecated`**
 
@@ -606,7 +606,7 @@ use getTransactionByHash or getTransactionByBlockIdAndIndex (will be removed on 
 
 #### Returns
 
-`Promise`<[`InvokeTransactionResponse`](../interfaces/types.InvokeTransactionResponse.md) \| [`DeclareTransactionResponse`](../interfaces/types.DeclareTransactionResponse.md) \| [`RejectedTransactionResponse`](../namespaces/types.md#rejectedtransactionresponse)\>
+`Promise`\<[`InvokeTransactionResponse`](../interfaces/types.InvokeTransactionResponse.md) \| [`DeclareTransactionResponse`](../interfaces/types.DeclareTransactionResponse.md) \| [`RejectedTransactionResponse`](../namespaces/types.md#rejectedtransactionresponse)\>
 
 #### Implementation of
 
@@ -620,7 +620,7 @@ use getTransactionByHash or getTransactionByBlockIdAndIndex (will be removed on 
 
 ### getTransactionByHash
 
-▸ **getTransactionByHash**(`txHash`): `Promise`<[`TransactionWithHash`](../namespaces/types.RPC.md#transactionwithhash)\>
+▸ **getTransactionByHash**(`txHash`): `Promise`\<[`TransactionWithHash`](../namespaces/types.RPC.md#transactionwithhash)\>
 
 #### Parameters
 
@@ -630,7 +630,7 @@ use getTransactionByHash or getTransactionByBlockIdAndIndex (will be removed on 
 
 #### Returns
 
-`Promise`<[`TransactionWithHash`](../namespaces/types.RPC.md#transactionwithhash)\>
+`Promise`\<[`TransactionWithHash`](../namespaces/types.RPC.md#transactionwithhash)\>
 
 #### Defined in
 
@@ -640,7 +640,7 @@ use getTransactionByHash or getTransactionByBlockIdAndIndex (will be removed on 
 
 ### getTransactionByBlockIdAndIndex
 
-▸ **getTransactionByBlockIdAndIndex**(`blockIdentifier`, `index`): `Promise`<[`TransactionWithHash`](../namespaces/types.RPC.md#transactionwithhash)\>
+▸ **getTransactionByBlockIdAndIndex**(`blockIdentifier`, `index`): `Promise`\<[`TransactionWithHash`](../namespaces/types.RPC.md#transactionwithhash)\>
 
 #### Parameters
 
@@ -651,7 +651,7 @@ use getTransactionByHash or getTransactionByBlockIdAndIndex (will be removed on 
 
 #### Returns
 
-`Promise`<[`TransactionWithHash`](../namespaces/types.RPC.md#transactionwithhash)\>
+`Promise`\<[`TransactionWithHash`](../namespaces/types.RPC.md#transactionwithhash)\>
 
 #### Defined in
 
@@ -661,7 +661,7 @@ use getTransactionByHash or getTransactionByBlockIdAndIndex (will be removed on 
 
 ### getTransactionReceipt
 
-▸ **getTransactionReceipt**(`txHash`): `Promise`<[`TransactionReceipt`](../namespaces/types.RPC.md#transactionreceipt)\>
+▸ **getTransactionReceipt**(`txHash`): `Promise`\<[`TransactionReceipt`](../namespaces/types.RPC.md#transactionreceipt)\>
 
 Gets the transaction receipt from a tx hash.
 
@@ -673,7 +673,7 @@ Gets the transaction receipt from a tx hash.
 
 #### Returns
 
-`Promise`<[`TransactionReceipt`](../namespaces/types.RPC.md#transactionreceipt)\>
+`Promise`\<[`TransactionReceipt`](../namespaces/types.RPC.md#transactionreceipt)\>
 
 the transaction receipt object
 
@@ -689,7 +689,7 @@ the transaction receipt object
 
 ### getTransactionTrace
 
-▸ **getTransactionTrace**(`txHash`): `Promise`<[`TRANSACTION_TRACE`](../namespaces/types.RPC.SPEC.md#transaction_trace)\>
+▸ **getTransactionTrace**(`txHash`): `Promise`\<[`TRANSACTION_TRACE`](../namespaces/types.RPC.SPEC.md#transaction_trace)\>
 
 #### Parameters
 
@@ -699,7 +699,7 @@ the transaction receipt object
 
 #### Returns
 
-`Promise`<[`TRANSACTION_TRACE`](../namespaces/types.RPC.SPEC.md#transaction_trace)\>
+`Promise`\<[`TRANSACTION_TRACE`](../namespaces/types.RPC.SPEC.md#transaction_trace)\>
 
 #### Defined in
 
@@ -709,7 +709,7 @@ the transaction receipt object
 
 ### getTransactionStatus
 
-▸ **getTransactionStatus**(`transactionHash`): `Promise`<[`TransactionStatus`](../namespaces/types.RPC.md#transactionstatus)\>
+▸ **getTransactionStatus**(`transactionHash`): `Promise`\<[`TransactionStatus`](../namespaces/types.RPC.md#transactionstatus)\>
 
 NEW: Get the status of a transaction
 
@@ -721,7 +721,7 @@ NEW: Get the status of a transaction
 
 #### Returns
 
-`Promise`<[`TransactionStatus`](../namespaces/types.RPC.md#transactionstatus)\>
+`Promise`\<[`TransactionStatus`](../namespaces/types.RPC.md#transactionstatus)\>
 
 #### Defined in
 
@@ -731,7 +731,7 @@ NEW: Get the status of a transaction
 
 ### simulateTransaction
 
-▸ **simulateTransaction**(`invocations`, `simulateTransactionOptions`): `Promise`<[`SimulateTransactionResponse`](../namespaces/types.md#simulatetransactionresponse)\>
+▸ **simulateTransaction**(`invocations`, `simulateTransactionOptions`): `Promise`\<[`SimulateTransactionResponse`](../namespaces/types.md#simulatetransactionresponse)\>
 
 #### Parameters
 
@@ -742,7 +742,7 @@ NEW: Get the status of a transaction
 
 #### Returns
 
-`Promise`<[`SimulateTransactionResponse`](../namespaces/types.md#simulatetransactionresponse)\>
+`Promise`\<[`SimulateTransactionResponse`](../namespaces/types.md#simulatetransactionresponse)\>
 
 #### Defined in
 
@@ -752,7 +752,7 @@ NEW: Get the status of a transaction
 
 ### waitForTransaction
 
-▸ **waitForTransaction**(`txHash`, `options?`): `Promise`<[`TransactionReceipt`](../namespaces/types.RPC.md#transactionreceipt)\>
+▸ **waitForTransaction**(`txHash`, `options?`): `Promise`\<[`TransactionReceipt`](../namespaces/types.RPC.md#transactionreceipt)\>
 
 Wait for the transaction to be accepted
 
@@ -765,7 +765,7 @@ Wait for the transaction to be accepted
 
 #### Returns
 
-`Promise`<[`TransactionReceipt`](../namespaces/types.RPC.md#transactionreceipt)\>
+`Promise`\<[`TransactionReceipt`](../namespaces/types.RPC.md#transactionreceipt)\>
 
 GetTransactionReceiptResponse
 
@@ -781,21 +781,21 @@ GetTransactionReceiptResponse
 
 ### getStorageAt
 
-▸ **getStorageAt**(`contractAddress`, `key`, `blockIdentifier?`): `Promise`<`string`\>
+▸ **getStorageAt**(`contractAddress`, `key`, `blockIdentifier?`): `Promise`\<`string`\>
 
 Get the value of the storage (contract's variable) at the given address and key
 
 #### Parameters
 
-| Name              | Type                                                        | Description                                                |
-| :---------------- | :---------------------------------------------------------- | :--------------------------------------------------------- |
-| `contractAddress` | [`BigNumberish`](../namespaces/types.md#bignumberish)       |                                                            |
-| `key`             | [`BigNumberish`](../namespaces/types.md#bignumberish)       | from getStorageVarAddress('<STORAGE_VARIABLE_NAME>') (WIP) |
-| `blockIdentifier` | [`BlockIdentifier`](../namespaces/types.md#blockidentifier) | block identifier                                           |
+| Name              | Type                                                        | Description                                                  |
+| :---------------- | :---------------------------------------------------------- | :----------------------------------------------------------- |
+| `contractAddress` | [`BigNumberish`](../namespaces/types.md#bignumberish)       |                                                              |
+| `key`             | [`BigNumberish`](../namespaces/types.md#bignumberish)       | from getStorageVarAddress('\<STORAGE_VARIABLE_NAME\>') (WIP) |
+| `blockIdentifier` | [`BlockIdentifier`](../namespaces/types.md#blockidentifier) | block identifier                                             |
 
 #### Returns
 
-`Promise`<`string`\>
+`Promise`\<`string`\>
 
 the value of the storage variable
 
@@ -811,7 +811,7 @@ the value of the storage variable
 
 ### getClassHashAt
 
-▸ **getClassHashAt**(`contractAddress`, `blockIdentifier?`): `Promise`<`string`\>
+▸ **getClassHashAt**(`contractAddress`, `blockIdentifier?`): `Promise`\<`string`\>
 
 Returns the contract class hash in the given block for the contract deployed at the given address
 
@@ -824,7 +824,7 @@ Returns the contract class hash in the given block for the contract deployed at 
 
 #### Returns
 
-`Promise`<`string`\>
+`Promise`\<`string`\>
 
 Class hash
 
@@ -840,7 +840,7 @@ Class hash
 
 ### getClassByHash
 
-▸ **getClassByHash**(`classHash`): `Promise`<[`LegacyContractClass`](../namespaces/types.md#legacycontractclass) \| `Omit`<[`CompiledSierra`](../namespaces/types.md#compiledsierra), `"sierra_program_debug_info"`\>\>
+▸ **getClassByHash**(`classHash`): `Promise`\<[`LegacyContractClass`](../namespaces/types.md#legacycontractclass) \| `Omit`\<[`CompiledSierra`](../namespaces/types.md#compiledsierra), `"sierra_program_debug_info"`\>\>
 
 Returns the contract class deployed under the given class hash.
 
@@ -852,7 +852,7 @@ Returns the contract class deployed under the given class hash.
 
 #### Returns
 
-`Promise`<[`LegacyContractClass`](../namespaces/types.md#legacycontractclass) \| `Omit`<[`CompiledSierra`](../namespaces/types.md#compiledsierra), `"sierra_program_debug_info"`\>\>
+`Promise`\<[`LegacyContractClass`](../namespaces/types.md#legacycontractclass) \| `Omit`\<[`CompiledSierra`](../namespaces/types.md#compiledsierra), `"sierra_program_debug_info"`\>\>
 
 Contract class of compiled contract
 
@@ -868,7 +868,7 @@ Contract class of compiled contract
 
 ### getClass
 
-▸ **getClass**(`classHash`, `blockIdentifier?`): `Promise`<[`LegacyContractClass`](../namespaces/types.md#legacycontractclass) \| `Omit`<[`CompiledSierra`](../namespaces/types.md#compiledsierra), `"sierra_program_debug_info"`\>\>
+▸ **getClass**(`classHash`, `blockIdentifier?`): `Promise`\<[`LegacyContractClass`](../namespaces/types.md#legacycontractclass) \| `Omit`\<[`CompiledSierra`](../namespaces/types.md#compiledsierra), `"sierra_program_debug_info"`\>\>
 
 #### Parameters
 
@@ -879,7 +879,7 @@ Contract class of compiled contract
 
 #### Returns
 
-`Promise`<[`LegacyContractClass`](../namespaces/types.md#legacycontractclass) \| `Omit`<[`CompiledSierra`](../namespaces/types.md#compiledsierra), `"sierra_program_debug_info"`\>\>
+`Promise`\<[`LegacyContractClass`](../namespaces/types.md#legacycontractclass) \| `Omit`\<[`CompiledSierra`](../namespaces/types.md#compiledsierra), `"sierra_program_debug_info"`\>\>
 
 #### Defined in
 
@@ -889,7 +889,7 @@ Contract class of compiled contract
 
 ### getClassAt
 
-▸ **getClassAt**(`contractAddress`, `blockIdentifier?`): `Promise`<[`LegacyContractClass`](../namespaces/types.md#legacycontractclass) \| `Omit`<[`CompiledSierra`](../namespaces/types.md#compiledsierra), `"sierra_program_debug_info"`\>\>
+▸ **getClassAt**(`contractAddress`, `blockIdentifier?`): `Promise`\<[`LegacyContractClass`](../namespaces/types.md#legacycontractclass) \| `Omit`\<[`CompiledSierra`](../namespaces/types.md#compiledsierra), `"sierra_program_debug_info"`\>\>
 
 Gets the contract class of the deployed contract.
 
@@ -902,7 +902,7 @@ Gets the contract class of the deployed contract.
 
 #### Returns
 
-`Promise`<[`LegacyContractClass`](../namespaces/types.md#legacycontractclass) \| `Omit`<[`CompiledSierra`](../namespaces/types.md#compiledsierra), `"sierra_program_debug_info"`\>\>
+`Promise`\<[`LegacyContractClass`](../namespaces/types.md#legacycontractclass) \| `Omit`\<[`CompiledSierra`](../namespaces/types.md#compiledsierra), `"sierra_program_debug_info"`\>\>
 
 Contract class of compiled contract
 
@@ -918,7 +918,7 @@ Contract class of compiled contract
 
 ### getCode
 
-▸ **getCode**(`_contractAddress`, `_blockIdentifier?`): `Promise`<[`GetCodeResponse`](../interfaces/types.GetCodeResponse.md)\>
+▸ **getCode**(`_contractAddress`, `_blockIdentifier?`): `Promise`\<[`GetCodeResponse`](../interfaces/types.GetCodeResponse.md)\>
 
 **`Deprecated`**
 
@@ -933,7 +933,7 @@ The method should not be used
 
 #### Returns
 
-`Promise`<[`GetCodeResponse`](../interfaces/types.GetCodeResponse.md)\>
+`Promise`\<[`GetCodeResponse`](../interfaces/types.GetCodeResponse.md)\>
 
 #### Implementation of
 
@@ -947,7 +947,7 @@ The method should not be used
 
 ### getContractVersion
 
-▸ **getContractVersion**(`contractAddress`, `classHash?`, `options?`): `Promise`<[`ContractVersion`](../namespaces/types.md#contractversion)\>
+▸ **getContractVersion**(`contractAddress`, `classHash?`, `options?`): `Promise`\<[`ContractVersion`](../namespaces/types.md#contractversion)\>
 
 Gets the contract version from the provided address
 
@@ -961,7 +961,7 @@ Gets the contract version from the provided address
 
 #### Returns
 
-`Promise`<[`ContractVersion`](../namespaces/types.md#contractversion)\>
+`Promise`\<[`ContractVersion`](../namespaces/types.md#contractversion)\>
 
 #### Implementation of
 
@@ -971,7 +971,7 @@ Gets the contract version from the provided address
 
 [src/provider/rpc.ts:455](https://github.com/starknet-io/starknet.js/blob/v5.24.3/src/provider/rpc.ts#L455)
 
-▸ **getContractVersion**(`contractAddress`, `classHash`, `options?`): `Promise`<[`ContractVersion`](../namespaces/types.md#contractversion)\>
+▸ **getContractVersion**(`contractAddress`, `classHash`, `options?`): `Promise`\<[`ContractVersion`](../namespaces/types.md#contractversion)\>
 
 Gets the contract version from the provided address
 
@@ -985,7 +985,7 @@ Gets the contract version from the provided address
 
 #### Returns
 
-`Promise`<[`ContractVersion`](../namespaces/types.md#contractversion)\>
+`Promise`\<[`ContractVersion`](../namespaces/types.md#contractversion)\>
 
 #### Implementation of
 
@@ -999,7 +999,7 @@ Gets the contract version from the provided address
 
 ### getEstimateFee
 
-▸ **getEstimateFee**(`invocation`, `invocationDetails`, `blockIdentifier?`): `Promise`<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
+▸ **getEstimateFee**(`invocation`, `invocationDetails`, `blockIdentifier?`): `Promise`\<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
 
 **`Deprecated`**
 
@@ -1015,7 +1015,7 @@ use get*type*EstimateFee (will be refactored based on type after sequencer depre
 
 #### Returns
 
-`Promise`<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
+`Promise`\<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
 
 #### Implementation of
 
@@ -1029,7 +1029,7 @@ use get*type*EstimateFee (will be refactored based on type after sequencer depre
 
 ### getInvokeEstimateFee
 
-▸ **getInvokeEstimateFee**(`invocation`, `invocationDetails`, `blockIdentifier?`): `Promise`<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
+▸ **getInvokeEstimateFee**(`invocation`, `invocationDetails`, `blockIdentifier?`): `Promise`\<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
 
 Estimates the fee for a given INVOKE transaction
 
@@ -1043,7 +1043,7 @@ Estimates the fee for a given INVOKE transaction
 
 #### Returns
 
-`Promise`<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
+`Promise`\<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
 
 the estimated fee
 
@@ -1059,7 +1059,7 @@ the estimated fee
 
 ### getDeclareEstimateFee
 
-▸ **getDeclareEstimateFee**(`invocation`, `details`, `blockIdentifier?`): `Promise`<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
+▸ **getDeclareEstimateFee**(`invocation`, `details`, `blockIdentifier?`): `Promise`\<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
 
 Estimates the fee for a given DECLARE transaction
 
@@ -1073,7 +1073,7 @@ Estimates the fee for a given DECLARE transaction
 
 #### Returns
 
-`Promise`<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
+`Promise`\<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
 
 the estimated fee
 
@@ -1089,7 +1089,7 @@ the estimated fee
 
 ### getDeployAccountEstimateFee
 
-▸ **getDeployAccountEstimateFee**(`invocation`, `details`, `blockIdentifier?`): `Promise`<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
+▸ **getDeployAccountEstimateFee**(`invocation`, `details`, `blockIdentifier?`): `Promise`\<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
 
 Estimates the fee for a given DEPLOY_ACCOUNT transaction
 
@@ -1103,7 +1103,7 @@ Estimates the fee for a given DEPLOY_ACCOUNT transaction
 
 #### Returns
 
-`Promise`<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
+`Promise`\<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
 
 the estimated fee
 
@@ -1119,7 +1119,7 @@ the estimated fee
 
 ### getEstimateFeeBulk
 
-▸ **getEstimateFeeBulk**(`invocations`, `«destructured»`): `Promise`<[`EstimateFeeResponseBulk`](../namespaces/types.md#estimatefeeresponsebulk)\>
+▸ **getEstimateFeeBulk**(`invocations`, `«destructured»`): `Promise`\<[`EstimateFeeResponseBulk`](../namespaces/types.md#estimatefeeresponsebulk)\>
 
 Estimates the fee for a list of INVOKE transaction
 
@@ -1132,7 +1132,7 @@ Estimates the fee for a list of INVOKE transaction
 
 #### Returns
 
-`Promise`<[`EstimateFeeResponseBulk`](../namespaces/types.md#estimatefeeresponsebulk)\>
+`Promise`\<[`EstimateFeeResponseBulk`](../namespaces/types.md#estimatefeeresponsebulk)\>
 
 the estimated fee
 
@@ -1148,7 +1148,7 @@ the estimated fee
 
 ### invokeFunction
 
-▸ **invokeFunction**(`functionInvocation`, `details`): `Promise`<[`InvokedTransaction`](../namespaces/types.RPC.md#invokedtransaction)\>
+▸ **invokeFunction**(`functionInvocation`, `details`): `Promise`\<[`InvokedTransaction`](../namespaces/types.RPC.md#invokedtransaction)\>
 
 Invokes a function on starknet
 
@@ -1165,7 +1165,7 @@ This method won't be supported as soon as fees are mandatory. Should not be used
 
 #### Returns
 
-`Promise`<[`InvokedTransaction`](../namespaces/types.RPC.md#invokedtransaction)\>
+`Promise`\<[`InvokedTransaction`](../namespaces/types.RPC.md#invokedtransaction)\>
 
 response from addTransaction
 
@@ -1181,7 +1181,7 @@ response from addTransaction
 
 ### declareContract
 
-▸ **declareContract**(`«destructured»`, `details`): `Promise`<[`DeclaredTransaction`](../namespaces/types.RPC.md#declaredtransaction)\>
+▸ **declareContract**(`«destructured»`, `details`): `Promise`\<[`DeclaredTransaction`](../namespaces/types.RPC.md#declaredtransaction)\>
 
 Declares a given compiled contract (json) to starknet
 
@@ -1194,7 +1194,7 @@ Declares a given compiled contract (json) to starknet
 
 #### Returns
 
-`Promise`<[`DeclaredTransaction`](../namespaces/types.RPC.md#declaredtransaction)\>
+`Promise`\<[`DeclaredTransaction`](../namespaces/types.RPC.md#declaredtransaction)\>
 
 a confirmation of sending a transaction on the starknet contract
 
@@ -1210,7 +1210,7 @@ a confirmation of sending a transaction on the starknet contract
 
 ### deployAccountContract
 
-▸ **deployAccountContract**(`«destructured»`, `details`): `Promise`<[`DeployedAccountTransaction`](../namespaces/types.RPC.md#deployedaccounttransaction)\>
+▸ **deployAccountContract**(`«destructured»`, `details`): `Promise`\<[`DeployedAccountTransaction`](../namespaces/types.RPC.md#deployedaccounttransaction)\>
 
 Deploys a given compiled Account contract (json) to starknet
 
@@ -1223,7 +1223,7 @@ Deploys a given compiled Account contract (json) to starknet
 
 #### Returns
 
-`Promise`<[`DeployedAccountTransaction`](../namespaces/types.RPC.md#deployedaccounttransaction)\>
+`Promise`\<[`DeployedAccountTransaction`](../namespaces/types.RPC.md#deployedaccounttransaction)\>
 
 a confirmation of sending a transaction on the starknet contract
 
@@ -1239,7 +1239,7 @@ a confirmation of sending a transaction on the starknet contract
 
 ### callContract
 
-▸ **callContract**(`call`, `blockIdentifier?`): `Promise`<[`CallContractResponse`](../namespaces/types.md#callcontractresponse)\>
+▸ **callContract**(`call`, `blockIdentifier?`): `Promise`\<[`CallContractResponse`](../namespaces/types.md#callcontractresponse)\>
 
 Calls a function on the Starknet contract.
 
@@ -1252,7 +1252,7 @@ Calls a function on the Starknet contract.
 
 #### Returns
 
-`Promise`<[`CallContractResponse`](../namespaces/types.md#callcontractresponse)\>
+`Promise`\<[`CallContractResponse`](../namespaces/types.md#callcontractresponse)\>
 
 the result of the function on the smart contract.
 
@@ -1268,7 +1268,7 @@ the result of the function on the smart contract.
 
 ### estimateMessageFee
 
-▸ **estimateMessageFee**(`message`, `blockIdentifier?`): `Promise`<[`FEE_ESTIMATE`](../namespaces/types.RPC.SPEC.md#fee_estimate)\>
+▸ **estimateMessageFee**(`message`, `blockIdentifier?`): `Promise`\<[`FEE_ESTIMATE`](../namespaces/types.RPC.SPEC.md#fee_estimate)\>
 
 NEW: Estimate the fee for a message from L1
 
@@ -1281,7 +1281,7 @@ NEW: Estimate the fee for a message from L1
 
 #### Returns
 
-`Promise`<[`FEE_ESTIMATE`](../namespaces/types.RPC.SPEC.md#fee_estimate)\>
+`Promise`\<[`FEE_ESTIMATE`](../namespaces/types.RPC.SPEC.md#fee_estimate)\>
 
 #### Defined in
 
@@ -1291,13 +1291,13 @@ NEW: Estimate the fee for a message from L1
 
 ### getSyncingStats
 
-▸ **getSyncingStats**(): `Promise`<[`Syncing`](../namespaces/types.RPC.md#syncing)\>
+▸ **getSyncingStats**(): `Promise`\<[`Syncing`](../namespaces/types.RPC.md#syncing)\>
 
 Returns an object about the sync status, or false if the node is not synching
 
 #### Returns
 
-`Promise`<[`Syncing`](../namespaces/types.RPC.md#syncing)\>
+`Promise`\<[`Syncing`](../namespaces/types.RPC.md#syncing)\>
 
 Object with the stats data
 
@@ -1309,7 +1309,7 @@ Object with the stats data
 
 ### getEvents
 
-▸ **getEvents**(`eventFilter`): `Promise`<[`EVENTS_CHUNK`](../namespaces/types.RPC.SPEC.md#events_chunk)\>
+▸ **getEvents**(`eventFilter`): `Promise`\<[`EVENTS_CHUNK`](../namespaces/types.RPC.SPEC.md#events_chunk)\>
 
 Returns all events matching the given filter
 
@@ -1321,7 +1321,7 @@ Returns all events matching the given filter
 
 #### Returns
 
-`Promise`<[`EVENTS_CHUNK`](../namespaces/types.RPC.SPEC.md#events_chunk)\>
+`Promise`\<[`EVENTS_CHUNK`](../namespaces/types.RPC.SPEC.md#events_chunk)\>
 
 events and the pagination of the events
 
@@ -1333,7 +1333,7 @@ events and the pagination of the events
 
 ### getStarkName
 
-▸ **getStarkName**(`address`, `StarknetIdContract?`): `Promise`<`string`\>
+▸ **getStarkName**(`address`, `StarknetIdContract?`): `Promise`\<`string`\>
 
 StarknetId Endpoint (get name from address)
 
@@ -1346,7 +1346,7 @@ StarknetId Endpoint (get name from address)
 
 #### Returns
 
-`Promise`<`string`\>
+`Promise`\<`string`\>
 
 #### Defined in
 
@@ -1356,7 +1356,7 @@ StarknetId Endpoint (get name from address)
 
 ### getAddressFromStarkName
 
-▸ **getAddressFromStarkName**(`name`, `StarknetIdContract?`): `Promise`<`string`\>
+▸ **getAddressFromStarkName**(`name`, `StarknetIdContract?`): `Promise`\<`string`\>
 
 StarknetId Endpoint (get address from name)
 
@@ -1369,7 +1369,7 @@ StarknetId Endpoint (get address from name)
 
 #### Returns
 
-`Promise`<`string`\>
+`Promise`\<`string`\>
 
 #### Defined in
 

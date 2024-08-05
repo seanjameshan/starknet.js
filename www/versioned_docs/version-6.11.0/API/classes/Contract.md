@@ -256,13 +256,13 @@ Attaches to new Provider or Account
 
 ### deployed
 
-▸ **deployed**(): `Promise`<[`Contract`](Contract.md)\>
+▸ **deployed**(): `Promise`\<[`Contract`](Contract.md)\>
 
 Resolves when contract is deployed on the network or when no deployment transaction is found
 
 #### Returns
 
-`Promise`<[`Contract`](Contract.md)\>
+`Promise`\<[`Contract`](Contract.md)\>
 
 Promise that resolves when contract is deployed on the network or when no deployment transaction is found
 
@@ -282,7 +282,7 @@ When deployment fails
 
 ### call
 
-▸ **call**(`method`, `args?`, `«destructured»?`): `Promise`<[`Result`](../namespaces/types.md#result)\>
+▸ **call**(`method`, `args?`, `«destructured»?`): `Promise`\<[`Result`](../namespaces/types.md#result)\>
 
 Calls a method on a contract
 
@@ -296,7 +296,7 @@ Calls a method on a contract
 
 #### Returns
 
-`Promise`<[`Result`](../namespaces/types.md#result)\>
+`Promise`\<[`Result`](../namespaces/types.md#result)\>
 
 Result of the call as an array with key value pars
 
@@ -312,7 +312,7 @@ Result of the call as an array with key value pars
 
 ### invoke
 
-▸ **invoke**(`method`, `args?`, `«destructured»?`): `Promise`<\{ `transaction_hash`: `string` }\>
+▸ **invoke**(`method`, `args?`, `«destructured»?`): `Promise`\<\{ `transaction_hash`: `string` }\>
 
 Invokes a method on a contract
 
@@ -326,7 +326,7 @@ Invokes a method on a contract
 
 #### Returns
 
-`Promise`<\{ `transaction_hash`: `string` }\>
+`Promise`\<\{ `transaction_hash`: `string` }\>
 
 Add Transaction Response
 
@@ -342,7 +342,7 @@ Add Transaction Response
 
 ### estimate
 
-▸ **estimate**(`method`, `args?`): `Promise`<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
+▸ **estimate**(`method`, `args?`): `Promise`\<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
 
 Estimates a method on a contract
 
@@ -355,7 +355,7 @@ Estimates a method on a contract
 
 #### Returns
 
-`Promise`<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
+`Promise`\<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
 
 #### Implementation of
 
@@ -454,13 +454,13 @@ const isCairo1: boolean = myContract.isCairo1();
 
 ### getVersion
 
-▸ **getVersion**(): `Promise`<[`ContractVersion`](../namespaces/types.md#contractversion)\>
+▸ **getVersion**(): `Promise`\<[`ContractVersion`](../namespaces/types.md#contractversion)\>
 
 Retrieves the version of the contract (cairo version & compiler version)
 
 #### Returns
 
-`Promise`<[`ContractVersion`](../namespaces/types.md#contractversion)\>
+`Promise`\<[`ContractVersion`](../namespaces/types.md#contractversion)\>
 
 #### Implementation of
 
@@ -474,7 +474,7 @@ Retrieves the version of the contract (cairo version & compiler version)
 
 ### typedv2
 
-▸ **typedv2**<`TAbi`\>(`tAbi`): [`TypedContractV2`](../modules.md#typedcontractv2)<`TAbi`\>
+▸ **typedv2**\<`TAbi`\>(`tAbi`): [`TypedContractV2`](../modules.md#typedcontractv2)\<`TAbi`\>
 
 Returns a typed instance of ContractV2 based on the supplied ABI.
 
@@ -492,7 +492,7 @@ Returns a typed instance of ContractV2 based on the supplied ABI.
 
 #### Returns
 
-[`TypedContractV2`](../modules.md#typedcontractv2)<`TAbi`\>
+[`TypedContractV2`](../modules.md#typedcontractv2)\<`TAbi`\>
 
 - A typed instance of ContractV2.
 

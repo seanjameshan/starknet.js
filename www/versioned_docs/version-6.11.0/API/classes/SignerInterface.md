@@ -25,13 +25,13 @@ custom_edit_url: null
 
 ### getPubKey
 
-▸ **getPubKey**(): `Promise`<`string`\>
+▸ **getPubKey**(): `Promise`\<`string`\>
 
 Method to get the public key of the signer
 
 #### Returns
 
-`Promise`<`string`\>
+`Promise`\<`string`\>
 
 hex-string
 
@@ -51,7 +51,7 @@ const result = await mySigner.getPubKey();
 
 ### signMessage
 
-▸ **signMessage**(`typedData`, `accountAddress`): `Promise`<[`Signature`](../namespaces/types.md#signature)\>
+▸ **signMessage**(`typedData`, `accountAddress`): `Promise`\<[`Signature`](../namespaces/types.md#signature)\>
 
 Signs a JSON object for off-chain usage with the private key and returns the signature.
 This adds a message prefix so it can't be interchanged with transactions
@@ -65,7 +65,7 @@ This adds a message prefix so it can't be interchanged with transactions
 
 #### Returns
 
-`Promise`<[`Signature`](../namespaces/types.md#signature)\>
+`Promise`\<[`Signature`](../namespaces/types.md#signature)\>
 
 the signature of the message
 
@@ -102,7 +102,7 @@ const result = await mySigner.signMessage(
 
 ### signTransaction
 
-▸ **signTransaction**(`transactions`, `transactionsDetail`): `Promise`<[`Signature`](../namespaces/types.md#signature)\>
+▸ **signTransaction**(`transactions`, `transactionsDetail`): `Promise`\<[`Signature`](../namespaces/types.md#signature)\>
 
 Signs transactions with the private key and returns the signature
 
@@ -115,7 +115,7 @@ Signs transactions with the private key and returns the signature
 
 #### Returns
 
-`Promise`<[`Signature`](../namespaces/types.md#signature)\>
+`Promise`\<[`Signature`](../namespaces/types.md#signature)\>
 
 the signature of the transaction
 
@@ -151,7 +151,7 @@ const result = await mySigner.signTransaction(calls, transactionsDetail);
 
 ### signDeployAccountTransaction
 
-▸ **signDeployAccountTransaction**(`transaction`): `Promise`<[`Signature`](../namespaces/types.md#signature)\>
+▸ **signDeployAccountTransaction**(`transaction`): `Promise`\<[`Signature`](../namespaces/types.md#signature)\>
 
 Signs a DEPLOY_ACCOUNT transaction with the private key and returns the signature
 
@@ -163,7 +163,7 @@ Signs a DEPLOY_ACCOUNT transaction with the private key and returns the signatur
 
 #### Returns
 
-`Promise`<[`Signature`](../namespaces/types.md#signature)\>
+`Promise`\<[`Signature`](../namespaces/types.md#signature)\>
 
 the signature of the transaction to deploy an account
 
@@ -200,7 +200,7 @@ const result = await mySigner.signDeployAccountTransaction(myDeployAcc);
 
 ### signDeclareTransaction
 
-▸ **signDeclareTransaction**(`transaction`): `Promise`<[`Signature`](../namespaces/types.md#signature)\>
+▸ **signDeclareTransaction**(`transaction`): `Promise`\<[`Signature`](../namespaces/types.md#signature)\>
 
 Signs a DECLARE transaction with the private key and returns the signature
 
@@ -212,7 +212,7 @@ Signs a DECLARE transaction with the private key and returns the signature
 
 #### Returns
 
-`Promise`<[`Signature`](../namespaces/types.md#signature)\>
+`Promise`\<[`Signature`](../namespaces/types.md#signature)\>
 
 the signature of the transaction to declare a class
 

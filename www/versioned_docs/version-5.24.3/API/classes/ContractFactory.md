@@ -96,7 +96,7 @@ custom_edit_url: null
 
 ### deploy
 
-▸ **deploy**(`...args`): `Promise`<[`Contract`](Contract.md)\>
+▸ **deploy**(`...args`): `Promise`\<[`Contract`](Contract.md)\>
 
 Deploys contract and returns new instance of the Contract
 
@@ -110,7 +110,7 @@ If contract is not declared it will first declare it, and then deploy
 
 #### Returns
 
-`Promise`<[`Contract`](Contract.md)\>
+`Promise`\<[`Contract`](Contract.md)\>
 
 #### Defined in
 

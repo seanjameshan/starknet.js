@@ -30,7 +30,7 @@ custom_edit_url: null
 
 ### ResponseBody
 
-Ƭ **ResponseBody**: { `id`: `number` \| `string` ; `jsonrpc`: `"2.0"` } & [`SuccessResponseBody`](types.RPC.JRPC.md#successresponsebody) \| [`ErrorResponseBody`](types.RPC.JRPC.md#errorresponsebody)
+Ƭ **ResponseBody**: \{ `id`: `number` \| `string` ; `jsonrpc`: `"2.0"` \} & [`SuccessResponseBody`](types.RPC.JRPC.md#successresponsebody) \| [`ErrorResponseBody`](types.RPC.JRPC.md#errorresponsebody)
 
 #### Defined in
 

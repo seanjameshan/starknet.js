@@ -9,7 +9,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- `Required`<[`InvocationsDetails`](../namespaces/types.md#invocationsdetails)\>
+- `Required`\<[`InvocationsDetails`](../namespaces/types.md#invocationsdetails)\>
 
   ↳ **`InvocationsSignerDetails`**
 

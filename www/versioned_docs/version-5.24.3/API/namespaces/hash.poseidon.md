@@ -15,16 +15,16 @@ custom_edit_url: null
 
 #### Type declaration
 
-| Name                    | Type                |
-| :---------------------- | :------------------ |
-| `Fp`                    | `IField`<`bigint`\> |
-| `t`                     | `number`            |
-| `roundsFull`            | `number`            |
-| `roundsPartial`         | `number`            |
-| `sboxPower?`            | `number`            |
-| `reversePartialPowIdx?` | `boolean`           |
-| `mds`                   | `bigint`[][]        |
-| `roundConstants`        | `bigint`[][]        |
+| Name                    | Type                 |
+| :---------------------- | :------------------- |
+| `Fp`                    | `IField`\<`bigint`\> |
+| `t`                     | `number`             |
+| `roundsFull`            | `number`             |
+| `roundsPartial`         | `number`             |
+| `sboxPower?`            | `number`             |
+| `reversePartialPowIdx?` | `boolean`            |
+| `mds`                   | `bigint`[][]         |
+| `roundConstants`        | `bigint`[][]         |
 
 #### Defined in
 
@@ -34,7 +34,7 @@ node_modules/@noble/curves/abstract/poseidon.d.ts:3
 
 ### validateOpts
 
-▸ **validateOpts**(`opts`): `Readonly`<{ `rounds`: `number` ; `sboxFn`: (`n`: `bigint`) => `bigint` ; `roundConstants`: `bigint`[][] ; `mds`: `bigint`[][] ; `Fp`: `IField`<`bigint`\> ; `t`: `number` ; `roundsFull`: `number` ; `roundsPartial`: `number` ; `sboxPower?`: `number` ; `reversePartialPowIdx?`: `boolean` }\>
+▸ **validateOpts**(`opts`): `Readonly`\<\{ `rounds`: `number` ; `sboxFn`: (`n`: `bigint`) => `bigint` ; `roundConstants`: `bigint`[][] ; `mds`: `bigint`[][] ; `Fp`: `IField`\<`bigint`\> ; `t`: `number` ; `roundsFull`: `number` ; `roundsPartial`: `number` ; `sboxPower?`: `number` ; `reversePartialPowIdx?`: `boolean` \}\>
 
 #### Parameters
 
@@ -44,7 +44,7 @@ node_modules/@noble/curves/abstract/poseidon.d.ts:3
 
 #### Returns
 
-`Readonly`<{ `rounds`: `number` ; `sboxFn`: (`n`: `bigint`) => `bigint` ; `roundConstants`: `bigint`[][] ; `mds`: `bigint`[][] ; `Fp`: `IField`<`bigint`\> ; `t`: `number` ; `roundsFull`: `number` ; `roundsPartial`: `number` ; `sboxPower?`: `number` ; `reversePartialPowIdx?`: `boolean` }\>
+`Readonly`\<\{ `rounds`: `number` ; `sboxFn`: (`n`: `bigint`) => `bigint` ; `roundConstants`: `bigint`[][] ; `mds`: `bigint`[][] ; `Fp`: `IField`\<`bigint`\> ; `t`: `number` ; `roundsFull`: `number` ; `roundsPartial`: `number` ; `sboxPower?`: `number` ; `reversePartialPowIdx?`: `boolean` \}\>
 
 #### Defined in
 

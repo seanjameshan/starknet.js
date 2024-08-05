@@ -9,7 +9,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- `Record`<`string`, `any`\>
+- `Record`\<`string`, `any`\>
 
   ↳ **`Program`**
 

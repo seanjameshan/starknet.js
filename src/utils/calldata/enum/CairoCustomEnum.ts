@@ -4,8 +4,8 @@ export type CairoEnumRaw = {
 
 /**
  * Class to handle Cairo custom Enum
- * @param enumContent object containing the variants and its content. Example :
- *  {Success: 234, Warning: undefined, Error: undefined}.
+ * @param enumContent object containing the variants and its content. Example:
+ *  `{Success: 234, Warning: undefined, Error: undefined}`.
  *  Only one variant with a value, object, array.
  * @returns an instance representing a Cairo custom Enum.
  * @example

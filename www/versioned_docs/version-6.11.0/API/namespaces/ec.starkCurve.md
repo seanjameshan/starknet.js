@@ -15,7 +15,7 @@ custom_edit_url: null
 
 ### ProjectivePoint
 
-Ƭ **ProjectivePoint**: `ProjPointType`<`bigint`\>
+Ƭ **ProjectivePoint**: `ProjPointType`\<`bigint`\>
 
 #### Defined in
 
@@ -31,13 +31,13 @@ node_modules/@scure/starknet/lib/index.d.ts:45
 
 #### Type declaration
 
-| Name            | Type                |
-| :-------------- | :------------------ |
-| `Fp`            | `IField`<`bigint`\> |
-| `rate`          | `number`            |
-| `capacity`      | `number`            |
-| `roundsFull`    | `number`            |
-| `roundsPartial` | `number`            |
+| Name            | Type                 |
+| :-------------- | :------------------- |
+| `Fp`            | `IField`\<`bigint`\> |
+| `rate`          | `number`             |
+| `capacity`      | `number`             |
+| `roundsFull`    | `number`             |
+| `roundsPartial` | `number`             |
 
 #### Defined in
 
@@ -47,7 +47,7 @@ node_modules/@scure/starknet/lib/index.d.ts:62
 
 ### PoseidonFn
 
-Ƭ **PoseidonFn**: `ReturnType`<typeof `poseidon`\> & \{ `m`: `number` ; `rate`: `number` ; `capacity`: `number` }
+Ƭ **PoseidonFn**: `ReturnType`\<typeof `poseidon`\> & \{ `m`: `number` ; `rate`: `number` ; `capacity`: `number` }
 
 #### Defined in
 
@@ -77,7 +77,7 @@ node_modules/@scure/starknet/lib/index.d.ts:8
 
 ### CURVE
 
-• `Const` **CURVE**: `Readonly`<\{ `nBitLength`: `number` ; `nByteLength`: `number` ; `Fp`: `IField`<`bigint`\> ; `n`: `bigint` ; `h`: `bigint` ; `hEff?`: `bigint` ; `Gx`: `bigint` ; `Gy`: `bigint` ; `allowInfinityPoint?`: `boolean` ; `a`: `bigint` ; `b`: `bigint` ; `allowedPrivateKeyLengths?`: readonly `number`[] ; `wrapPrivateKey?`: `boolean` ; `endo?`: \{ `beta`: `bigint` ; `splitScalar`: (`k`: `bigint`) => \{ `k1neg`: `boolean` ; `k1`: `bigint` ; `k2neg`: `boolean` ; `k2`: `bigint` } } ; `isTorsionFree?`: (`c`: `ProjConstructor`, `point`: `ProjPointType`<`bigint`\>) => `boolean` ; `clearCofactor?`: (`c`: `ProjConstructor`, `point`: `ProjPointType`<`bigint`\>) => `ProjPointType`<`bigint`\> ; `hash`: `u.CHash` ; `hmac`: (`key`: `Uint8Array`, ...`messages`: `Uint8Array`[]) => `Uint8Array` ; `randomBytes`: (`bytesLength?`: `number`) => `Uint8Array` ; `lowS`: `boolean` ; `bits2int?`: (`bytes`: `Uint8Array`) => `bigint` ; `bits2int_modN?`: (`bytes`: `Uint8Array`) => `bigint` ; `p`: `bigint` }\>
+• `Const` **CURVE**: `Readonly`\<\{ `nBitLength`: `number` ; `nByteLength`: `number` ; `Fp`: `IField`\<`bigint`\> ; `n`: `bigint` ; `h`: `bigint` ; `hEff?`: `bigint` ; `Gx`: `bigint` ; `Gy`: `bigint` ; `allowInfinityPoint?`: `boolean` ; `a`: `bigint` ; `b`: `bigint` ; `allowedPrivateKeyLengths?`: readonly `number`[] ; `wrapPrivateKey?`: `boolean` ; `endo?`: \{ `beta`: `bigint` ; `splitScalar`: (`k`: `bigint`) => \{ `k1neg`: `boolean` ; `k1`: `bigint` ; `k2neg`: `boolean` ; `k2`: `bigint` } } ; `isTorsionFree?`: (`c`: `ProjConstructor`, `point`: `ProjPointType`\<`bigint`\>) => `boolean` ; `clearCofactor?`: (`c`: `ProjConstructor`, `point`: `ProjPointType`\<`bigint`\>) => `ProjPointType`\<`bigint`\> ; `hash`: `u.CHash` ; `hmac`: (`key`: `Uint8Array`, ...`messages`: `Uint8Array`[]) => `Uint8Array` ; `randomBytes`: (`bytesLength?`: `number`) => `Uint8Array` ; `lowS`: `boolean` ; `bits2int?`: (`bytes`: `Uint8Array`) => `bigint` ; `bits2int_modN?`: (`bytes`: `Uint8Array`) => `bigint` ; `p`: `bigint` }\>
 
 #### Defined in
 
@@ -87,7 +87,7 @@ node_modules/@scure/starknet/lib/index.d.ts:13
 
 ### ProjectivePoint
 
-• **ProjectivePoint**: `ProjConstructor`<`bigint`\>
+• **ProjectivePoint**: `ProjConstructor`\<`bigint`\>
 
 #### Defined in
 
@@ -113,12 +113,12 @@ node_modules/@scure/starknet/lib/index.d.ts:45
 
 #### Type declaration
 
-| Name                     | Type                                                                                          |
-| :----------------------- | :-------------------------------------------------------------------------------------------- |
-| `normPrivateKeyToScalar` | (`key`: `u.PrivKey`) => `bigint`                                                              |
-| `randomPrivateKey`       | () => `Uint8Array`                                                                            |
-| `precompute`             | (`windowSize?`: `number`, `point?`: `ProjPointType`<`bigint`\>) => `ProjPointType`<`bigint`\> |
-| `isValidPrivateKey`      | (`privateKey`: `PrivKey`) => `boolean`                                                        |
+| Name                     | Type                                                                                            |
+| :----------------------- | :---------------------------------------------------------------------------------------------- |
+| `normPrivateKeyToScalar` | (`key`: `u.PrivKey`) => `bigint`                                                                |
+| `randomPrivateKey`       | () => `Uint8Array`                                                                              |
+| `precompute`             | (`windowSize?`: `number`, `point?`: `ProjPointType`\<`bigint`\>) => `ProjPointType`\<`bigint`\> |
+| `isValidPrivateKey`      | (`privateKey`: `PrivKey`) => `boolean`                                                          |
 
 #### Defined in
 
@@ -128,7 +128,7 @@ node_modules/@scure/starknet/lib/index.d.ts:45
 
 ### Fp251
 
-• `Const` **Fp251**: `Readonly`<`IField`<`bigint`\> & `Required`<`Pick`<`IField`<`bigint`\>, `"isOdd"`\>\>\>
+• `Const` **Fp251**: `Readonly`\<`IField`\<`bigint`\> & `Required`\<`Pick`\<`IField`\<`bigint`\>, `"isOdd"`\>\>\>
 
 #### Defined in
 
@@ -332,12 +332,12 @@ node_modules/@scure/starknet/lib/index.d.ts:57
 
 #### Parameters
 
-| Name       | Type                |
-| :--------- | :------------------ |
-| `Fp`       | `IField`<`bigint`\> |
-| `name`     | `string`            |
-| `m`        | `number`            |
-| `attempt?` | `number`            |
+| Name       | Type                 |
+| :--------- | :------------------- |
+| `Fp`       | `IField`\<`bigint`\> |
+| `name`     | `string`             |
+| `m`        | `number`             |
+| `attempt?` | `number`             |
 
 #### Returns
 

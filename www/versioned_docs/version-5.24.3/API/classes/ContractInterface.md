@@ -164,7 +164,7 @@ Attaches to new Provider or Account
 
 ### deployed
 
-▸ `Abstract` **deployed**(): `Promise`<[`ContractInterface`](ContractInterface.md)\>
+▸ `Abstract` **deployed**(): `Promise`\<[`ContractInterface`](ContractInterface.md)\>
 
 Resolves when contract is deployed on the network or when no deployment transaction is found
 
@@ -174,7 +174,7 @@ When deployment fails
 
 #### Returns
 
-`Promise`<[`ContractInterface`](ContractInterface.md)\>
+`Promise`\<[`ContractInterface`](ContractInterface.md)\>
 
 Promise that resolves when contract is deployed on the network or when no deployment transaction is found
 
@@ -186,7 +186,7 @@ Promise that resolves when contract is deployed on the network or when no deploy
 
 ### call
 
-▸ `Abstract` **call**(`method`, `args?`, `options?`): `Promise`<[`Result`](../namespaces/types.md#result)\>
+▸ `Abstract` **call**(`method`, `args?`, `options?`): `Promise`\<[`Result`](../namespaces/types.md#result)\>
 
 Calls a method on a contract
 
@@ -200,7 +200,7 @@ Calls a method on a contract
 
 #### Returns
 
-`Promise`<[`Result`](../namespaces/types.md#result)\>
+`Promise`\<[`Result`](../namespaces/types.md#result)\>
 
 Result of the call as an array with key value pars
 
@@ -212,7 +212,7 @@ Result of the call as an array with key value pars
 
 ### invoke
 
-▸ `Abstract` **invoke**(`method`, `args?`, `options?`): `Promise`<[`InvokeFunctionResponse`](../interfaces/types.InvokeFunctionResponse.md)\>
+▸ `Abstract` **invoke**(`method`, `args?`, `options?`): `Promise`\<[`InvokeFunctionResponse`](../interfaces/types.InvokeFunctionResponse.md)\>
 
 Invokes a method on a contract
 
@@ -226,7 +226,7 @@ Invokes a method on a contract
 
 #### Returns
 
-`Promise`<[`InvokeFunctionResponse`](../interfaces/types.InvokeFunctionResponse.md)\>
+`Promise`\<[`InvokeFunctionResponse`](../interfaces/types.InvokeFunctionResponse.md)\>
 
 Add Transaction Response
 
@@ -238,7 +238,7 @@ Add Transaction Response
 
 ### estimate
 
-▸ `Abstract` **estimate**(`method`, `args?`, `options?`): `Promise`<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
+▸ `Abstract` **estimate**(`method`, `args?`, `options?`): `Promise`\<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
 
 Estimates a method on a contract
 
@@ -253,7 +253,7 @@ Estimates a method on a contract
 
 #### Returns
 
-`Promise`<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
+`Promise`\<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
 
 #### Defined in
 
@@ -336,13 +336,13 @@ TRUE if the contract comes from a Cairo1 contract
 
 ### getVersion
 
-▸ `Abstract` **getVersion**(): `Promise`<[`ContractVersion`](../namespaces/types.md#contractversion)\>
+▸ `Abstract` **getVersion**(): `Promise`\<[`ContractVersion`](../namespaces/types.md#contractversion)\>
 
 Retrieves the version of the contract (cairo version & compiler version)
 
 #### Returns
 
-`Promise`<[`ContractVersion`](../namespaces/types.md#contractversion)\>
+`Promise`\<[`ContractVersion`](../namespaces/types.md#contractversion)\>
 
 #### Defined in
 
@@ -352,7 +352,7 @@ Retrieves the version of the contract (cairo version & compiler version)
 
 ### typed
 
-▸ `Abstract` **typed**<`TAbi`\>(`tAbi`): [`TypedContract`](../modules.md#typedcontract)<`TAbi`\>
+▸ `Abstract` **typed**\<`TAbi`\>(`tAbi`): [`TypedContract`](../modules.md#typedcontract)\<`TAbi`\>
 
 #### Type parameters
 
@@ -368,7 +368,7 @@ Retrieves the version of the contract (cairo version & compiler version)
 
 #### Returns
 
-[`TypedContract`](../modules.md#typedcontract)<`TAbi`\>
+[`TypedContract`](../modules.md#typedcontract)\<`TAbi`\>
 
 #### Defined in
 

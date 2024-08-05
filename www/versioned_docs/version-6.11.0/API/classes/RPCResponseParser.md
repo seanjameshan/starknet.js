@@ -8,7 +8,7 @@ custom_edit_url: null
 
 ## Implements
 
-- `Omit`<[`ResponseParser`](ResponseParser.md), `"parseDeclareContractResponse"` \| `"parseDeployContractResponse"` \| `"parseInvokeFunctionResponse"` \| `"parseGetTransactionReceiptResponse"` \| `"parseGetTransactionResponse"` \| `"parseCallContractResponse"`\>
+- `Omit`\<[`ResponseParser`](ResponseParser.md), `"parseDeclareContractResponse"` \| `"parseDeployContractResponse"` \| `"parseInvokeFunctionResponse"` \| `"parseGetTransactionReceiptResponse"` \| `"parseGetTransactionResponse"` \| `"parseCallContractResponse"`\>
 
 ## Constructors
 

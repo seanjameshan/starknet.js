@@ -97,17 +97,17 @@ custom_edit_url: null
 
 #### Type declaration
 
-| Name                                           | Type                                                                                                                                                                                   |
-| :--------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `n_steps`                                      | `number`                                                                                                                                                                               |
-| `builtin_instance_counter`                     | { `pedersen_builtin`: `number` ; `range_check_builtin`: `number` ; `bitwise_builtin`: `number` ; `output_builtin`: `number` ; `ecdsa_builtin`: `number` ; `ec_op_builtin?`: `number` } |
-| `builtin_instance_counter.pedersen_builtin`    | `number`                                                                                                                                                                               |
-| `builtin_instance_counter.range_check_builtin` | `number`                                                                                                                                                                               |
-| `builtin_instance_counter.bitwise_builtin`     | `number`                                                                                                                                                                               |
-| `builtin_instance_counter.output_builtin`      | `number`                                                                                                                                                                               |
-| `builtin_instance_counter.ecdsa_builtin`       | `number`                                                                                                                                                                               |
-| `builtin_instance_counter.ec_op_builtin?`      | `number`                                                                                                                                                                               |
-| `n_memory_holes`                               | `number`                                                                                                                                                                               |
+| Name                                           | Type                                                                                                                                                                                     |
+| :--------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `n_steps`                                      | `number`                                                                                                                                                                                 |
+| `builtin_instance_counter`                     | \{ `pedersen_builtin`: `number` ; `range_check_builtin`: `number` ; `bitwise_builtin`: `number` ; `output_builtin`: `number` ; `ecdsa_builtin`: `number` ; `ec_op_builtin?`: `number` \} |
+| `builtin_instance_counter.pedersen_builtin`    | `number`                                                                                                                                                                                 |
+| `builtin_instance_counter.range_check_builtin` | `number`                                                                                                                                                                                 |
+| `builtin_instance_counter.bitwise_builtin`     | `number`                                                                                                                                                                                 |
+| `builtin_instance_counter.output_builtin`      | `number`                                                                                                                                                                                 |
+| `builtin_instance_counter.ecdsa_builtin`       | `number`                                                                                                                                                                                 |
+| `builtin_instance_counter.ec_op_builtin?`      | `number`                                                                                                                                                                                 |
+| `n_memory_holes`                               | `number`                                                                                                                                                                                 |
 
 #### Defined in
 
@@ -171,7 +171,7 @@ custom_edit_url: null
 | `execution_status`                | [`TransactionExecutionStatus`](../enums/types.TransactionExecutionStatus.md) |
 | `finality_status`                 | [`TransactionFinalityStatus`](../enums/types.TransactionFinalityStatus.md)   |
 | `block_hash?`                     | `string`                                                                     |
-| `tx_failure_reason?`              | { `code`: `string` ; `error_message`: `string` }                             |
+| `tx_failure_reason?`              | \{ `code`: `string` ; `error_message`: `string` \}                           |
 | `tx_failure_reason.code`          | `string`                                                                     |
 | `tx_failure_reason.error_message` | `string`                                                                     |
 | `tx_revert_reason?`               | `string`                                                                     |
@@ -184,7 +184,7 @@ custom_edit_url: null
 
 ### SequencerIdentifier
 
-Ƭ **SequencerIdentifier**: { `blockHash`: `string` } \| { `blockNumber`: [`BlockNumber`](types.md#blocknumber) }
+Ƭ **SequencerIdentifier**: \{ `blockHash`: `string` \} \| \{ `blockNumber`: [`BlockNumber`](types.md#blocknumber) \}
 
 #### Defined in
 
@@ -267,10 +267,10 @@ custom_edit_url: null
 
 #### Type declaration
 
-| Name      | Type                                                                                                                                                      |
-| :-------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `declare` | { `class_hash`: [`BigNumberish`](types.md#bignumberish) } & `Partial`<[`DeclareTransactionReceiptResponse`](types.md#declaretransactionreceiptresponse)\> |
-| `deploy`  | [`DeployContractUDCResponse`](types.md#deploycontractudcresponse)                                                                                         |
+| Name      | Type                                                                                                                                                         |
+| :-------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `declare` | \{ `class_hash`: [`BigNumberish`](types.md#bignumberish) \} & `Partial`\<[`DeclareTransactionReceiptResponse`](types.md#declaretransactionreceiptresponse)\> |
+| `deploy`  | [`DeployContractUDCResponse`](types.md#deploycontractudcresponse)                                                                                            |
 
 #### Defined in
 
@@ -299,7 +299,7 @@ custom_edit_url: null
 
 ### AsyncContractFunction
 
-Ƭ **AsyncContractFunction**<`T`\>: (...`args`: [`ArgsOrCalldataWithOptions`](types.md#argsorcalldatawithoptions)) => `Promise`<`T`\>
+Ƭ **AsyncContractFunction**\<`T`\>: (...`args`: [`ArgsOrCalldataWithOptions`](types.md#argsorcalldatawithoptions)) => `Promise`\<`T`\>
 
 #### Type parameters
 
@@ -309,7 +309,7 @@ custom_edit_url: null
 
 #### Type declaration
 
-▸ (`...args`): `Promise`<`T`\>
+▸ (`...args`): `Promise`\<`T`\>
 
 ##### Parameters
 
@@ -319,7 +319,7 @@ custom_edit_url: null
 
 ##### Returns
 
-`Promise`<`T`\>
+`Promise`\<`T`\>
 
 #### Defined in
 
@@ -353,7 +353,7 @@ custom_edit_url: null
 
 ### Result
 
-Ƭ **Result**: { `[key: string]`: `any`; } \| [`Result`](types.md#result)[] \| `bigint` \| `string` \| `boolean` \| [`CairoEnum`](types.md#cairoenum)
+Ƭ **Result**: \{ `[key: string]`: `any`; \} \| [`Result`](types.md#result)[] \| `bigint` \| `string` \| `boolean` \| [`CairoEnum`](types.md#cairoenum)
 
 #### Defined in
 
@@ -392,7 +392,7 @@ custom_edit_url: null
 | `blockIdentifier?` | [`BlockIdentifier`](types.md#blockidentifier) |
 | `parseRequest?`    | `boolean`                                     |
 | `parseResponse?`   | `boolean`                                     |
-| `formatResponse?`  | { `[key: string]`: `any`; }                   |
+| `formatResponse?`  | \{ `[key: string]`: `any`; \}                 |
 | `maxFee?`          | [`BigNumberish`](types.md#bignumberish)       |
 | `nonce?`           | [`BigNumberish`](types.md#bignumberish)       |
 | `signature?`       | [`Signature`](types.md#signature)             |
@@ -406,7 +406,7 @@ custom_edit_url: null
 
 ### CallOptions
 
-Ƭ **CallOptions**: `Pick`<[`ContractOptions`](types.md#contractoptions), `"blockIdentifier"` \| `"parseRequest"` \| `"parseResponse"` \| `"formatResponse"`\>
+Ƭ **CallOptions**: `Pick`\<[`ContractOptions`](types.md#contractoptions), `"blockIdentifier"` \| `"parseRequest"` \| `"parseResponse"` \| `"formatResponse"`\>
 
 #### Defined in
 
@@ -416,7 +416,7 @@ custom_edit_url: null
 
 ### InvokeOptions
 
-Ƭ **InvokeOptions**: `Pick`<[`ContractOptions`](types.md#contractoptions), `"maxFee"` \| `"nonce"` \| `"signature"` \| `"parseRequest"`\>
+Ƭ **InvokeOptions**: `Pick`\<[`ContractOptions`](types.md#contractoptions), `"maxFee"` \| `"nonce"` \| `"signature"` \| `"parseRequest"`\>
 
 #### Defined in
 
@@ -490,7 +490,7 @@ custom_edit_url: null
 
 ### Calldata
 
-Ƭ **Calldata**: `string`[] & { `__compiled__?`: `boolean` }
+Ƭ **Calldata**: `string`[] & \{ `__compiled__?`: `boolean` \}
 
 Compiled calldata ready to be sent
 decimal-string array
@@ -528,7 +528,7 @@ Hexadecimal-string array
 
 ### AllowArray
 
-Ƭ **AllowArray**<`T`\>: `T` \| `T`[]
+Ƭ **AllowArray**\<`T`\>: `T` \| `T`[]
 
 #### Type parameters
 
@@ -544,7 +544,7 @@ Hexadecimal-string array
 
 ### OptionalPayload
 
-Ƭ **OptionalPayload**<`T`\>: { `payload`: `T` } \| `T`
+Ƭ **OptionalPayload**\<`T`\>: \{ `payload`: `T` \} \| `T`
 
 #### Type parameters
 
@@ -642,7 +642,7 @@ Hexadecimal-string array
 
 ### DeployAccountContractTransaction
 
-Ƭ **DeployAccountContractTransaction**: `Omit`<[`DeployAccountContractPayload`](types.md#deployaccountcontractpayload), `"contractAddress"`\> & { `signature?`: [`Signature`](types.md#signature) }
+Ƭ **DeployAccountContractTransaction**: `Omit`\<[`DeployAccountContractPayload`](types.md#deployaccountcontractpayload), `"contractAddress"`\> & \{ `signature?`: [`Signature`](types.md#signature) \}
 
 #### Defined in
 
@@ -690,7 +690,7 @@ Hexadecimal-string array
 
 ### DeclareAndDeployContractPayload
 
-Ƭ **DeclareAndDeployContractPayload**: `Omit`<[`UniversalDeployerContractPayload`](types.md#universaldeployercontractpayload), `"classHash"`\> & [`DeclareContractPayload`](types.md#declarecontractpayload)
+Ƭ **DeclareAndDeployContractPayload**: `Omit`\<[`UniversalDeployerContractPayload`](types.md#universaldeployercontractpayload), `"classHash"`\> & [`DeclareContractPayload`](types.md#declarecontractpayload)
 
 #### Defined in
 
@@ -737,7 +737,7 @@ Hexadecimal-string array
 
 ### Invocation
 
-Ƭ **Invocation**: [`CallDetails`](types.md#calldetails) & { `signature?`: [`Signature`](types.md#signature) }
+Ƭ **Invocation**: [`CallDetails`](types.md#calldetails) & \{ `signature?`: [`Signature`](types.md#signature) \}
 
 #### Defined in
 
@@ -747,7 +747,7 @@ Hexadecimal-string array
 
 ### Call
 
-Ƭ **Call**: [`CallDetails`](types.md#calldetails) & { `entrypoint`: `string` }
+Ƭ **Call**: [`CallDetails`](types.md#calldetails) & \{ `entrypoint`: `string` \}
 
 #### Defined in
 
@@ -816,7 +816,7 @@ Contain all additional details params
 
 ### InvocationsDetailsWithNonce
 
-Ƭ **InvocationsDetailsWithNonce**: [`InvocationsDetails`](types.md#invocationsdetails) & { `nonce`: [`BigNumberish`](types.md#bignumberish) }
+Ƭ **InvocationsDetailsWithNonce**: [`InvocationsDetails`](types.md#invocationsdetails) & \{ `nonce`: [`BigNumberish`](types.md#bignumberish) \}
 
 #### Defined in
 
@@ -850,7 +850,7 @@ null appends nothing to the request url
 
 ### AccountInvocationItem
 
-Ƭ **AccountInvocationItem**: { `type`: [`DECLARE`](../enums/types.TransactionType.md#declare) } & [`DeclareContractTransaction`](types.md#declarecontracttransaction) \| { `type`: [`DEPLOY_ACCOUNT`](../enums/types.TransactionType.md#deploy_account) } & [`DeployAccountContractTransaction`](types.md#deployaccountcontracttransaction) \| { `type`: [`INVOKE`](../enums/types.TransactionType.md#invoke) } & [`Invocation`](types.md#invocation) & [`InvocationsDetailsWithNonce`](types.md#invocationsdetailswithnonce)
+Ƭ **AccountInvocationItem**: \{ `type`: [`DECLARE`](../enums/types.TransactionType.md#declare) \} & [`DeclareContractTransaction`](types.md#declarecontracttransaction) \| \{ `type`: [`DEPLOY_ACCOUNT`](../enums/types.TransactionType.md#deploy_account) \} & [`DeployAccountContractTransaction`](types.md#deployaccountcontracttransaction) \| \{ `type`: [`INVOKE`](../enums/types.TransactionType.md#invoke) \} & [`Invocation`](types.md#invocation) & [`InvocationsDetailsWithNonce`](types.md#invocationsdetailswithnonce)
 
 items used by AccountInvocations
 
@@ -874,7 +874,7 @@ Complete invocations array with account details (internal type from account -> p
 
 ### Invocations
 
-Ƭ **Invocations**: ({ `type`: [`DECLARE`](../enums/types.TransactionType.md#declare) } & [`OptionalPayload`](types.md#optionalpayload)<[`DeclareContractPayload`](types.md#declarecontractpayload)\> \| { `type`: [`DEPLOY`](../enums/types.TransactionType.md#deploy) } & [`OptionalPayload`](types.md#optionalpayload)<[`AllowArray`](types.md#allowarray)<[`UniversalDeployerContractPayload`](types.md#universaldeployercontractpayload)\>\> \| { `type`: [`DEPLOY_ACCOUNT`](../enums/types.TransactionType.md#deploy_account) } & [`OptionalPayload`](types.md#optionalpayload)<[`DeployAccountContractPayload`](types.md#deployaccountcontractpayload)\> \| { `type`: [`INVOKE`](../enums/types.TransactionType.md#invoke) } & [`OptionalPayload`](types.md#optionalpayload)<[`AllowArray`](types.md#allowarray)<[`Call`](types.md#call)\>\>)[]
+Ƭ **Invocations**: (\{ `type`: [`DECLARE`](../enums/types.TransactionType.md#declare) \} & [`OptionalPayload`](types.md#optionalpayload)\<[`DeclareContractPayload`](types.md#declarecontractpayload)\> \| \{ `type`: [`DEPLOY`](../enums/types.TransactionType.md#deploy) \} & [`OptionalPayload`](types.md#optionalpayload)\<[`AllowArray`](types.md#allowarray)\<[`UniversalDeployerContractPayload`](types.md#universaldeployercontractpayload)\>\> \| \{ `type`: [`DEPLOY_ACCOUNT`](../enums/types.TransactionType.md#deploy_account) \} & [`OptionalPayload`](types.md#optionalpayload)\<[`DeployAccountContractPayload`](types.md#deployaccountcontractpayload)\> \| \{ `type`: [`INVOKE`](../enums/types.TransactionType.md#invoke) \} & [`OptionalPayload`](types.md#optionalpayload)\<[`AllowArray`](types.md#allowarray)\<[`Call`](types.md#call)\>\>)[]
 
 Invocations array user provide to bulk method (simulate)
 
@@ -1144,12 +1144,12 @@ ABI
 
 #### Type declaration
 
-| Name      | Type                                                       |
-| :-------- | :--------------------------------------------------------- |
-| `members` | [`AbiEntry`](types.md#abientry) & { `offset`: `number` }[] |
-| `name`    | `string`                                                   |
-| `size`    | `number`                                                   |
-| `type`    | `"struct"`                                                 |
+| Name      | Type                                                        |
+| :-------- | :---------------------------------------------------------- |
+| `members` | [`AbiEntry`](types.md#abientry) & \{ `offset`: `number` }[] |
+| `name`    | `string`                                                    |
+| `size`    | `number`                                                    |
+| `type`    | `"struct"`                                                  |
 
 #### Defined in
 
@@ -1177,12 +1177,12 @@ ABI
 
 #### Type declaration
 
-| Name       | Type                                                       |
-| :--------- | :--------------------------------------------------------- |
-| `variants` | [`AbiEntry`](types.md#abientry) & { `offset`: `number` }[] |
-| `name`     | `string`                                                   |
-| `size`     | `number`                                                   |
-| `type`     | `"enum"`                                                   |
+| Name       | Type                                                        |
+| :--------- | :---------------------------------------------------------- |
+| `variants` | [`AbiEntry`](types.md#abientry) & \{ `offset`: `number` }[] |
+| `name`     | `string`                                                    |
+| `size`     | `number`                                                    |
+| `type`     | `"enum"`                                                    |
 
 #### Defined in
 
@@ -1274,7 +1274,7 @@ format produced after compressing 'program' property
 
 ### LegacyCompiledContract
 
-Ƭ **LegacyCompiledContract**: `Omit`<[`LegacyContractClass`](types.md#legacycontractclass), `"program"`\> & { `program`: [`Program`](../interfaces/types.Program.md) }
+Ƭ **LegacyCompiledContract**: `Omit`\<[`LegacyContractClass`](types.md#legacycontractclass), `"program"`\> & \{ `program`: [`Program`](../interfaces/types.Program.md) }
 
 format produced after compile .cairo to .json
 
@@ -1390,7 +1390,7 @@ sierra_program is hex array
 
 ### SierraContractClass
 
-Ƭ **SierraContractClass**: `Omit`<[`CompiledSierra`](types.md#compiledsierra), `"abi"` \| `"sierra_program_debug_info"`\> & { `sierra_program`: `string` ; `abi`: `string` }
+Ƭ **SierraContractClass**: `Omit`\<[`CompiledSierra`](types.md#compiledsierra), `"abi"` \| `"sierra_program_debug_info"`\> & \{ `sierra_program`: `string` ; `abi`: `string` }
 
 format produced after compressing 'sierra_program', stringifies 'abi' property and omit sierra_program_debug_info
 CompressedCompiledSierra
@@ -1519,7 +1519,7 @@ SUBTYPES
 
 ### SequencerProviderOptions
 
-Ƭ **SequencerProviderOptions**: { `headers?`: `Record`<`string`, `string`\> ; `blockIdentifier?`: [`BlockIdentifier`](types.md#blockidentifier) ; `chainId?`: [`StarknetChainId`](../enums/constants.StarknetChainId.md) } & { `network`: [`NetworkName`](../enums/constants.NetworkName.md) \| [`StarknetChainId`](../enums/constants.StarknetChainId.md) } \| { `baseUrl`: `string` ; `feederGatewayUrl?`: `string` ; `gatewayUrl?`: `string` }
+Ƭ **SequencerProviderOptions**: \{ `headers?`: `Record`\<`string`, `string`\> ; `blockIdentifier?`: [`BlockIdentifier`](types.md#blockidentifier) ; `chainId?`: [`StarknetChainId`](../enums/constants.StarknetChainId.md) \} & \{ `network`: [`NetworkName`](../enums/constants.NetworkName.md) \| [`StarknetChainId`](../enums/constants.StarknetChainId.md) \} \| \{ `baseUrl`: `string` ; `feederGatewayUrl?`: `string` ; `gatewayUrl?`: `string` }
 
 #### Defined in
 
@@ -1543,12 +1543,12 @@ SUBTYPES
 
 #### Type declaration
 
-| Name                                       | Type                                             |
-| :----------------------------------------- | :----------------------------------------------- |
-| `status`                                   | \`${REJECTED}\`                                  |
-| `transaction_failure_reason`               | { `code`: `string` ; `error_message`: `string` } |
-| `transaction_failure_reason.code`          | `string`                                         |
-| `transaction_failure_reason.error_message` | `string`                                         |
+| Name                                       | Type                                               |
+| :----------------------------------------- | :------------------------------------------------- |
+| `status`                                   | `REJECTED`                                         |
+| `transaction_failure_reason`               | \{ `code`: `string` ; `error_message`: `string` \} |
+| `transaction_failure_reason.code`          | `string`                                           |
+| `transaction_failure_reason.error_message` | `string`                                           |
 
 #### Defined in
 
@@ -1587,7 +1587,7 @@ SUBTYPES
 | `type?`              | [`TransactionType`](../enums/types.TransactionType.md)                       |
 | `execution_status`   | [`TransactionExecutionStatus`](../enums/types.TransactionExecutionStatus.md) |
 | `finality_status`    | [`TransactionFinalityStatus`](../enums/types.TransactionFinalityStatus.md)   |
-| `status?`            | \`${TransactionStatus}\`                                                     |
+| `status?`            | [`TransactionStatus`](../enums/types.TransactionStatus.md)                   |
 | `actual_fee`         | `string`                                                                     |
 | `block_hash`         | [`BlockHash`](types.RPC.md#blockhash)                                        |
 | `block_number`       | [`BlockNumber`](types.md#blocknumber)                                        |
@@ -1618,12 +1618,12 @@ SUBTYPES
 
 #### Type declaration
 
-| Name                                       | Type                                             |
-| :----------------------------------------- | :----------------------------------------------- |
-| `status`                                   | \`${REJECTED}\`                                  |
-| `transaction_failure_reason`               | { `code`: `string` ; `error_message`: `string` } |
-| `transaction_failure_reason.code`          | `string`                                         |
-| `transaction_failure_reason.error_message` | `string`                                         |
+| Name                                       | Type                                               |
+| :----------------------------------------- | :------------------------------------------------- |
+| `status`                                   | `REJECTED`                                         |
+| `transaction_failure_reason`               | \{ `code`: `string` ; `error_message`: `string` \} |
+| `transaction_failure_reason.code`          | `string`                                           |
+| `transaction_failure_reason.error_message` | `string`                                           |
 
 #### Defined in
 
@@ -1676,7 +1676,7 @@ SUBTYPES
 
 ### EstimateFeeAction
 
-Ƭ **EstimateFeeAction**: { `type`: [`INVOKE`](../enums/types.TransactionType.md#invoke) ; `payload`: [`AllowArray`](types.md#allowarray)<[`Call`](types.md#call)\> } \| { `type`: [`DECLARE`](../enums/types.TransactionType.md#declare) ; `payload`: [`DeclareContractPayload`](types.md#declarecontractpayload) } \| { `type`: [`DEPLOY_ACCOUNT`](../enums/types.TransactionType.md#deploy_account) ; `payload`: [`DeployAccountContractPayload`](types.md#deployaccountcontractpayload) } \| { `type`: [`DEPLOY`](../enums/types.TransactionType.md#deploy) ; `payload`: [`UniversalDeployerContractPayload`](types.md#universaldeployercontractpayload) }
+Ƭ **EstimateFeeAction**: \{ `type`: [`INVOKE`](../enums/types.TransactionType.md#invoke) ; `payload`: [`AllowArray`](types.md#allowarray)\<[`Call`](types.md#call)\> \} \| \{ `type`: [`DECLARE`](../enums/types.TransactionType.md#declare) ; `payload`: [`DeclareContractPayload`](types.md#declarecontractpayload) \} \| \{ `type`: [`DEPLOY_ACCOUNT`](../enums/types.TransactionType.md#deploy_account) ; `payload`: [`DeployAccountContractPayload`](types.md#deployaccountcontractpayload) \} \| \{ `type`: [`DEPLOY`](../enums/types.TransactionType.md#deploy) ; `payload`: [`UniversalDeployerContractPayload`](types.md#universaldeployercontractpayload) }
 
 #### Defined in
 
@@ -1754,7 +1754,7 @@ SUBTYPES
 
 ### ContractClassResponse
 
-Ƭ **ContractClassResponse**: [`LegacyContractClass`](types.md#legacycontractclass) \| `Omit`<[`CompiledSierra`](types.md#compiledsierra), `"sierra_program_debug_info"`\>
+Ƭ **ContractClassResponse**: [`LegacyContractClass`](types.md#legacycontractclass) \| `Omit`\<[`CompiledSierra`](types.md#compiledsierra), `"sierra_program_debug_info"`\>
 
 Standardized type
 Cairo0 program compressed and Cairo1 sierra_program decompressed
@@ -1769,7 +1769,7 @@ CompiledSierra without '.sierra_program_debug_info'
 
 ### DeployAccountSignerDetails
 
-Ƭ **DeployAccountSignerDetails**: `Required`<[`DeployAccountContractPayload`](types.md#deployaccountcontractpayload)\> & `Required`<[`InvocationsDetails`](types.md#invocationsdetails)\> & { `contractAddress`: [`BigNumberish`](types.md#bignumberish) ; `chainId`: [`StarknetChainId`](../enums/constants.StarknetChainId.md) }
+Ƭ **DeployAccountSignerDetails**: `Required`\<[`DeployAccountContractPayload`](types.md#deployaccountcontractpayload)\> & `Required`\<[`InvocationsDetails`](types.md#invocationsdetails)\> & \{ `contractAddress`: [`BigNumberish`](types.md#bignumberish) ; `chainId`: [`StarknetChainId`](../enums/constants.StarknetChainId.md) }
 
 #### Defined in
 
@@ -1797,7 +1797,7 @@ CompiledSierra without '.sierra_program_debug_info'
 
 ### StarkNetType
 
-Ƭ **StarkNetType**: { `name`: `string` ; `type`: `string` } \| [`StarkNetMerkleType`](types.md#starknetmerkletype)
+Ƭ **StarkNetType**: \{ `name`: `string` ; `type`: `string` \} \| [`StarkNetMerkleType`](types.md#starknetmerkletype)
 
 A single type, as part of a struct. The `type` field can be any of the EIP-712 supported types.
 
@@ -1812,7 +1812,7 @@ standard.
 
 ### CairoEnum
 
-Ƭ **CairoEnum**: [`CairoCustomEnum`](../classes/CairoCustomEnum.md) \| [`CairoOption`](../classes/CairoOption.md)<`any`\> \| [`CairoResult`](../classes/CairoResult.md)<`any`, `any`\>
+Ƭ **CairoEnum**: [`CairoCustomEnum`](../classes/CairoCustomEnum.md) \| [`CairoOption`](../classes/CairoOption.md)\<`any`\> \| [`CairoResult`](../classes/CairoResult.md)\<`any`, `any`\>
 
 #### Defined in
 

@@ -212,7 +212,7 @@ Return bigint representation
 ▸ **toUint256HexString**(): `Object`
 
 Return Uint256 structure with HexString props
-{low: HexString, high: HexString}
+`{low: HexString, high: HexString}`
 
 #### Returns
 
@@ -234,7 +234,7 @@ Return Uint256 structure with HexString props
 ▸ **toUint256DecimalString**(): `Object`
 
 Return Uint256 structure with DecimalString props
-{low: DecString, high: DecString}
+`{low: DecString, high: DecString}`
 
 #### Returns
 

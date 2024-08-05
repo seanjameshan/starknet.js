@@ -67,12 +67,14 @@ Cairo representation of a LongString
 const myByteArray: ByteArray = byteArrayFromString('ABCDEFGHI');
 ```
 
-Result is :
+```typescript
+// Result is:
 {
-data: [],
-pending_word: '0x414243444546474849',
-pending_word_len: 9
+  data: [],
+  pending_word: '0x414243444546474849',
+  pending_word_len: 9
 }
+```
 
 #### Defined in
 

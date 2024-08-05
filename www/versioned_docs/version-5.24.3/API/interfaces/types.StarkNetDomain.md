@@ -11,7 +11,7 @@ The EIP712 domain struct. Any of these fields are optional, but it must contain 
 
 ## Hierarchy
 
-- `Record`<`string`, `unknown`\>
+- `Record`\<`string`, `unknown`\>
 
   ↳ **`StarkNetDomain`**
 

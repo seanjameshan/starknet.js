@@ -13,7 +13,7 @@ The complete typed data, with all the structs, domain data, primary type of the 
 
 ### types
 
-• **types**: `Record`<`string`, [`StarkNetType`](../namespaces/types.md#starknettype)[]\>
+• **types**: `Record`\<`string`, [`StarkNetType`](../namespaces/types.md#starknettype)[]\>
 
 #### Defined in
 
@@ -43,7 +43,7 @@ The complete typed data, with all the structs, domain data, primary type of the 
 
 ### message
 
-• **message**: `Record`<`string`, `unknown`\>
+• **message**: `Record`\<`string`, `unknown`\>
 
 #### Defined in
 

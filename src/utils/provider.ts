@@ -131,15 +131,11 @@ export const getDefaultNodeUrl = (networkName?: NetworkName, mute: boolean = fal
 export const validBlockTags = Object.values(BlockTag);
 
 /**
- * This class is formatting the identifier of a block.
- *
- * hex string and BigInt are detected as block hashes. identifier return { block_hash: hash }
- *
- * decimal string and number are detected as block numbers. identifier return { block_number: number }
- *
- * text string are detected as block tag. identifier return tag
- *
- * null is detected as 'pending' block tag. identifier return 'pending'
+ * This class formats the identifier of a block.
+ * - hex strings and BigInts are detected as block hashes. identifier return `{ block_hash: hash }`
+ * - decimal strings and numbers are detected as block numbers. identifier return `{ block_number: number }`
+ * - text strings are detected as block tag. identifier return tag
+ * - null is detected as 'pending' block tag. identifier return 'pending'
  * @example
  * ```typescript
  * const result = new provider.Block(null).identifier;

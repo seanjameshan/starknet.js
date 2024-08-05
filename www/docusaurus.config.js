@@ -1,8 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require('prism-react-renderer').themes.github;
+const darkCodeTheme = require('prism-react-renderer').themes.dracula;
 
 const generateBaseUrl = (baseUrl = '') => `/${baseUrl.trim()}/`.replace(/\/+/g, '/');
 
@@ -12,6 +12,35 @@ const generateSourceLinkTemplate = (gitRevision) =>
   }/{path}#L{line}`;
 
 const migrationGuideLink = `${generateBaseUrl(process.env.DOCS_BASE_URL)}docs/guides/migrate`;
+
+/**
+ * @param {import('@docusaurus/plugin-content-docs/src/sidebars/types.js').SidebarItemsGeneratorArgs} args
+ * @param {import('@docusaurus/plugin-content-docs/src/sidebars/types.js').NormalizedSidebar} items
+ */
+function injectTypeDocSidebar(args, items) {
+  if (args.version.versionName !== 'current') return items;
+
+  return items.toReversed().map((item) => {
+    if (
+      item.type === 'category' &&
+      item.link?.type === 'doc' &&
+      item.link?.id === 'API/index' &&
+      item.label === 'Starknet.js API'
+    ) {
+      item.label = 'API';
+
+      const groupedItems = item.items.reduce((grouped, entry) => {
+        // @ts-ignore
+        grouped[entry.label || 'globals'] = entry;
+        return grouped;
+      }, {});
+      const order = ['globals', 'namespaces', 'classes'];
+      if (order.length !== item.items.length) throw new Error('Sidebar mapping error');
+      item.items = order.map((x) => groupedItems[x]);
+    }
+    return item;
+  });
+}
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -33,13 +62,18 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        docs: {
+          async sidebarItemsGenerator({ defaultSidebarItemsGenerator, ...args }) {
+            return injectTypeDocSidebar(args, await defaultSidebarItemsGenerator(args));
+          },
+        },
       }),
     ],
   ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    {
+    ({
       algolia: {
         // The application ID provided by Algolia
         appId: '86VVNRI64B',
@@ -153,18 +187,17 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
-    },
+    }),
 
   plugins: [
     [
       'docusaurus-plugin-typedoc',
-      {
+      /** @type {Partial<import('typedoc').TypeDocOptions & import('docusaurus-plugin-typedoc').PluginOptions>} */
+      ({
         entryPoints: ['../src/index.ts'],
         tsconfig: '../tsconfig.json',
-        out: 'API',
-        name: 'Starknet.js API',
+        out: 'docs/API',
         includeVersion: true,
-        includeExtension: true,
         sourceLinkTemplate: generateSourceLinkTemplate(
           process.env.GIT_REVISION_OVERRIDE || 'develop'
         ),
@@ -173,33 +206,16 @@ const config = {
           private: false,
         },
         sort: ['kind'],
-        kindSortOrder: [
-          'Reference',
-          'Project',
-          'Module',
-          'Class',
-          'Namespace',
-          'Enum',
-          'EnumMember',
-          'Interface',
-          'TypeAlias',
-          'Constructor',
-          'Property',
-          'Variable',
-          'Function',
-          'Accessor',
-          'Method',
-          'Parameter',
-          'TypeParameter',
-          'TypeLiteral',
-          'CallSignature',
-          'ConstructorSignature',
-          'IndexSignature',
-          'GetSignature',
-          'SetSignature',
-        ],
+        sidebar: {
+          autoConfiguration: true,
+        },
         readme: './ApiTitle.md',
-      },
+        parametersFormat: 'table',
+        interfacePropertiesFormat: 'table',
+        enumMembersFormat: 'table',
+        typeDeclarationFormat: 'table',
+        membersWithOwnFile: ['Class', 'Enum', 'Interface'],
+      }),
     ],
   ],
 };

@@ -994,7 +994,7 @@ Re-exports [CairoEnum](namespaces/types.md#cairoenum)
 
 ### TypedContract
 
-Ƭ **TypedContract**<`TAbi`\>: `AbiWanTypedContract`<`TAbi`\> & [`ContractInterface`](classes/ContractInterface.md)
+Ƭ **TypedContract**\<`TAbi`\>: `AbiWanTypedContract`\<`TAbi`\> & [`ContractInterface`](classes/ContractInterface.md)
 
 #### Type parameters
 
@@ -1090,7 +1090,7 @@ prefer the 'num' naming
 
 ### splitArgsAndOptions
 
-▸ **splitArgsAndOptions**(`args`): { `args`: [`ArgsOrCalldata`](namespaces/types.md#argsorcalldata) ; `options`: [`ContractOptions`](namespaces/types.md#contractoptions) } \| { `args`: [`ArgsOrCalldata`](namespaces/types.md#argsorcalldata) ; `options?`: `undefined` }
+▸ **splitArgsAndOptions**(`args`): \{ `args`: [`ArgsOrCalldata`](namespaces/types.md#argsorcalldata) ; `options`: [`ContractOptions`](namespaces/types.md#contractoptions) \} \| \{ `args`: [`ArgsOrCalldata`](namespaces/types.md#argsorcalldata) ; `options?`: `undefined` \}
 
 #### Parameters
 
@@ -1100,7 +1100,7 @@ prefer the 'num' naming
 
 #### Returns
 
-{ `args`: [`ArgsOrCalldata`](namespaces/types.md#argsorcalldata) ; `options`: [`ContractOptions`](namespaces/types.md#contractoptions) } \| { `args`: [`ArgsOrCalldata`](namespaces/types.md#argsorcalldata) ; `options?`: `undefined` }
+\{ `args`: [`ArgsOrCalldata`](namespaces/types.md#argsorcalldata) ; `options`: [`ContractOptions`](namespaces/types.md#contractoptions) \} \| \{ `args`: [`ArgsOrCalldata`](namespaces/types.md#argsorcalldata) ; `options?`: `undefined` \}
 
 #### Defined in
 

@@ -1,8 +1,10 @@
+# Starknet.js API
+
 This API is based on the <ins>[Starknet.js V3](https://github.com/starknet-io/starknet.js/discussions/102)</ins> Interface write up by <ins>[Janek](https://twitter.com/0xjanek)</ins> of <ins>[Argent](https://www.argent.xyz/)</ins>
 
 ## Provider
 
-The Provider [**API**](./classes/Provider.md) allows you to interact with the Starknet network, without signing transactions or messages.
+The Provider [**API**](./classes/Provider.md) [**API2**](./docs/API/classes/Provider.md) allows you to interact with the Starknet network, without signing transactions or messages.
 
 Typically, these are _read_ calls on the blockchain.
 
@@ -34,18 +36,18 @@ The Signer [**API**](./classes/Signer.md) allows you to sign transactions and me
 
 Util functions are provided so you can use various low level functions in your application:
 
-### [elliptic curve](./namespaces/ec.md)
+### [elliptic curve](./namespaces/ec/)
 
-### [hash](./namespaces/hash.md)
+### [hash](./namespaces/hash/)
 
-### [num](./namespaces/num.md)
+### [num](./namespaces/num/)
 
-### [encode](./namespaces/encode.md)
+### [encode](./namespaces/encode/)
 
-### [merkle](./namespaces/merkle.md)
+### [merkle](./namespaces/merkle/)
 
-### [shortString](./namespaces/shortString.md)
+### [shortString](./namespaces/shortString/)
 
-### [stark](./namespaces/stark.md)
+### [stark](./namespaces/stark/)
 
-### [uint256](./namespaces/uint256.md)
+### [uint256](./namespaces/uint256/)

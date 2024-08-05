@@ -20,13 +20,13 @@ custom_edit_url: null
 
 ### getPubKey
 
-▸ `Abstract` **getPubKey**(): `Promise`<`string`\>
+▸ `Abstract` **getPubKey**(): `Promise`\<`string`\>
 
 Method to get the public key of the signer
 
 #### Returns
 
-`Promise`<`string`\>
+`Promise`\<`string`\>
 
 public key of signer as hex string with 0x prefix
 
@@ -38,7 +38,7 @@ public key of signer as hex string with 0x prefix
 
 ### signMessage
 
-▸ `Abstract` **signMessage**(`typedData`, `accountAddress`): `Promise`<[`Signature`](../namespaces/types.md#signature)\>
+▸ `Abstract` **signMessage**(`typedData`, `accountAddress`): `Promise`\<[`Signature`](../namespaces/types.md#signature)\>
 
 Sign an JSON object for off-chain usage with the starknet private key and return the signature
 This adds a message prefix so it can't be interchanged with transactions
@@ -56,7 +56,7 @@ if the JSON object is not a valid JSON
 
 #### Returns
 
-`Promise`<[`Signature`](../namespaces/types.md#signature)\>
+`Promise`\<[`Signature`](../namespaces/types.md#signature)\>
 
 the signature of the JSON object
 
@@ -68,7 +68,7 @@ the signature of the JSON object
 
 ### signTransaction
 
-▸ `Abstract` **signTransaction**(`transactions`, `transactionsDetail`, `abis?`): `Promise`<[`Signature`](../namespaces/types.md#signature)\>
+▸ `Abstract` **signTransaction**(`transactions`, `transactionsDetail`, `abis?`): `Promise`\<[`Signature`](../namespaces/types.md#signature)\>
 
 Signs a transaction with the starknet private key and returns the signature
 
@@ -82,7 +82,7 @@ Signs a transaction with the starknet private key and returns the signature
 
 #### Returns
 
-`Promise`<[`Signature`](../namespaces/types.md#signature)\>
+`Promise`\<[`Signature`](../namespaces/types.md#signature)\>
 
 signature
 
@@ -94,7 +94,7 @@ signature
 
 ### signDeployAccountTransaction
 
-▸ `Abstract` **signDeployAccountTransaction**(`transaction`): `Promise`<[`Signature`](../namespaces/types.md#signature)\>
+▸ `Abstract` **signDeployAccountTransaction**(`transaction`): `Promise`\<[`Signature`](../namespaces/types.md#signature)\>
 
 Signs a DEPLOY_ACCOUNT transaction with the starknet private key and returns the signature
 
@@ -106,7 +106,7 @@ Signs a DEPLOY_ACCOUNT transaction with the starknet private key and returns the
 
 #### Returns
 
-`Promise`<[`Signature`](../namespaces/types.md#signature)\>
+`Promise`\<[`Signature`](../namespaces/types.md#signature)\>
 
 signature
 
@@ -118,7 +118,7 @@ signature
 
 ### signDeclareTransaction
 
-▸ `Abstract` **signDeclareTransaction**(`transaction`): `Promise`<[`Signature`](../namespaces/types.md#signature)\>
+▸ `Abstract` **signDeclareTransaction**(`transaction`): `Promise`\<[`Signature`](../namespaces/types.md#signature)\>
 
 Signs a DECLARE transaction with the starknet private key and returns the signature
 
@@ -130,7 +130,7 @@ Signs a DECLARE transaction with the starknet private key and returns the signat
 
 #### Returns
 
-`Promise`<[`Signature`](../namespaces/types.md#signature)\>
+`Promise`\<[`Signature`](../namespaces/types.md#signature)\>
 
 signature
 

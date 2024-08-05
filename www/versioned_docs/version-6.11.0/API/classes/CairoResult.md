@@ -33,7 +33,7 @@ const myOption = new CairoResult<BigNumberish, CustomError>(CairoResultVariant.O
 
 ### constructor
 
-• **new CairoResult**<`T`, `U`\>(`variant`, `resultContent`): [`CairoResult`](CairoResult.md)<`T`, `U`\>
+• **new CairoResult**\<`T`, `U`\>(`variant`, `resultContent`): [`CairoResult`](CairoResult.md)\<`T`, `U`\>
 
 #### Type parameters
 
@@ -51,7 +51,7 @@ const myOption = new CairoResult<BigNumberish, CustomError>(CairoResultVariant.O
 
 #### Returns
 
-[`CairoResult`](CairoResult.md)<`T`, `U`\>
+[`CairoResult`](CairoResult.md)\<`T`, `U`\>
 
 #### Defined in
 
