@@ -9,6 +9,7 @@ import {
   ParsedStruct,
   Tupled,
 } from '../../types';
+import { CairoFelt252 } from '../cairoDataTypes/felt252';
 import { CairoUint256 } from '../cairoDataTypes/uint256';
 import { CairoUint512 } from '../cairoDataTypes/uint512';
 import { addHexPrefix, removeHexPrefix } from '../encode';
@@ -16,7 +17,6 @@ import { toHex } from '../num';
 import { encodeShortString, isString, isText, splitLongString } from '../shortString';
 import { byteArrayFromString } from './byteArray';
 import {
-  felt,
   getArrayType,
   isTypeArray,
   isTypeBytes31,
@@ -56,15 +56,15 @@ function parseBaseTypes(type: string, val: BigNumberish): AllowArray<string> {
       const pubKeyETH = removeHexPrefix(toHex(val)).padStart(128, '0');
       const pubKeyETHy = uint256(addHexPrefix(pubKeyETH.slice(-64)));
       const pubKeyETHx = uint256(addHexPrefix(pubKeyETH.slice(0, -64)));
-      return [
-        felt(pubKeyETHx.low),
-        felt(pubKeyETHx.high),
-        felt(pubKeyETHy.low),
-        felt(pubKeyETHy.high),
-      ];
+      return CairoFelt252.toFeltArray(
+        pubKeyETHx.low,
+        pubKeyETHx.high,
+        pubKeyETHy.low,
+        pubKeyETHy.high
+      );
     }
     default:
-      return felt(val);
+      return new CairoFelt252(val).value;
   }
 }
 
@@ -81,7 +81,7 @@ function parseTuple(element: object, typeStr: string): Tupled[] {
   if (elements.length !== memberTypes.length) {
     throw Error(
       `ParseTuple: provided and expected abi tuple size do not match.
-      provided: ${elements} 
+      provided: ${elements}
       expected: ${memberTypes}`
     );
   }
@@ -131,8 +131,8 @@ function parseCalldataValue(
 
   // value is Array
   if (Array.isArray(element)) {
-    const result: string[] = [];
-    result.push(felt(element.length)); // Add length to array
+    // Init array with length
+    const result = [new CairoFelt252(element.length).value];
     const arrayType = getArrayType(type);
 
     return element.reduce((acc, it) => {

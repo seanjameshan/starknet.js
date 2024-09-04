@@ -5,7 +5,7 @@
 
 import { BigNumberish, Uint256 } from '../../types';
 import { addHexPrefix } from '../encode';
-import { CairoFelt } from './felt';
+import { CairoFelt252 } from './felt252';
 
 export const UINT_128_MAX = (1n << 128n) - 1n;
 export const UINT_256_MAX = (1n << 256n) - 1n;
@@ -131,6 +131,6 @@ export class CairoUint256 {
    * Return api requests representation witch is felt array
    */
   toApiRequest() {
-    return [CairoFelt(this.low), CairoFelt(this.high)];
+    return CairoFelt252.toFeltArray(this.low, this.high);
   }
 }

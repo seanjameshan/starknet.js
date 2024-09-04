@@ -19,7 +19,7 @@ import { isBigInt, toHex } from '../num';
 import { getSelectorFromName } from '../hash/selector';
 import { isLongText } from '../shortString';
 import { byteArrayFromString } from './byteArray';
-import { felt, isCairo1Type, isLen } from './cairo';
+import { isCairo1Type, isLen } from './cairo';
 import {
   CairoCustomEnum,
   CairoOption,
@@ -34,6 +34,7 @@ import orderPropsByAbi from './propertyOrder';
 import { parseCalldataField } from './requestParser';
 import responseParser from './responseParser';
 import validateFields from './validate';
+import { CairoFelt252 } from '../cairoDataTypes/felt252';
 
 export * as cairo from './cairo';
 export * as byteArray from './byteArray';
@@ -170,7 +171,7 @@ export class CallData {
           if (k === 'entrypoint') value = getSelectorFromName(value);
           else if (isLongText(value)) value = byteArrayFromString(value);
           const kk = Array.isArray(oe) && k === '0' ? '$$len' : k;
-          if (isBigInt(value)) return [[`${prefix}${kk}`, felt(value)]];
+          if (isBigInt(value)) return [[`${prefix}${kk}`, new CairoFelt252(value).value]];
           if (Object(value) === value) {
             const methodsKeys = Object.getOwnPropertyNames(Object.getPrototypeOf(value));
             const keys = [...Object.getOwnPropertyNames(value), ...methodsKeys];
@@ -182,7 +183,7 @@ export class CallData {
                 : CairoOptionVariant.None;
               if (myOption.isSome())
                 return getEntries({ 0: variantNb, 1: myOption.unwrap() }, `${prefix}${kk}.`);
-              return [[`${prefix}${kk}`, felt(variantNb)]];
+              return [[`${prefix}${kk}`, new CairoFelt252(variantNb).value]];
             }
             if (keys.includes('isOk') && keys.includes('isErr')) {
               // Result
@@ -202,14 +203,14 @@ export class CallData {
                 typeof myEnum.unwrap() === 'object' &&
                 Object.keys(myEnum.unwrap()).length === 0 // empty object : {}
               ) {
-                return [[`${prefix}${kk}`, felt(activeVariantNb)]];
+                return [[`${prefix}${kk}`, new CairoFelt252(activeVariantNb).value]];
               }
               return getEntries({ 0: activeVariantNb, 1: myEnum.unwrap() }, `${prefix}${kk}.`);
             }
             // normal object
             return getEntries(value, `${prefix}${kk}.`);
           }
-          return [[`${prefix}${kk}`, felt(value)]];
+          return [[`${prefix}${kk}`, new CairoFelt252(value).value]];
         });
       };
       const result = Object.fromEntries(getEntries(obj));

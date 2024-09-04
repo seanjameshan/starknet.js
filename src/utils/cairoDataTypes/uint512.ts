@@ -5,7 +5,7 @@
 
 import { BigNumberish, type Uint512 } from '../../types';
 import { addHexPrefix } from '../encode';
-import { CairoFelt } from './felt';
+import { CairoFelt252 } from './felt252';
 import { UINT_128_MAX } from './uint256';
 
 export const UINT_512_MAX = (1n << 512n) - 1n;
@@ -166,11 +166,6 @@ export class CairoUint512 {
    */
   toApiRequest(): string[] {
     // lower limb first : https://github.com/starkware-libs/cairo/blob/07484c52791b76abcc18fd86265756904557d0d2/corelib/src/test/integer_test.cairo#L767
-    return [
-      CairoFelt(this.limb0),
-      CairoFelt(this.limb1),
-      CairoFelt(this.limb2),
-      CairoFelt(this.limb3),
-    ];
+    return CairoFelt252.toFeltArray(this.limb0, this.limb1, this.limb2, this.limb3);
   }
 }

@@ -9,7 +9,7 @@ import {
   Uint256,
   Uint512,
 } from '../../types';
-import { CairoFelt } from '../cairoDataTypes/felt';
+import { CairoFelt252 } from '../cairoDataTypes/felt252';
 import { CairoUint256 } from '../cairoDataTypes/uint256';
 import { CairoUint512 } from '../cairoDataTypes/uint512';
 
@@ -27,7 +27,7 @@ export const isLen = (name: string) => /_len$/.test(name);
  * @param {string} type - The type to check.
  * @returns - True if the type is felt, false otherwise.
  */
-export const isTypeFelt = (type: string) => type === 'felt' || type === 'core::felt252';
+export const isTypeFelt = (type: string) => CairoFelt252.isAbiType(type);
 /**
  * Checks if the given type is an array type.
  *
@@ -262,5 +262,5 @@ export const tuple = (
  * @returns format: felt-string
  */
 export function felt(it: BigNumberish): string {
-  return CairoFelt(it);
+  return new CairoFelt252(it).value;
 }
