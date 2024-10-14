@@ -103,7 +103,7 @@ node_modules/@noble/curves/esm/abstract/weierstrass.d.ts:142
 
 ### recoverPublicKey
 
-▸ **recoverPublicKey**(`msgHash`): [`ProjPointType`](ec.weierstrass.ProjPointType.md)<`bigint`\>
+▸ **recoverPublicKey**(`msgHash`): [`ProjPointType`](ec.weierstrass.ProjPointType.md)\<`bigint`\>
 
 #### Parameters
 
@@ -113,7 +113,7 @@ node_modules/@noble/curves/esm/abstract/weierstrass.d.ts:142
 
 #### Returns
 
-[`ProjPointType`](ec.weierstrass.ProjPointType.md)<`bigint`\>
+[`ProjPointType`](ec.weierstrass.ProjPointType.md)\<`bigint`\>
 
 #### Defined in
 

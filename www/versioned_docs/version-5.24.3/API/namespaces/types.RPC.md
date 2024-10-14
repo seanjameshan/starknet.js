@@ -64,7 +64,7 @@ https://github.com/starkware-libs/starknet-specs
 
 ### SimulateTransactionResponse
 
-Ƭ **SimulateTransactionResponse**: { `transaction_trace`: [`TRANSACTION_TRACE`](types.RPC.SPEC.md#transaction_trace) ; `fee_estimation`: [`FEE_ESTIMATE`](types.RPC.SPEC.md#fee_estimate) }[]
+Ƭ **SimulateTransactionResponse**: \{ `transaction_trace`: [`TRANSACTION_TRACE`](types.RPC.SPEC.md#transaction_trace) ; `fee_estimation`: [`FEE_ESTIMATE`](types.RPC.SPEC.md#fee_estimate) \}[]
 
 #### Defined in
 
@@ -84,7 +84,7 @@ https://github.com/starkware-libs/starknet-specs
 
 ### TransactionWithHash
 
-Ƭ **TransactionWithHash**: [`TXN`](types.RPC.SPEC.md#txn) & { `transaction_hash`: [`TXN_HASH`](types.RPC.SPEC.md#txn_hash) }
+Ƭ **TransactionWithHash**: [`TXN`](types.RPC.SPEC.md#txn) & \{ `transaction_hash`: [`TXN_HASH`](types.RPC.SPEC.md#txn_hash) \}
 
 #### Defined in
 
@@ -141,7 +141,7 @@ https://github.com/starkware-libs/starknet-specs
 
 ### BlockTransactionsTraces
 
-Ƭ **BlockTransactionsTraces**: { `transaction_hash`: [`FELT`](types.RPC.SPEC.md#felt) ; `trace_root`: [`TRANSACTION_TRACE`](types.RPC.SPEC.md#transaction_trace) }[]
+Ƭ **BlockTransactionsTraces**: \{ `transaction_hash`: [`FELT`](types.RPC.SPEC.md#felt) ; `trace_root`: [`TRANSACTION_TRACE`](types.RPC.SPEC.md#transaction_trace) \}[]
 
 #### Defined in
 

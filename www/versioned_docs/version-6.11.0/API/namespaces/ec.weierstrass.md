@@ -17,7 +17,7 @@ custom_edit_url: null
 
 ### AffinePoint
 
-Ƭ **AffinePoint**<`T`\>: \{ `x`: `T` ; `y`: `T` } & \{ `z?`: `never` ; `t?`: `never` }
+Ƭ **AffinePoint**\<`T`\>: \{ `x`: `T` ; `y`: `T` } & \{ `z?`: `never` ; `t?`: `never` }
 
 #### Type parameters
 
@@ -33,7 +33,7 @@ node_modules/@noble/curves/esm/abstract/curve.d.ts:3
 
 ### BasicWCurve
 
-Ƭ **BasicWCurve**<`T`\>: `BasicCurve`<`T`\> & \{ `a`: `T` ; `b`: `T` ; `allowedPrivateKeyLengths?`: readonly `number`[] ; `wrapPrivateKey?`: `boolean` ; `endo?`: `EndomorphismOpts` ; `isTorsionFree?`: (`c`: [`ProjConstructor`](../interfaces/ec.weierstrass.ProjConstructor.md)<`T`\>, `point`: [`ProjPointType`](../interfaces/ec.weierstrass.ProjPointType.md)<`T`\>) => `boolean` ; `clearCofactor?`: (`c`: [`ProjConstructor`](../interfaces/ec.weierstrass.ProjConstructor.md)<`T`\>, `point`: [`ProjPointType`](../interfaces/ec.weierstrass.ProjPointType.md)<`T`\>) => [`ProjPointType`](../interfaces/ec.weierstrass.ProjPointType.md)<`T`\> }
+Ƭ **BasicWCurve**\<`T`\>: `BasicCurve`\<`T`\> & \{ `a`: `T` ; `b`: `T` ; `allowedPrivateKeyLengths?`: readonly `number`[] ; `wrapPrivateKey?`: `boolean` ; `endo?`: `EndomorphismOpts` ; `isTorsionFree?`: (`c`: [`ProjConstructor`](../interfaces/ec.weierstrass.ProjConstructor.md)\<`T`\>, `point`: [`ProjPointType`](../interfaces/ec.weierstrass.ProjPointType.md)\<`T`\>) => `boolean` ; `clearCofactor?`: (`c`: [`ProjConstructor`](../interfaces/ec.weierstrass.ProjConstructor.md)\<`T`\>, `point`: [`ProjPointType`](../interfaces/ec.weierstrass.ProjPointType.md)\<`T`\>) => [`ProjPointType`](../interfaces/ec.weierstrass.ProjPointType.md)\<`T`\> }
 
 #### Type parameters
 
@@ -84,7 +84,7 @@ node_modules/@noble/curves/esm/abstract/weierstrass.d.ts:31
 
 ### CurvePointsType
 
-Ƭ **CurvePointsType**<`T`\>: [`BasicWCurve`](ec.weierstrass.md#basicwcurve)<`T`\> & \{ `fromBytes?`: (`bytes`: `Uint8Array`) => [`AffinePoint`](ec.weierstrass.md#affinepoint)<`T`\> ; `toBytes?`: (`c`: [`ProjConstructor`](../interfaces/ec.weierstrass.ProjConstructor.md)<`T`\>, `point`: [`ProjPointType`](../interfaces/ec.weierstrass.ProjPointType.md)<`T`\>, `isCompressed`: `boolean`) => `Uint8Array` }
+Ƭ **CurvePointsType**\<`T`\>: [`BasicWCurve`](ec.weierstrass.md#basicwcurve)\<`T`\> & \{ `fromBytes?`: (`bytes`: `Uint8Array`) => [`AffinePoint`](ec.weierstrass.md#affinepoint)\<`T`\> ; `toBytes?`: (`c`: [`ProjConstructor`](../interfaces/ec.weierstrass.ProjConstructor.md)\<`T`\>, `point`: [`ProjPointType`](../interfaces/ec.weierstrass.ProjPointType.md)\<`T`\>, `isCompressed`: `boolean`) => `Uint8Array` }
 
 #### Type parameters
 
@@ -100,7 +100,7 @@ node_modules/@noble/curves/esm/abstract/weierstrass.d.ts:81
 
 ### CurvePointsRes
 
-Ƭ **CurvePointsRes**<`T`\>: `Object`
+Ƭ **CurvePointsRes**\<`T`\>: `Object`
 
 #### Type parameters
 
@@ -110,13 +110,13 @@ node_modules/@noble/curves/esm/abstract/weierstrass.d.ts:81
 
 #### Type declaration
 
-| Name                     | Type                                                                       |
-| :----------------------- | :------------------------------------------------------------------------- |
-| `CURVE`                  | `ReturnType`<typeof `validatePointOpts`\>                                  |
-| `ProjectivePoint`        | [`ProjConstructor`](../interfaces/ec.weierstrass.ProjConstructor.md)<`T`\> |
-| `normPrivateKeyToScalar` | (`key`: `PrivKey`) => `bigint`                                             |
-| `weierstrassEquation`    | (`x`: `T`) => `T`                                                          |
-| `isWithinCurveOrder`     | (`num`: `bigint`) => `boolean`                                             |
+| Name                     | Type                                                                        |
+| :----------------------- | :-------------------------------------------------------------------------- |
+| `CURVE`                  | `ReturnType`\<typeof `validatePointOpts`\>                                  |
+| `ProjectivePoint`        | [`ProjConstructor`](../interfaces/ec.weierstrass.ProjConstructor.md)\<`T`\> |
+| `normPrivateKeyToScalar` | (`key`: `PrivKey`) => `bigint`                                              |
+| `weierstrassEquation`    | (`x`: `T`) => `T`                                                           |
+| `isWithinCurveOrder`     | (`num`: `bigint`) => `boolean`                                              |
 
 #### Defined in
 
@@ -168,7 +168,7 @@ node_modules/@noble/curves/esm/abstract/weierstrass.d.ts:152
 
 ### PubKey
 
-Ƭ **PubKey**: `Hex` \| [`ProjPointType`](../interfaces/ec.weierstrass.ProjPointType.md)<`bigint`\>
+Ƭ **PubKey**: `Hex` \| [`ProjPointType`](../interfaces/ec.weierstrass.ProjPointType.md)\<`bigint`\>
 
 #### Defined in
 
@@ -178,7 +178,7 @@ node_modules/@noble/curves/esm/abstract/weierstrass.d.ts:161
 
 ### CurveType
 
-Ƭ **CurveType**: [`BasicWCurve`](ec.weierstrass.md#basicwcurve)<`bigint`\> & \{ `hash`: `CHash` ; `hmac`: `HmacFnSync` ; `randomBytes`: (`bytesLength?`: `number`) => `Uint8Array` ; `lowS?`: `boolean` ; `bits2int?`: (`bytes`: `Uint8Array`) => `bigint` ; `bits2int_modN?`: (`bytes`: `Uint8Array`) => `bigint` }
+Ƭ **CurveType**: [`BasicWCurve`](ec.weierstrass.md#basicwcurve)\<`bigint`\> & \{ `hash`: `CHash` ; `hmac`: `HmacFnSync` ; `randomBytes`: (`bytesLength?`: `number`) => `Uint8Array` ; `lowS?`: `boolean` ; `bits2int?`: (`bytes`: `Uint8Array`) => `bigint` ; `bits2int_modN?`: (`bytes`: `Uint8Array`) => `bigint` }
 
 #### Defined in
 
@@ -192,20 +192,20 @@ node_modules/@noble/curves/esm/abstract/weierstrass.d.ts:162
 
 #### Type declaration
 
-| Name                           | Type                                                                                                                                                                                                                                                                                                                                                                                 |
-| :----------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `CURVE`                        | `ReturnType`<typeof `validateOpts`\>                                                                                                                                                                                                                                                                                                                                                 |
-| `getPublicKey`                 | (`privateKey`: `PrivKey`, `isCompressed?`: `boolean`) => `Uint8Array`                                                                                                                                                                                                                                                                                                                |
-| `getSharedSecret`              | (`privateA`: `PrivKey`, `publicB`: `Hex`, `isCompressed?`: `boolean`) => `Uint8Array`                                                                                                                                                                                                                                                                                                |
-| `sign`                         | (`msgHash`: `Hex`, `privKey`: `PrivKey`, `opts?`: [`SignOpts`](ec.weierstrass.md#signopts)) => [`RecoveredSignatureType`](ec.weierstrass.md#recoveredsignaturetype)                                                                                                                                                                                                                  |
-| `verify`                       | (`signature`: `Hex` \| `SignatureLike`, `msgHash`: `Hex`, `publicKey`: `Hex`, `opts?`: [`VerOpts`](ec.weierstrass.md#veropts)) => `boolean`                                                                                                                                                                                                                                          |
-| `ProjectivePoint`              | [`ProjConstructor`](../interfaces/ec.weierstrass.ProjConstructor.md)<`bigint`\>                                                                                                                                                                                                                                                                                                      |
-| `Signature`                    | [`SignatureConstructor`](ec.weierstrass.md#signatureconstructor)                                                                                                                                                                                                                                                                                                                     |
-| `utils`                        | \{ `normPrivateKeyToScalar`: (`key`: `PrivKey`) => `bigint` ; `randomPrivateKey`: () => `Uint8Array` ; `precompute`: (`windowSize?`: `number`, `point?`: [`ProjPointType`](../interfaces/ec.weierstrass.ProjPointType.md)<`bigint`\>) => [`ProjPointType`](../interfaces/ec.weierstrass.ProjPointType.md)<`bigint`\> ; `isValidPrivateKey`: (`privateKey`: `PrivKey`) => `boolean` } |
-| `utils.normPrivateKeyToScalar` | (`key`: `PrivKey`) => `bigint`                                                                                                                                                                                                                                                                                                                                                       |
-| `utils.randomPrivateKey`       | () => `Uint8Array`                                                                                                                                                                                                                                                                                                                                                                   |
-| `utils.precompute`             | (`windowSize?`: `number`, `point?`: [`ProjPointType`](../interfaces/ec.weierstrass.ProjPointType.md)<`bigint`\>) => [`ProjPointType`](../interfaces/ec.weierstrass.ProjPointType.md)<`bigint`\>                                                                                                                                                                                      |
-| `utils.isValidPrivateKey`      | [object Object]                                                                                                                                                                                                                                                                                                                                                                      |
+| Name                           | Type                                                                                                                                                                                                                                                                                                                                                                                   |
+| :----------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `CURVE`                        | `ReturnType`\<typeof `validateOpts`\>                                                                                                                                                                                                                                                                                                                                                  |
+| `getPublicKey`                 | (`privateKey`: `PrivKey`, `isCompressed?`: `boolean`) => `Uint8Array`                                                                                                                                                                                                                                                                                                                  |
+| `getSharedSecret`              | (`privateA`: `PrivKey`, `publicB`: `Hex`, `isCompressed?`: `boolean`) => `Uint8Array`                                                                                                                                                                                                                                                                                                  |
+| `sign`                         | (`msgHash`: `Hex`, `privKey`: `PrivKey`, `opts?`: [`SignOpts`](ec.weierstrass.md#signopts)) => [`RecoveredSignatureType`](ec.weierstrass.md#recoveredsignaturetype)                                                                                                                                                                                                                    |
+| `verify`                       | (`signature`: `Hex` \| `SignatureLike`, `msgHash`: `Hex`, `publicKey`: `Hex`, `opts?`: [`VerOpts`](ec.weierstrass.md#veropts)) => `boolean`                                                                                                                                                                                                                                            |
+| `ProjectivePoint`              | [`ProjConstructor`](../interfaces/ec.weierstrass.ProjConstructor.md)\<`bigint`\>                                                                                                                                                                                                                                                                                                       |
+| `Signature`                    | [`SignatureConstructor`](ec.weierstrass.md#signatureconstructor)                                                                                                                                                                                                                                                                                                                       |
+| `utils`                        | \{ `normPrivateKeyToScalar`: (`key`: `PrivKey`) => `bigint` ; `randomPrivateKey`: () => `Uint8Array` ; `precompute`: (`windowSize?`: `number`, `point?`: [`ProjPointType`](../interfaces/ec.weierstrass.ProjPointType.md)\<`bigint`\>) => [`ProjPointType`](../interfaces/ec.weierstrass.ProjPointType.md)\<`bigint`\> ; `isValidPrivateKey`: (`privateKey`: `PrivKey`) => `boolean` } |
+| `utils.normPrivateKeyToScalar` | (`key`: `PrivKey`) => `bigint`                                                                                                                                                                                                                                                                                                                                                         |
+| `utils.randomPrivateKey`       | () => `Uint8Array`                                                                                                                                                                                                                                                                                                                                                                     |
+| `utils.precompute`             | (`windowSize?`: `number`, `point?`: [`ProjPointType`](../interfaces/ec.weierstrass.ProjPointType.md)\<`bigint`\>) => [`ProjPointType`](../interfaces/ec.weierstrass.ProjPointType.md)\<`bigint`\>                                                                                                                                                                                      |
+| `utils.isValidPrivateKey`      | [object Object]                                                                                                                                                                                                                                                                                                                                                                        |
 
 #### Defined in
 
@@ -234,7 +234,7 @@ node_modules/@noble/curves/esm/abstract/weierstrass.d.ts:113
 
 ### weierstrassPoints
 
-▸ **weierstrassPoints**<`T`\>(`opts`): [`CurvePointsRes`](ec.weierstrass.md#curvepointsres)<`T`\>
+▸ **weierstrassPoints**\<`T`\>(`opts`): [`CurvePointsRes`](ec.weierstrass.md#curvepointsres)\<`T`\>
 
 #### Type parameters
 
@@ -244,13 +244,13 @@ node_modules/@noble/curves/esm/abstract/weierstrass.d.ts:113
 
 #### Parameters
 
-| Name   | Type                                                         |
-| :----- | :----------------------------------------------------------- |
-| `opts` | [`CurvePointsType`](ec.weierstrass.md#curvepointstype)<`T`\> |
+| Name   | Type                                                          |
+| :----- | :------------------------------------------------------------ |
+| `opts` | [`CurvePointsType`](ec.weierstrass.md#curvepointstype)\<`T`\> |
 
 #### Returns
 
-[`CurvePointsRes`](ec.weierstrass.md#curvepointsres)<`T`\>
+[`CurvePointsRes`](ec.weierstrass.md#curvepointsres)\<`T`\>
 
 #### Defined in
 
@@ -280,7 +280,7 @@ node_modules/@noble/curves/esm/abstract/weierstrass.d.ts:210
 
 ### SWUFpSqrtRatio
 
-▸ **SWUFpSqrtRatio**<`T`\>(`Fp`, `Z`): (`u`: `T`, `v`: `T`) => \{ `isValid`: `boolean` ; `value`: `T` }
+▸ **SWUFpSqrtRatio**\<`T`\>(`Fp`, `Z`): (`u`: `T`, `v`: `T`) => \{ `isValid`: `boolean` ; `value`: `T` }
 
 Implementation of the Shallue and van de Woestijne method for any weierstrass curve.
 TODO: check if there is a way to merge this with uvRatio in Edwards; move to modular.
@@ -295,10 +295,10 @@ b = False and y = sqrt(Z \* (u / v)) otherwise.
 
 #### Parameters
 
-| Name | Type           |
-| :--- | :------------- |
-| `Fp` | `IField`<`T`\> |
-| `Z`  | `T`            |
+| Name | Type            |
+| :--- | :-------------- |
+| `Fp` | `IField`\<`T`\> |
+| `Z`  | `T`             |
 
 #### Returns
 
@@ -330,7 +330,7 @@ node_modules/@noble/curves/esm/abstract/weierstrass.d.ts:220
 
 ### mapToCurveSimpleSWU
 
-▸ **mapToCurveSimpleSWU**<`T`\>(`Fp`, `opts`): (`u`: `T`) => \{ `x`: `T` ; `y`: `T` }
+▸ **mapToCurveSimpleSWU**\<`T`\>(`Fp`, `opts`): (`u`: `T`) => \{ `x`: `T` ; `y`: `T` }
 
 Simplified Shallue-van de Woestijne-Ulas Method
 https://www.rfc-editor.org/rfc/rfc9380#section-6.6.2
@@ -343,13 +343,13 @@ https://www.rfc-editor.org/rfc/rfc9380#section-6.6.2
 
 #### Parameters
 
-| Name     | Type           |
-| :------- | :------------- |
-| `Fp`     | `IField`<`T`\> |
-| `opts`   | `Object`       |
-| `opts.A` | `T`            |
-| `opts.B` | `T`            |
-| `opts.Z` | `T`            |
+| Name     | Type            |
+| :------- | :-------------- |
+| `Fp`     | `IField`\<`T`\> |
+| `opts`   | `Object`        |
+| `opts.A` | `T`             |
+| `opts.B` | `T`             |
+| `opts.Z` | `T`             |
 
 #### Returns
 

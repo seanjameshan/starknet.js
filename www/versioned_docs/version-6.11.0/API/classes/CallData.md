@@ -301,21 +301,21 @@ Result - parsed and formatted response object
 
 ### decodeParameters
 
-▸ **decodeParameters**(`typeCairo`, `response`): [`AllowArray`](../namespaces/types.md#allowarray)<[`Result`](../namespaces/types.md#result)\>
+▸ **decodeParameters**(`typeCairo`, `response`): [`AllowArray`](../namespaces/types.md#allowarray)\<[`Result`](../namespaces/types.md#result)\>
 
 Parse the elements of a contract response and structure them into one or several Result.
 In Cairo 0, arrays are not supported.
 
 #### Parameters
 
-| Name        | Type                                                         | Description                                                         |
-| :---------- | :----------------------------------------------------------- | :------------------------------------------------------------------ |
-| `typeCairo` | [`AllowArray`](../namespaces/types.md#allowarray)<`string`\> | string or string[] - Cairo type name, ex : "hello::hello::UserData" |
-| `response`  | `string`[]                                                   | string[] - serialized data corresponding to typeCairo.              |
+| Name        | Type                                                          | Description                                                         |
+| :---------- | :------------------------------------------------------------ | :------------------------------------------------------------------ |
+| `typeCairo` | [`AllowArray`](../namespaces/types.md#allowarray)\<`string`\> | string or string[] - Cairo type name, ex : "hello::hello::UserData" |
+| `response`  | `string`[]                                                    | string[] - serialized data corresponding to typeCairo.              |
 
 #### Returns
 
-[`AllowArray`](../namespaces/types.md#allowarray)<[`Result`](../namespaces/types.md#result)\>
+[`AllowArray`](../namespaces/types.md#allowarray)\<[`Result`](../namespaces/types.md#result)\>
 
 Result or Result[] - parsed response corresponding to typeData.
 

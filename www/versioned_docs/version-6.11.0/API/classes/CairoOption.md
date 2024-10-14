@@ -32,7 +32,7 @@ const myOption = new CairoOption<BigNumberish>(CairoOptionVariant.Some, '0x54dda
 
 ### constructor
 
-• **new CairoOption**<`T`\>(`variant`, `someContent?`): [`CairoOption`](CairoOption.md)<`T`\>
+• **new CairoOption**\<`T`\>(`variant`, `someContent?`): [`CairoOption`](CairoOption.md)\<`T`\>
 
 #### Type parameters
 
@@ -49,7 +49,7 @@ const myOption = new CairoOption<BigNumberish>(CairoOptionVariant.Some, '0x54dda
 
 #### Returns
 
-[`CairoOption`](CairoOption.md)<`T`\>
+[`CairoOption`](CairoOption.md)\<`T`\>
 
 #### Defined in
 

@@ -14,7 +14,7 @@ The complete typed data, with all the structs, domain data, primary type of the 
 
 ### types
 
-• **types**: `Record`<`string`, [`StarknetType`](../namespaces/types.RPC.RPCSPEC07.WALLET_API.md#starknettype)[]\>
+• **types**: `Record`\<`string`, [`StarknetType`](../namespaces/types.RPC.RPCSPEC07.WALLET_API.md#starknettype)[]\>
 
 #### Defined in
 

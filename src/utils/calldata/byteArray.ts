@@ -37,13 +37,12 @@ export function stringFromByteArray(myByteArray: ByteArray): string {
  * @example
  * ```typescript
  * const myByteArray: ByteArray = byteArrayFromString("ABCDEFGHI");
+ * // result is: {
+ * //   data: [],
+ * //   pending_word: '0x414243444546474849',
+ * //   pending_word_len: 9
+ * // }
  * ```
- * Result is :
- * {
- *    data: [],
- *    pending_word: '0x414243444546474849',
- *    pending_word_len: 9
- * }
  */
 export function byteArrayFromString(targetString: string): ByteArray {
   const shortStrings: string[] = splitLongString(targetString);

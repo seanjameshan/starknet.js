@@ -81,11 +81,11 @@ in the resulting array.
 
 #### Parameters
 
-| Name            | Type                                                           | Default value |
-| :-------------- | :------------------------------------------------------------- | :------------ |
-| `types`         | `Record`<`string`, [`StarkNetType`](types.md#starknettype)[]\> | `undefined`   |
-| `type`          | `string`                                                       | `undefined`   |
-| `dependencies?` | `string`[]                                                     | `[]`          |
+| Name            | Type                                                            | Default value |
+| :-------------- | :-------------------------------------------------------------- | :------------ |
+| `types`         | `Record`\<`string`, [`StarkNetType`](types.md#starknettype)[]\> | `undefined`   |
+| `type`          | `string`                                                        | `undefined`   |
+| `dependencies?` | `string`[]                                                      | `[]`          |
 
 #### Returns
 
@@ -105,10 +105,10 @@ Encode a type to a string. All dependent types are alphabetically sorted.
 
 #### Parameters
 
-| Name    | Type                                                           |
-| :------ | :------------------------------------------------------------- |
-| `types` | `Record`<`string`, [`StarkNetType`](types.md#starknettype)[]\> |
-| `type`  | `string`                                                       |
+| Name    | Type                                                            |
+| :------ | :-------------------------------------------------------------- |
+| `types` | `Record`\<`string`, [`StarkNetType`](types.md#starknettype)[]\> |
+| `type`  | `string`                                                        |
 
 #### Returns
 
@@ -128,10 +128,10 @@ Get a type string as hash.
 
 #### Parameters
 
-| Name    | Type                                                           |
-| :------ | :------------------------------------------------------------- |
-| `types` | `Record`<`string`, [`StarkNetType`](types.md#starknettype)[]\> |
-| `type`  | `string`                                                       |
+| Name    | Type                                                            |
+| :------ | :-------------------------------------------------------------- |
+| `types` | `Record`\<`string`, [`StarkNetType`](types.md#starknettype)[]\> |
+| `type`  | `string`                                                        |
 
 #### Returns
 
@@ -152,12 +152,12 @@ an array of ABI compatible types, and an array of corresponding values.
 
 #### Parameters
 
-| Name    | Type                                                           |
-| :------ | :------------------------------------------------------------- |
-| `types` | `Record`<`string`, [`StarkNetType`](types.md#starknettype)[]\> |
-| `type`  | `string`                                                       |
-| `data`  | `unknown`                                                      |
-| `ctx`   | `Context`                                                      |
+| Name    | Type                                                            |
+| :------ | :-------------------------------------------------------------- |
+| `types` | `Record`\<`string`, [`StarkNetType`](types.md#starknettype)[]\> |
+| `type`  | `string`                                                        |
+| `data`  | `unknown`                                                       |
+| `ctx`   | `Context`                                                       |
 
 #### Returns
 
@@ -171,7 +171,7 @@ an array of ABI compatible types, and an array of corresponding values.
 
 ### encodeData
 
-▸ **encodeData**<`T`\>(`types`, `type`, `data`): `string`[][]
+▸ **encodeData**\<`T`\>(`types`, `type`, `data`): `string`[][]
 
 Encode the data to an ABI encoded Buffer. The data should be a key -> value object with all the required values.
 All dependent types are automatically encoded.
@@ -202,7 +202,7 @@ All dependent types are automatically encoded.
 
 ### getStructHash
 
-▸ **getStructHash**<`T`\>(`types`, `type`, `data`): `string`
+▸ **getStructHash**\<`T`\>(`types`, `type`, `data`): `string`
 
 Get encoded data as a hash. The data should be a key -> value object with all the required values.
 All dependent types are automatically encoded.

@@ -15,7 +15,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- `GroupConstructor`<[`ProjPointType`](ec.weierstrass.ProjPointType.md)<`T`\>\>
+- `GroupConstructor`\<[`ProjPointType`](ec.weierstrass.ProjPointType.md)\<`T`\>\>
 
   ↳ **`ProjConstructor`**
 
@@ -23,7 +23,7 @@ custom_edit_url: null
 
 ### constructor
 
-• **new ProjConstructor**(`x`, `y`, `z`): [`ProjPointType`](ec.weierstrass.ProjPointType.md)<`T`\>
+• **new ProjConstructor**(`x`, `y`, `z`): [`ProjPointType`](ec.weierstrass.ProjPointType.md)\<`T`\>
 
 #### Parameters
 
@@ -35,11 +35,11 @@ custom_edit_url: null
 
 #### Returns
 
-[`ProjPointType`](ec.weierstrass.ProjPointType.md)<`T`\>
+[`ProjPointType`](ec.weierstrass.ProjPointType.md)\<`T`\>
 
 #### Inherited from
 
-GroupConstructor<ProjPointType<T\>\>.constructor
+GroupConstructor\<ProjPointType\<T\>\>.constructor
 
 #### Defined in
 
@@ -49,7 +49,7 @@ node_modules/@noble/curves/esm/abstract/weierstrass.d.ts:75
 
 ### BASE
 
-• **BASE**: [`ProjPointType`](ec.weierstrass.ProjPointType.md)<`T`\>
+• **BASE**: [`ProjPointType`](ec.weierstrass.ProjPointType.md)\<`T`\>
 
 #### Inherited from
 
@@ -63,7 +63,7 @@ node_modules/@noble/curves/esm/abstract/curve.d.ts:19
 
 ### ZERO
 
-• **ZERO**: [`ProjPointType`](ec.weierstrass.ProjPointType.md)<`T`\>
+• **ZERO**: [`ProjPointType`](ec.weierstrass.ProjPointType.md)\<`T`\>
 
 #### Inherited from
 
@@ -77,17 +77,17 @@ node_modules/@noble/curves/esm/abstract/curve.d.ts:20
 
 ### fromAffine
 
-▸ **fromAffine**(`p`): [`ProjPointType`](ec.weierstrass.ProjPointType.md)<`T`\>
+▸ **fromAffine**(`p`): [`ProjPointType`](ec.weierstrass.ProjPointType.md)\<`T`\>
 
 #### Parameters
 
-| Name | Type                                                               |
-| :--- | :----------------------------------------------------------------- |
-| `p`  | [`AffinePoint`](../namespaces/ec.weierstrass.md#affinepoint)<`T`\> |
+| Name | Type                                                                |
+| :--- | :------------------------------------------------------------------ |
+| `p`  | [`AffinePoint`](../namespaces/ec.weierstrass.md#affinepoint)\<`T`\> |
 
 #### Returns
 
-[`ProjPointType`](ec.weierstrass.ProjPointType.md)<`T`\>
+[`ProjPointType`](ec.weierstrass.ProjPointType.md)\<`T`\>
 
 #### Defined in
 
@@ -97,7 +97,7 @@ node_modules/@noble/curves/esm/abstract/weierstrass.d.ts:76
 
 ### fromHex
 
-▸ **fromHex**(`hex`): [`ProjPointType`](ec.weierstrass.ProjPointType.md)<`T`\>
+▸ **fromHex**(`hex`): [`ProjPointType`](ec.weierstrass.ProjPointType.md)\<`T`\>
 
 #### Parameters
 
@@ -107,7 +107,7 @@ node_modules/@noble/curves/esm/abstract/weierstrass.d.ts:76
 
 #### Returns
 
-[`ProjPointType`](ec.weierstrass.ProjPointType.md)<`T`\>
+[`ProjPointType`](ec.weierstrass.ProjPointType.md)\<`T`\>
 
 #### Defined in
 
@@ -117,7 +117,7 @@ node_modules/@noble/curves/esm/abstract/weierstrass.d.ts:77
 
 ### fromPrivateKey
 
-▸ **fromPrivateKey**(`privateKey`): [`ProjPointType`](ec.weierstrass.ProjPointType.md)<`T`\>
+▸ **fromPrivateKey**(`privateKey`): [`ProjPointType`](ec.weierstrass.ProjPointType.md)\<`T`\>
 
 #### Parameters
 
@@ -127,7 +127,7 @@ node_modules/@noble/curves/esm/abstract/weierstrass.d.ts:77
 
 #### Returns
 
-[`ProjPointType`](ec.weierstrass.ProjPointType.md)<`T`\>
+[`ProjPointType`](ec.weierstrass.ProjPointType.md)\<`T`\>
 
 #### Defined in
 
@@ -137,17 +137,17 @@ node_modules/@noble/curves/esm/abstract/weierstrass.d.ts:78
 
 ### normalizeZ
 
-▸ **normalizeZ**(`points`): [`ProjPointType`](ec.weierstrass.ProjPointType.md)<`T`\>[]
+▸ **normalizeZ**(`points`): [`ProjPointType`](ec.weierstrass.ProjPointType.md)\<`T`\>[]
 
 #### Parameters
 
-| Name     | Type                                                       |
-| :------- | :--------------------------------------------------------- |
-| `points` | [`ProjPointType`](ec.weierstrass.ProjPointType.md)<`T`\>[] |
+| Name     | Type                                                        |
+| :------- | :---------------------------------------------------------- |
+| `points` | [`ProjPointType`](ec.weierstrass.ProjPointType.md)\<`T`\>[] |
 
 #### Returns
 
-[`ProjPointType`](ec.weierstrass.ProjPointType.md)<`T`\>[]
+[`ProjPointType`](ec.weierstrass.ProjPointType.md)\<`T`\>[]
 
 #### Defined in
 

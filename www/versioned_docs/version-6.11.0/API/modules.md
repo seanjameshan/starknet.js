@@ -1126,7 +1126,7 @@ Re-exports [UINT_256_MAX](namespaces/uint256.md#uint_256_max)
 
 ### TypedContractV2
 
-Ƭ **TypedContractV2**<`TAbi`\>: `AbiWanTypedContract`<`TAbi`\> & [`Contract`](classes/Contract.md)
+Ƭ **TypedContractV2**\<`TAbi`\>: `AbiWanTypedContract`\<`TAbi`\> & [`Contract`](classes/Contract.md)
 
 #### Type parameters
 
@@ -1583,7 +1583,7 @@ Parse one field of the calldata by using input field from the abi for that metho
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `argsIterator` | `Iterator`<`any`, `any`, `undefined`\> | Iterator for value of the field |
+| `argsIterator` | `Iterator`\<`any`, `any`, `undefined`\> | Iterator for value of the field |
 | `input` | [`AbiEntry`](namespaces/types.md#abientry) | input(field) information from the abi that will be used to parse the data |
 | `structs` | [`AbiStructs`](namespaces/types.md#abistructs) | structs from abi |
 | `enums` | [`AbiEnums`](namespaces/types.md#abienums) | enums from abi |

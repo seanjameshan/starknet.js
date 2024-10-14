@@ -10,7 +10,7 @@ custom_edit_url: null
 
 ### requestAccounts
 
-▸ **requestAccounts**(`swo`, `silent_mode?`): `Promise`<`string`[]\>
+▸ **requestAccounts**(`swo`, `silent_mode?`): `Promise`\<`string`[]\>
 
 Request Permission for wallet account, return addresses that are allowed by user
 
@@ -23,7 +23,7 @@ Request Permission for wallet account, return addresses that are allowed by user
 
 #### Returns
 
-`Promise`<`string`[]\>
+`Promise`\<`string`[]\>
 
 allowed accounts addresses
 
@@ -35,7 +35,7 @@ allowed accounts addresses
 
 ### getPermissions
 
-▸ **getPermissions**(`swo`): `Promise`<[] \| `"accounts"`[]\>
+▸ **getPermissions**(`swo`): `Promise`\<[] \| `"accounts"`[]\>
 
 Request Permission for wallet account
 
@@ -47,7 +47,7 @@ Request Permission for wallet account
 
 #### Returns
 
-`Promise`<[] \| `"accounts"`[]\>
+`Promise`\<[] \| `"accounts"`[]\>
 
 allowed accounts addresses
 
@@ -59,7 +59,7 @@ allowed accounts addresses
 
 ### watchAsset
 
-▸ **watchAsset**(`swo`, `asset`): `Promise`<`boolean`\>
+▸ **watchAsset**(`swo`, `asset`): `Promise`\<`boolean`\>
 
 Request adding ERC20 Token to Wallet List
 
@@ -72,7 +72,7 @@ Request adding ERC20 Token to Wallet List
 
 #### Returns
 
-`Promise`<`boolean`\>
+`Promise`\<`boolean`\>
 
 boolean
 
@@ -84,7 +84,7 @@ boolean
 
 ### addStarknetChain
 
-▸ **addStarknetChain**(`swo`, `chain`): `Promise`<`boolean`\>
+▸ **addStarknetChain**(`swo`, `chain`): `Promise`\<`boolean`\>
 
 Request adding custom Starknet chain
 
@@ -97,7 +97,7 @@ Request adding custom Starknet chain
 
 #### Returns
 
-`Promise`<`boolean`\>
+`Promise`\<`boolean`\>
 
 boolean
 
@@ -109,7 +109,7 @@ boolean
 
 ### switchStarknetChain
 
-▸ **switchStarknetChain**(`swo`, `chainId`): `Promise`<`boolean`\>
+▸ **switchStarknetChain**(`swo`, `chainId`): `Promise`\<`boolean`\>
 
 Request Wallet Network change
 
@@ -122,7 +122,7 @@ Request Wallet Network change
 
 #### Returns
 
-`Promise`<`boolean`\>
+`Promise`\<`boolean`\>
 
 boolean
 
@@ -134,7 +134,7 @@ boolean
 
 ### requestChainId
 
-▸ **requestChainId**(`swo`): `Promise`<`string`\>
+▸ **requestChainId**(`swo`): `Promise`\<`string`\>
 
 Request the current chain ID from the wallet.
 
@@ -146,7 +146,7 @@ Request the current chain ID from the wallet.
 
 #### Returns
 
-`Promise`<`string`\>
+`Promise`\<`string`\>
 
 The current Starknet chain ID.
 
@@ -158,7 +158,7 @@ The current Starknet chain ID.
 
 ### deploymentData
 
-▸ **deploymentData**(`swo`): `Promise`<[`AccountDeploymentData`](../interfaces/types.RPC.RPCSPEC07.WALLET_API.AccountDeploymentData.md)\>
+▸ **deploymentData**(`swo`): `Promise`\<[`AccountDeploymentData`](../interfaces/types.RPC.RPCSPEC07.WALLET_API.AccountDeploymentData.md)\>
 
 Get deployment data for a contract.
 
@@ -170,7 +170,7 @@ Get deployment data for a contract.
 
 #### Returns
 
-`Promise`<[`AccountDeploymentData`](../interfaces/types.RPC.RPCSPEC07.WALLET_API.AccountDeploymentData.md)\>
+`Promise`\<[`AccountDeploymentData`](../interfaces/types.RPC.RPCSPEC07.WALLET_API.AccountDeploymentData.md)\>
 
 The deployment data result.
 
@@ -182,7 +182,7 @@ The deployment data result.
 
 ### addInvokeTransaction
 
-▸ **addInvokeTransaction**(`swo`, `params`): `Promise`<[`AddInvokeTransactionResult`](../interfaces/types.RPC.RPCSPEC07.WALLET_API.AddInvokeTransactionResult.md)\>
+▸ **addInvokeTransaction**(`swo`, `params`): `Promise`\<[`AddInvokeTransactionResult`](../interfaces/types.RPC.RPCSPEC07.WALLET_API.AddInvokeTransactionResult.md)\>
 
 Add an invoke transaction to the wallet.
 
@@ -195,7 +195,7 @@ Add an invoke transaction to the wallet.
 
 #### Returns
 
-`Promise`<[`AddInvokeTransactionResult`](../interfaces/types.RPC.RPCSPEC07.WALLET_API.AddInvokeTransactionResult.md)\>
+`Promise`\<[`AddInvokeTransactionResult`](../interfaces/types.RPC.RPCSPEC07.WALLET_API.AddInvokeTransactionResult.md)\>
 
 The result of adding the invoke transaction.
 
@@ -207,7 +207,7 @@ The result of adding the invoke transaction.
 
 ### addDeclareTransaction
 
-▸ **addDeclareTransaction**(`swo`, `params`): `Promise`<[`AddDeclareTransactionResult`](../interfaces/types.RPC.RPCSPEC07.WALLET_API.AddDeclareTransactionResult.md)\>
+▸ **addDeclareTransaction**(`swo`, `params`): `Promise`\<[`AddDeclareTransactionResult`](../interfaces/types.RPC.RPCSPEC07.WALLET_API.AddDeclareTransactionResult.md)\>
 
 Add a declare transaction to the wallet.
 
@@ -220,7 +220,7 @@ Add a declare transaction to the wallet.
 
 #### Returns
 
-`Promise`<[`AddDeclareTransactionResult`](../interfaces/types.RPC.RPCSPEC07.WALLET_API.AddDeclareTransactionResult.md)\>
+`Promise`\<[`AddDeclareTransactionResult`](../interfaces/types.RPC.RPCSPEC07.WALLET_API.AddDeclareTransactionResult.md)\>
 
 The result of adding the declare transaction.
 
@@ -232,7 +232,7 @@ The result of adding the declare transaction.
 
 ### signMessage
 
-▸ **signMessage**(`swo`, `typedData`): `Promise`<[`SIGNATURE`](types.RPC.RPCSPEC07.API.SPEC.md#signature)\>
+▸ **signMessage**(`swo`, `typedData`): `Promise`\<[`SIGNATURE`](types.RPC.RPCSPEC07.API.SPEC.md#signature)\>
 
 Sign typed data using the wallet.
 
@@ -245,7 +245,7 @@ Sign typed data using the wallet.
 
 #### Returns
 
-`Promise`<[`SIGNATURE`](types.RPC.RPCSPEC07.API.SPEC.md#signature)\>
+`Promise`\<[`SIGNATURE`](types.RPC.RPCSPEC07.API.SPEC.md#signature)\>
 
 An array of signatures as strings.
 
@@ -257,7 +257,7 @@ An array of signatures as strings.
 
 ### supportedSpecs
 
-▸ **supportedSpecs**(`swo`): `Promise`<`string`[]\>
+▸ **supportedSpecs**(`swo`): `Promise`\<`string`[]\>
 
 Get the list of supported specifications.
 
@@ -269,7 +269,7 @@ Get the list of supported specifications.
 
 #### Returns
 
-`Promise`<`string`[]\>
+`Promise`\<`string`[]\>
 
 An array of supported specification strings.
 

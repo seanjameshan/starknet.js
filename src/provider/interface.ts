@@ -133,7 +133,7 @@ export abstract class ProviderInterface {
    * Get the value of the storage (contract's variable) at the given address and key
    *
    * @param contractAddress
-   * @param key - from getStorageVarAddress('<STORAGE_VARIABLE_NAME>') (WIP)
+   * @param key - from starknetKeccak()
    * @param blockIdentifier - block identifier
    * @returns the value of the storage variable
    */
@@ -147,7 +147,7 @@ export abstract class ProviderInterface {
    * Gets the transaction information from a tx id.
    *
    * @param transactionHash
-   * @returns the transaction object \{ transaction_id, status, transaction, block_number?, block_number?, transaction_index?, transaction_failure_reason? \}
+   * @returns the transaction object `{ transaction_id, status, transaction, block_number?, block_number?, transaction_index?, transaction_failure_reason? }`
    */
   public abstract getTransaction(transactionHash: BigNumberish): Promise<GetTransactionResponse>;
 

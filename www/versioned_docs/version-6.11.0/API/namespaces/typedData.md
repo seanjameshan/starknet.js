@@ -101,13 +101,13 @@ in the resulting array.
 
 #### Parameters
 
-| Name           | Type                                                                                    | Default value     |
-| :------------- | :-------------------------------------------------------------------------------------- | :---------------- |
-| `types`        | `Record`<`string`, [`StarknetType`](types.RPC.RPCSPEC07.WALLET_API.md#starknettype)[]\> | `undefined`       |
-| `type`         | `string`                                                                                | `undefined`       |
-| `dependencies` | `string`[]                                                                              | `[]`              |
-| `contains`     | `string`                                                                                | `''`              |
-| `revision`     | [`TypedDataRevision`](types.RPC.RPCSPEC07.WALLET_API.md#typeddatarevision-1)            | `Revision.LEGACY` |
+| Name           | Type                                                                                     | Default value     |
+| :------------- | :--------------------------------------------------------------------------------------- | :---------------- |
+| `types`        | `Record`\<`string`, [`StarknetType`](types.RPC.RPCSPEC07.WALLET_API.md#starknettype)[]\> | `undefined`       |
+| `type`         | `string`                                                                                 | `undefined`       |
+| `dependencies` | `string`[]                                                                               | `[]`              |
+| `contains`     | `string`                                                                                 | `''`              |
+| `revision`     | [`TypedDataRevision`](types.RPC.RPCSPEC07.WALLET_API.md#typeddatarevision-1)             | `Revision.LEGACY` |
 
 #### Returns
 
@@ -127,11 +127,11 @@ Encode a type to a string. All dependent types are alphabetically sorted.
 
 #### Parameters
 
-| Name       | Type                                                                                    | Default value     |
-| :--------- | :-------------------------------------------------------------------------------------- | :---------------- |
-| `types`    | `Record`<`string`, [`StarknetType`](types.RPC.RPCSPEC07.WALLET_API.md#starknettype)[]\> | `undefined`       |
-| `type`     | `string`                                                                                | `undefined`       |
-| `revision` | [`TypedDataRevision`](types.RPC.RPCSPEC07.WALLET_API.md#typeddatarevision-1)            | `Revision.LEGACY` |
+| Name       | Type                                                                                     | Default value     |
+| :--------- | :--------------------------------------------------------------------------------------- | :---------------- |
+| `types`    | `Record`\<`string`, [`StarknetType`](types.RPC.RPCSPEC07.WALLET_API.md#starknettype)[]\> | `undefined`       |
+| `type`     | `string`                                                                                 | `undefined`       |
+| `revision` | [`TypedDataRevision`](types.RPC.RPCSPEC07.WALLET_API.md#typeddatarevision-1)             | `Revision.LEGACY` |
 
 #### Returns
 
@@ -151,11 +151,11 @@ Get a type string as hash.
 
 #### Parameters
 
-| Name       | Type                                                                                    | Default value     |
-| :--------- | :-------------------------------------------------------------------------------------- | :---------------- |
-| `types`    | `Record`<`string`, [`StarknetType`](types.RPC.RPCSPEC07.WALLET_API.md#starknettype)[]\> | `undefined`       |
-| `type`     | `string`                                                                                | `undefined`       |
-| `revision` | [`TypedDataRevision`](types.RPC.RPCSPEC07.WALLET_API.md#typeddatarevision-1)            | `Revision.LEGACY` |
+| Name       | Type                                                                                     | Default value     |
+| :--------- | :--------------------------------------------------------------------------------------- | :---------------- |
+| `types`    | `Record`\<`string`, [`StarknetType`](types.RPC.RPCSPEC07.WALLET_API.md#starknettype)[]\> | `undefined`       |
+| `type`     | `string`                                                                                 | `undefined`       |
+| `revision` | [`TypedDataRevision`](types.RPC.RPCSPEC07.WALLET_API.md#typeddatarevision-1)             | `Revision.LEGACY` |
 
 #### Returns
 
@@ -176,13 +176,13 @@ an array of ABI compatible types, and an array of corresponding values.
 
 #### Parameters
 
-| Name       | Type                                                                                    | Default value     |
-| :--------- | :-------------------------------------------------------------------------------------- | :---------------- |
-| `types`    | `Record`<`string`, [`StarknetType`](types.RPC.RPCSPEC07.WALLET_API.md#starknettype)[]\> | `undefined`       |
-| `type`     | `string`                                                                                | `undefined`       |
-| `data`     | `unknown`                                                                               | `undefined`       |
-| `ctx`      | `Context`                                                                               | `{}`              |
-| `revision` | [`TypedDataRevision`](types.RPC.RPCSPEC07.WALLET_API.md#typeddatarevision-1)            | `Revision.LEGACY` |
+| Name       | Type                                                                                     | Default value     |
+| :--------- | :--------------------------------------------------------------------------------------- | :---------------- |
+| `types`    | `Record`\<`string`, [`StarknetType`](types.RPC.RPCSPEC07.WALLET_API.md#starknettype)[]\> | `undefined`       |
+| `type`     | `string`                                                                                 | `undefined`       |
+| `data`     | `unknown`                                                                                | `undefined`       |
+| `ctx`      | `Context`                                                                                | `{}`              |
+| `revision` | [`TypedDataRevision`](types.RPC.RPCSPEC07.WALLET_API.md#typeddatarevision-1)             | `Revision.LEGACY` |
 
 #### Returns
 
@@ -196,7 +196,7 @@ an array of ABI compatible types, and an array of corresponding values.
 
 ### encodeData
 
-▸ **encodeData**<`T`\>(`types`, `type`, `data`, `revision?`): `string`[][]
+▸ **encodeData**\<`T`\>(`types`, `type`, `data`, `revision?`): `string`[][]
 
 Encode the data to an ABI encoded Buffer. The data should be a key -> value object with all the required values.
 All dependent types are automatically encoded.
@@ -228,7 +228,7 @@ All dependent types are automatically encoded.
 
 ### getStructHash
 
-▸ **getStructHash**<`T`\>(`types`, `type`, `data`, `revision?`): `string`
+▸ **getStructHash**\<`T`\>(`types`, `type`, `data`, `revision?`): `string`
 
 Get encoded data as a hash. The data should be a key -> value object with all the required values.
 All dependent types are automatically encoded.

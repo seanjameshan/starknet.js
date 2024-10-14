@@ -65,7 +65,7 @@ Use RPC Provider or Default provider (Default provider will be RPC Provider with
 
 ### headers
 
-• `Optional` **headers**: `Record`<`string`, `string`\>
+• `Optional` **headers**: `Record`\<`string`, `string`\>
 
 #### Defined in
 
@@ -189,9 +189,9 @@ Use RPC Provider or Default provider (Default provider will be RPC Provider with
 
 #### Parameters
 
-| Name     | Type                       |
-| :------- | :------------------------- |
-| `query?` | `Record`<`string`, `any`\> |
+| Name     | Type                        |
+| :------- | :-------------------------- |
+| `query?` | `Record`\<`string`, `any`\> |
 
 #### Returns
 
@@ -205,7 +205,7 @@ Use RPC Provider or Default provider (Default provider will be RPC Provider with
 
 ### getHeaders
 
-▸ `Private` **getHeaders**(`method`): `undefined` \| `Record`<`string`, `string`\>
+▸ `Private` **getHeaders**(`method`): `undefined` \| `Record`\<`string`, `string`\>
 
 #### Parameters
 
@@ -215,7 +215,7 @@ Use RPC Provider or Default provider (Default provider will be RPC Provider with
 
 #### Returns
 
-`undefined` \| `Record`<`string`, `string`\>
+`undefined` \| `Record`\<`string`, `string`\>
 
 #### Defined in
 
@@ -225,7 +225,7 @@ Use RPC Provider or Default provider (Default provider will be RPC Provider with
 
 ### fetchEndpoint
 
-▸ `Protected` **fetchEndpoint**<`T`\>(`endpoint`, `...«destructured»`): `Promise`<[`Endpoints`](../namespaces/types.Sequencer.md#endpoints)[`T`][``"RESPONSE"``]\>
+▸ `Protected` **fetchEndpoint**\<`T`\>(`endpoint`, `...«destructured»`): `Promise`\<[`Endpoints`](../namespaces/types.Sequencer.md#endpoints)[`T`][``"RESPONSE"``]\>
 
 #### Type parameters
 
@@ -242,7 +242,7 @@ Use RPC Provider or Default provider (Default provider will be RPC Provider with
 
 #### Returns
 
-`Promise`<[`Endpoints`](../namespaces/types.Sequencer.md#endpoints)[`T`][``"RESPONSE"``]\>
+`Promise`\<[`Endpoints`](../namespaces/types.Sequencer.md#endpoints)[`T`][``"RESPONSE"``]\>
 
 #### Defined in
 
@@ -252,7 +252,7 @@ Use RPC Provider or Default provider (Default provider will be RPC Provider with
 
 ### fetch
 
-▸ **fetch**(`endpoint`, `options?`): `Promise`<`any`\>
+▸ **fetch**(`endpoint`, `options?`): `Promise`\<`any`\>
 
 #### Parameters
 
@@ -266,7 +266,7 @@ Use RPC Provider or Default provider (Default provider will be RPC Provider with
 
 #### Returns
 
-`Promise`<`any`\>
+`Promise`\<`any`\>
 
 #### Defined in
 
@@ -276,13 +276,13 @@ Use RPC Provider or Default provider (Default provider will be RPC Provider with
 
 ### getChainId
 
-▸ **getChainId**(): `Promise`<[`StarknetChainId`](../enums/constants.StarknetChainId.md)\>
+▸ **getChainId**(): `Promise`\<[`StarknetChainId`](../enums/constants.StarknetChainId.md)\>
 
 Gets the Starknet chain Id
 
 #### Returns
 
-`Promise`<[`StarknetChainId`](../enums/constants.StarknetChainId.md)\>
+`Promise`\<[`StarknetChainId`](../enums/constants.StarknetChainId.md)\>
 
 the chain Id
 
@@ -298,7 +298,7 @@ the chain Id
 
 ### callContract
 
-▸ **callContract**(`«destructured»`, `blockIdentifier?`): `Promise`<[`CallContractResponse`](../namespaces/types.md#callcontractresponse)\>
+▸ **callContract**(`«destructured»`, `blockIdentifier?`): `Promise`\<[`CallContractResponse`](../namespaces/types.md#callcontractresponse)\>
 
 Calls a function on the Starknet contract.
 
@@ -311,7 +311,7 @@ Calls a function on the Starknet contract.
 
 #### Returns
 
-`Promise`<[`CallContractResponse`](../namespaces/types.md#callcontractresponse)\>
+`Promise`\<[`CallContractResponse`](../namespaces/types.md#callcontractresponse)\>
 
 the result of the function on the smart contract.
 
@@ -327,7 +327,7 @@ the result of the function on the smart contract.
 
 ### getBlock
 
-▸ **getBlock**(`blockIdentifier?`): `Promise`<[`GetBlockResponse`](../interfaces/types.GetBlockResponse.md)\>
+▸ **getBlock**(`blockIdentifier?`): `Promise`\<[`GetBlockResponse`](../interfaces/types.GetBlockResponse.md)\>
 
 Gets the block information
 
@@ -339,7 +339,7 @@ Gets the block information
 
 #### Returns
 
-`Promise`<[`GetBlockResponse`](../interfaces/types.GetBlockResponse.md)\>
+`Promise`\<[`GetBlockResponse`](../interfaces/types.GetBlockResponse.md)\>
 
 the block object
 
@@ -355,7 +355,7 @@ the block object
 
 ### getNonceForAddress
 
-▸ **getNonceForAddress**(`contractAddress`, `blockIdentifier?`): `Promise`<`string`\>
+▸ **getNonceForAddress**(`contractAddress`, `blockIdentifier?`): `Promise`\<`string`\>
 
 Returns the nonce associated with the given address in the given block
 
@@ -368,7 +368,7 @@ Returns the nonce associated with the given address in the given block
 
 #### Returns
 
-`Promise`<`string`\>
+`Promise`\<`string`\>
 
 the hex nonce
 
@@ -384,21 +384,21 @@ the hex nonce
 
 ### getStorageAt
 
-▸ **getStorageAt**(`contractAddress`, `key`, `blockIdentifier?`): `Promise`<`string`\>
+▸ **getStorageAt**(`contractAddress`, `key`, `blockIdentifier?`): `Promise`\<`string`\>
 
 Get the value of the storage (contract's variable) at the given address and key
 
 #### Parameters
 
-| Name              | Type                                                        | Description                                                |
-| :---------------- | :---------------------------------------------------------- | :--------------------------------------------------------- |
-| `contractAddress` | `string`                                                    |                                                            |
-| `key`             | [`BigNumberish`](../namespaces/types.md#bignumberish)       | from getStorageVarAddress('<STORAGE_VARIABLE_NAME>') (WIP) |
-| `blockIdentifier` | [`BlockIdentifier`](../namespaces/types.md#blockidentifier) | block identifier                                           |
+| Name              | Type                                                        | Description                                                  |
+| :---------------- | :---------------------------------------------------------- | :----------------------------------------------------------- |
+| `contractAddress` | `string`                                                    |                                                              |
+| `key`             | [`BigNumberish`](../namespaces/types.md#bignumberish)       | from getStorageVarAddress('\<STORAGE_VARIABLE_NAME\>') (WIP) |
+| `blockIdentifier` | [`BlockIdentifier`](../namespaces/types.md#blockidentifier) | block identifier                                             |
 
 #### Returns
 
-`Promise`<`string`\>
+`Promise`\<`string`\>
 
 the value of the storage variable
 
@@ -414,7 +414,7 @@ the value of the storage variable
 
 ### getTransaction
 
-▸ **getTransaction**(`txHash`): `Promise`<[`GetTransactionResponse`](../namespaces/types.md#gettransactionresponse)\>
+▸ **getTransaction**(`txHash`): `Promise`\<[`GetTransactionResponse`](../namespaces/types.md#gettransactionresponse)\>
 
 Gets the transaction information from a tx id.
 
@@ -426,9 +426,9 @@ Gets the transaction information from a tx id.
 
 #### Returns
 
-`Promise`<[`GetTransactionResponse`](../namespaces/types.md#gettransactionresponse)\>
+`Promise`\<[`GetTransactionResponse`](../namespaces/types.md#gettransactionresponse)\>
 
-the transaction object { transaction_id, status, transaction, block_number?, block_number?, transaction_index?, transaction_failure_reason? }
+the transaction object `{ transaction_id, status, transaction, block_number?, block_number?, transaction_index?, transaction_failure_reason? }`
 
 #### Implementation of
 
@@ -442,7 +442,7 @@ the transaction object { transaction_id, status, transaction, block_number?, blo
 
 ### getTransactionReceipt
 
-▸ **getTransactionReceipt**(`txHash`): `Promise`<[`GetTransactionReceiptResponse`](../namespaces/types.md#gettransactionreceiptresponse)\>
+▸ **getTransactionReceipt**(`txHash`): `Promise`\<[`GetTransactionReceiptResponse`](../namespaces/types.md#gettransactionreceiptresponse)\>
 
 Gets the transaction receipt from a tx hash.
 
@@ -454,7 +454,7 @@ Gets the transaction receipt from a tx hash.
 
 #### Returns
 
-`Promise`<[`GetTransactionReceiptResponse`](../namespaces/types.md#gettransactionreceiptresponse)\>
+`Promise`\<[`GetTransactionReceiptResponse`](../namespaces/types.md#gettransactionreceiptresponse)\>
 
 the transaction receipt object
 
@@ -470,7 +470,7 @@ the transaction receipt object
 
 ### getClassAt
 
-▸ **getClassAt**(`contractAddress`, `blockIdentifier?`): `Promise`<[`ContractClassResponse`](../namespaces/types.md#contractclassresponse)\>
+▸ **getClassAt**(`contractAddress`, `blockIdentifier?`): `Promise`\<[`ContractClassResponse`](../namespaces/types.md#contractclassresponse)\>
 
 Gets the contract class of the deployed contract.
 
@@ -483,7 +483,7 @@ Gets the contract class of the deployed contract.
 
 #### Returns
 
-`Promise`<[`ContractClassResponse`](../namespaces/types.md#contractclassresponse)\>
+`Promise`\<[`ContractClassResponse`](../namespaces/types.md#contractclassresponse)\>
 
 Contract class of compiled contract
 
@@ -499,7 +499,7 @@ Contract class of compiled contract
 
 ### getClassHashAt
 
-▸ **getClassHashAt**(`contractAddress`, `blockIdentifier?`): `Promise`<`string`\>
+▸ **getClassHashAt**(`contractAddress`, `blockIdentifier?`): `Promise`\<`string`\>
 
 Returns the contract class hash in the given block for the contract deployed at the given address
 
@@ -512,7 +512,7 @@ Returns the contract class hash in the given block for the contract deployed at 
 
 #### Returns
 
-`Promise`<`string`\>
+`Promise`\<`string`\>
 
 Class hash
 
@@ -528,7 +528,7 @@ Class hash
 
 ### getClassByHash
 
-▸ **getClassByHash**(`classHash`, `blockIdentifier?`): `Promise`<[`ContractClassResponse`](../namespaces/types.md#contractclassresponse)\>
+▸ **getClassByHash**(`classHash`, `blockIdentifier?`): `Promise`\<[`ContractClassResponse`](../namespaces/types.md#contractclassresponse)\>
 
 Returns the contract class deployed under the given class hash.
 
@@ -541,7 +541,7 @@ Returns the contract class deployed under the given class hash.
 
 #### Returns
 
-`Promise`<[`ContractClassResponse`](../namespaces/types.md#contractclassresponse)\>
+`Promise`\<[`ContractClassResponse`](../namespaces/types.md#contractclassresponse)\>
 
 Contract class of compiled contract
 
@@ -557,7 +557,7 @@ Contract class of compiled contract
 
 ### getCompiledClassByClassHash
 
-▸ **getCompiledClassByClassHash**(`classHash`, `blockIdentifier?`): `Promise`<[`CairoAssembly`](../namespaces/types.md#cairoassembly)\>
+▸ **getCompiledClassByClassHash**(`classHash`, `blockIdentifier?`): `Promise`\<[`CairoAssembly`](../namespaces/types.md#cairoassembly)\>
 
 #### Parameters
 
@@ -568,7 +568,7 @@ Contract class of compiled contract
 
 #### Returns
 
-`Promise`<[`CairoAssembly`](../namespaces/types.md#cairoassembly)\>
+`Promise`\<[`CairoAssembly`](../namespaces/types.md#cairoassembly)\>
 
 #### Defined in
 
@@ -578,7 +578,7 @@ Contract class of compiled contract
 
 ### getContractVersion
 
-▸ **getContractVersion**(`contractAddress`, `classHash?`, `options?`): `Promise`<[`ContractVersion`](../namespaces/types.md#contractversion)\>
+▸ **getContractVersion**(`contractAddress`, `classHash?`, `options?`): `Promise`\<[`ContractVersion`](../namespaces/types.md#contractversion)\>
 
 Gets the contract version from the provided address
 
@@ -592,7 +592,7 @@ Gets the contract version from the provided address
 
 #### Returns
 
-`Promise`<[`ContractVersion`](../namespaces/types.md#contractversion)\>
+`Promise`\<[`ContractVersion`](../namespaces/types.md#contractversion)\>
 
 #### Implementation of
 
@@ -602,7 +602,7 @@ Gets the contract version from the provided address
 
 [src/provider/sequencer.ts:351](https://github.com/starknet-io/starknet.js/blob/v5.24.3/src/provider/sequencer.ts#L351)
 
-▸ **getContractVersion**(`contractAddress`, `classHash`, `options?`): `Promise`<[`ContractVersion`](../namespaces/types.md#contractversion)\>
+▸ **getContractVersion**(`contractAddress`, `classHash`, `options?`): `Promise`\<[`ContractVersion`](../namespaces/types.md#contractversion)\>
 
 Gets the contract version from the provided address
 
@@ -616,7 +616,7 @@ Gets the contract version from the provided address
 
 #### Returns
 
-`Promise`<[`ContractVersion`](../namespaces/types.md#contractversion)\>
+`Promise`\<[`ContractVersion`](../namespaces/types.md#contractversion)\>
 
 #### Implementation of
 
@@ -630,7 +630,7 @@ Gets the contract version from the provided address
 
 ### invokeFunction
 
-▸ **invokeFunction**(`functionInvocation`, `details`): `Promise`<[`InvokeFunctionResponse`](../interfaces/types.InvokeFunctionResponse.md)\>
+▸ **invokeFunction**(`functionInvocation`, `details`): `Promise`\<[`InvokeFunctionResponse`](../interfaces/types.InvokeFunctionResponse.md)\>
 
 Invokes a function on starknet
 
@@ -647,7 +647,7 @@ This method won't be supported as soon as fees are mandatory. Should not be used
 
 #### Returns
 
-`Promise`<[`InvokeFunctionResponse`](../interfaces/types.InvokeFunctionResponse.md)\>
+`Promise`\<[`InvokeFunctionResponse`](../interfaces/types.InvokeFunctionResponse.md)\>
 
 response from addTransaction
 
@@ -663,7 +663,7 @@ response from addTransaction
 
 ### deployAccountContract
 
-▸ **deployAccountContract**(`«destructured»`, `details`): `Promise`<[`DeployContractResponse`](../interfaces/types.DeployContractResponse.md)\>
+▸ **deployAccountContract**(`«destructured»`, `details`): `Promise`\<[`DeployContractResponse`](../interfaces/types.DeployContractResponse.md)\>
 
 Deploys a given compiled Account contract (json) to starknet
 
@@ -676,7 +676,7 @@ Deploys a given compiled Account contract (json) to starknet
 
 #### Returns
 
-`Promise`<[`DeployContractResponse`](../interfaces/types.DeployContractResponse.md)\>
+`Promise`\<[`DeployContractResponse`](../interfaces/types.DeployContractResponse.md)\>
 
 a confirmation of sending a transaction on the starknet contract
 
@@ -692,7 +692,7 @@ a confirmation of sending a transaction on the starknet contract
 
 ### declareContract
 
-▸ **declareContract**(`«destructured»`, `details`): `Promise`<[`DeclareContractResponse`](../interfaces/types.DeclareContractResponse.md)\>
+▸ **declareContract**(`«destructured»`, `details`): `Promise`\<[`DeclareContractResponse`](../interfaces/types.DeclareContractResponse.md)\>
 
 Declares a given compiled contract (json) to starknet
 
@@ -705,7 +705,7 @@ Declares a given compiled contract (json) to starknet
 
 #### Returns
 
-`Promise`<[`DeclareContractResponse`](../interfaces/types.DeclareContractResponse.md)\>
+`Promise`\<[`DeclareContractResponse`](../interfaces/types.DeclareContractResponse.md)\>
 
 a confirmation of sending a transaction on the starknet contract
 
@@ -721,7 +721,7 @@ a confirmation of sending a transaction on the starknet contract
 
 ### getEstimateFee
 
-▸ **getEstimateFee**(`invocation`, `invocationDetails`, `blockIdentifier?`, `skipValidate?`): `Promise`<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
+▸ **getEstimateFee**(`invocation`, `invocationDetails`, `blockIdentifier?`, `skipValidate?`): `Promise`\<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
 
 Estimates the fee for a given INVOKE transaction
 
@@ -740,7 +740,7 @@ Please use getInvokeEstimateFee or getDeclareEstimateFee instead. Should not be 
 
 #### Returns
 
-`Promise`<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
+`Promise`\<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
 
 the estimated fee
 
@@ -756,7 +756,7 @@ the estimated fee
 
 ### getInvokeEstimateFee
 
-▸ **getInvokeEstimateFee**(`invocation`, `invocationDetails`, `blockIdentifier?`, `skipValidate?`): `Promise`<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
+▸ **getInvokeEstimateFee**(`invocation`, `invocationDetails`, `blockIdentifier?`, `skipValidate?`): `Promise`\<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
 
 Estimates the fee for a given INVOKE transaction
 
@@ -771,7 +771,7 @@ Estimates the fee for a given INVOKE transaction
 
 #### Returns
 
-`Promise`<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
+`Promise`\<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
 
 the estimated fee
 
@@ -787,7 +787,7 @@ the estimated fee
 
 ### getDeclareEstimateFee
 
-▸ **getDeclareEstimateFee**(`invocation`, `details`, `blockIdentifier?`, `skipValidate?`): `Promise`<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
+▸ **getDeclareEstimateFee**(`invocation`, `details`, `blockIdentifier?`, `skipValidate?`): `Promise`\<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
 
 Estimates the fee for a given DECLARE transaction
 
@@ -802,7 +802,7 @@ Estimates the fee for a given DECLARE transaction
 
 #### Returns
 
-`Promise`<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
+`Promise`\<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
 
 the estimated fee
 
@@ -818,7 +818,7 @@ the estimated fee
 
 ### getDeployAccountEstimateFee
 
-▸ **getDeployAccountEstimateFee**(`invocation`, `details`, `blockIdentifier?`, `skipValidate?`): `Promise`<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
+▸ **getDeployAccountEstimateFee**(`invocation`, `details`, `blockIdentifier?`, `skipValidate?`): `Promise`\<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
 
 Estimates the fee for a given DEPLOY_ACCOUNT transaction
 
@@ -833,7 +833,7 @@ Estimates the fee for a given DEPLOY_ACCOUNT transaction
 
 #### Returns
 
-`Promise`<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
+`Promise`\<[`EstimateFeeResponse`](../interfaces/types.EstimateFeeResponse.md)\>
 
 the estimated fee
 
@@ -849,7 +849,7 @@ the estimated fee
 
 ### getEstimateFeeBulk
 
-▸ **getEstimateFeeBulk**(`invocations`, `«destructured»`): `Promise`<[`EstimateFeeResponseBulk`](../namespaces/types.md#estimatefeeresponsebulk)\>
+▸ **getEstimateFeeBulk**(`invocations`, `«destructured»`): `Promise`\<[`EstimateFeeResponseBulk`](../namespaces/types.md#estimatefeeresponsebulk)\>
 
 Estimates the fee for a list of INVOKE transaction
 
@@ -862,7 +862,7 @@ Estimates the fee for a list of INVOKE transaction
 
 #### Returns
 
-`Promise`<[`EstimateFeeResponseBulk`](../namespaces/types.md#estimatefeeresponsebulk)\>
+`Promise`\<[`EstimateFeeResponseBulk`](../namespaces/types.md#estimatefeeresponsebulk)\>
 
 the estimated fee
 
@@ -878,7 +878,7 @@ the estimated fee
 
 ### getCode
 
-▸ **getCode**(`contractAddress`, `blockIdentifier?`): `Promise`<[`GetCodeResponse`](../namespaces/types.Sequencer.md#getcoderesponse)\>
+▸ **getCode**(`contractAddress`, `blockIdentifier?`): `Promise`\<[`GetCodeResponse`](../namespaces/types.Sequencer.md#getcoderesponse)\>
 
 **`Deprecated`**
 
@@ -893,7 +893,7 @@ The method should not be used
 
 #### Returns
 
-`Promise`<[`GetCodeResponse`](../namespaces/types.Sequencer.md#getcoderesponse)\>
+`Promise`\<[`GetCodeResponse`](../namespaces/types.Sequencer.md#getcoderesponse)\>
 
 #### Implementation of
 
@@ -907,7 +907,7 @@ The method should not be used
 
 ### waitForTransaction
 
-▸ **waitForTransaction**(`txHash`, `options?`): `Promise`<[`GetTransactionReceiptResponse`](../namespaces/types.md#gettransactionreceiptresponse)\>
+▸ **waitForTransaction**(`txHash`, `options?`): `Promise`\<[`GetTransactionReceiptResponse`](../namespaces/types.md#gettransactionreceiptresponse)\>
 
 Wait for the transaction to be accepted
 
@@ -920,7 +920,7 @@ Wait for the transaction to be accepted
 
 #### Returns
 
-`Promise`<[`GetTransactionReceiptResponse`](../namespaces/types.md#gettransactionreceiptresponse)\>
+`Promise`\<[`GetTransactionReceiptResponse`](../namespaces/types.md#gettransactionreceiptresponse)\>
 
 GetTransactionReceiptResponse
 
@@ -936,7 +936,7 @@ GetTransactionReceiptResponse
 
 ### getTransactionStatus
 
-▸ **getTransactionStatus**(`txHash`): `Promise`<[`GetTransactionStatusResponse`](../namespaces/types.md#gettransactionstatusresponse)\>
+▸ **getTransactionStatus**(`txHash`): `Promise`\<[`GetTransactionStatusResponse`](../namespaces/types.md#gettransactionstatusresponse)\>
 
 Gets the status of a transaction.
 
@@ -948,7 +948,7 @@ Gets the status of a transaction.
 
 #### Returns
 
-`Promise`<[`GetTransactionStatusResponse`](../namespaces/types.md#gettransactionstatusresponse)\>
+`Promise`\<[`GetTransactionStatusResponse`](../namespaces/types.md#gettransactionstatusresponse)\>
 
 GetTransactionStatusResponse - the transaction status object
 
@@ -960,13 +960,13 @@ GetTransactionStatusResponse - the transaction status object
 
 ### getContractAddresses
 
-▸ **getContractAddresses**(): `Promise`<[`GetContractAddressesResponse`](../namespaces/types.md#getcontractaddressesresponse)\>
+▸ **getContractAddresses**(): `Promise`\<[`GetContractAddressesResponse`](../namespaces/types.md#getcontractaddressesresponse)\>
 
 Gets the smart contract address on the goerli testnet.
 
 #### Returns
 
-`Promise`<[`GetContractAddressesResponse`](../namespaces/types.md#getcontractaddressesresponse)\>
+`Promise`\<[`GetContractAddressesResponse`](../namespaces/types.md#getcontractaddressesresponse)\>
 
 GetContractAddressesResponse - starknet smart contract addresses
 
@@ -978,7 +978,7 @@ GetContractAddressesResponse - starknet smart contract addresses
 
 ### getTransactionTrace
 
-▸ **getTransactionTrace**(`txHash`): `Promise`<[`TransactionTraceResponse`](../namespaces/types.Sequencer.md#transactiontraceresponse)\>
+▸ **getTransactionTrace**(`txHash`): `Promise`\<[`TransactionTraceResponse`](../namespaces/types.Sequencer.md#transactiontraceresponse)\>
 
 Gets the transaction trace from a tx id.
 
@@ -990,7 +990,7 @@ Gets the transaction trace from a tx id.
 
 #### Returns
 
-`Promise`<[`TransactionTraceResponse`](../namespaces/types.Sequencer.md#transactiontraceresponse)\>
+`Promise`\<[`TransactionTraceResponse`](../namespaces/types.Sequencer.md#transactiontraceresponse)\>
 
 TransactionTraceResponse - the transaction trace
 
@@ -1002,7 +1002,7 @@ TransactionTraceResponse - the transaction trace
 
 ### estimateMessageFee
 
-▸ **estimateMessageFee**(`«destructured»`, `blockIdentifier?`): `Promise`<[`EstimateFeeResponse`](../namespaces/types.Sequencer.md#estimatefeeresponse)\>
+▸ **estimateMessageFee**(`«destructured»`, `blockIdentifier?`): `Promise`\<[`EstimateFeeResponse`](../namespaces/types.Sequencer.md#estimatefeeresponse)\>
 
 #### Parameters
 
@@ -1013,7 +1013,7 @@ TransactionTraceResponse - the transaction trace
 
 #### Returns
 
-`Promise`<[`EstimateFeeResponse`](../namespaces/types.Sequencer.md#estimatefeeresponse)\>
+`Promise`\<[`EstimateFeeResponse`](../namespaces/types.Sequencer.md#estimatefeeresponse)\>
 
 #### Defined in
 
@@ -1023,7 +1023,7 @@ TransactionTraceResponse - the transaction trace
 
 ### getSimulateTransaction
 
-▸ **getSimulateTransaction**(`invocations`, `«destructured»`): `Promise`<[`SimulateTransactionResponse`](../namespaces/types.md#simulatetransactionresponse)\>
+▸ **getSimulateTransaction**(`invocations`, `«destructured»`): `Promise`\<[`SimulateTransactionResponse`](../namespaces/types.md#simulatetransactionresponse)\>
 
 Simulate transaction using Sequencer provider
 WARNING!: Sequencer will process only first element from invocations array
@@ -1037,7 +1037,7 @@ WARNING!: Sequencer will process only first element from invocations array
 
 #### Returns
 
-`Promise`<[`SimulateTransactionResponse`](../namespaces/types.md#simulatetransactionresponse)\>
+`Promise`\<[`SimulateTransactionResponse`](../namespaces/types.md#simulatetransactionresponse)\>
 
 #### Implementation of
 
@@ -1051,7 +1051,7 @@ WARNING!: Sequencer will process only first element from invocations array
 
 ### getStateUpdate
 
-▸ **getStateUpdate**(`blockIdentifier?`): `Promise`<[`StateUpdateResponse`](../interfaces/types.StateUpdateResponse.md)\>
+▸ **getStateUpdate**(`blockIdentifier?`): `Promise`\<[`StateUpdateResponse`](../interfaces/types.StateUpdateResponse.md)\>
 
 Gets the state changes in a specific block (result of executing the requested block)
 
@@ -1063,7 +1063,7 @@ Gets the state changes in a specific block (result of executing the requested bl
 
 #### Returns
 
-`Promise`<[`StateUpdateResponse`](../interfaces/types.StateUpdateResponse.md)\>
+`Promise`\<[`StateUpdateResponse`](../interfaces/types.StateUpdateResponse.md)\>
 
 StateUpdateResponse
 
@@ -1079,7 +1079,7 @@ StateUpdateResponse
 
 ### getBlockTraces
 
-▸ **getBlockTraces**(`blockIdentifier?`): `Promise`<[`BlockTransactionTracesResponse`](../namespaces/types.Sequencer.md#blocktransactiontracesresponse)\>
+▸ **getBlockTraces**(`blockIdentifier?`): `Promise`\<[`BlockTransactionTracesResponse`](../namespaces/types.Sequencer.md#blocktransactiontracesresponse)\>
 
 #### Parameters
 
@@ -1089,7 +1089,7 @@ StateUpdateResponse
 
 #### Returns
 
-`Promise`<[`BlockTransactionTracesResponse`](../namespaces/types.Sequencer.md#blocktransactiontracesresponse)\>
+`Promise`\<[`BlockTransactionTracesResponse`](../namespaces/types.Sequencer.md#blocktransactiontracesresponse)\>
 
 #### Defined in
 
@@ -1099,7 +1099,7 @@ StateUpdateResponse
 
 ### getStarkName
 
-▸ **getStarkName**(`address`, `StarknetIdContract?`): `Promise`<`string`\>
+▸ **getStarkName**(`address`, `StarknetIdContract?`): `Promise`\<`string`\>
 
 #### Parameters
 
@@ -1110,7 +1110,7 @@ StateUpdateResponse
 
 #### Returns
 
-`Promise`<`string`\>
+`Promise`\<`string`\>
 
 #### Defined in
 
@@ -1120,7 +1120,7 @@ StateUpdateResponse
 
 ### getAddressFromStarkName
 
-▸ **getAddressFromStarkName**(`name`, `StarknetIdContract?`): `Promise`<`string`\>
+▸ **getAddressFromStarkName**(`name`, `StarknetIdContract?`): `Promise`\<`string`\>
 
 #### Parameters
 
@@ -1131,7 +1131,7 @@ StateUpdateResponse
 
 #### Returns
 
-`Promise`<`string`\>
+`Promise`\<`string`\>
 
 #### Defined in
 

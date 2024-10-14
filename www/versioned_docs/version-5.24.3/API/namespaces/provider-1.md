@@ -10,7 +10,7 @@ custom_edit_url: null
 
 ### wait
 
-▸ **wait**(`delay`): `Promise`<`unknown`\>
+▸ **wait**(`delay`): `Promise`\<`unknown`\>
 
 Helper - Async Sleep for 'delay' time
 
@@ -22,7 +22,7 @@ Helper - Async Sleep for 'delay' time
 
 #### Returns
 
-`Promise`<`unknown`\>
+`Promise`\<`unknown`\>
 
 #### Defined in
 

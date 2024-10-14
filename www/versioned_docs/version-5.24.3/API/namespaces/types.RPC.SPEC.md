@@ -295,7 +295,7 @@ READ API
 
 ### EMITTED_EVENT
 
-Ƭ **EMITTED_EVENT**: [`EVENT`](types.RPC.SPEC.md#event) & { `block_hash`: [`BLOCK_HASH`](types.RPC.SPEC.md#block_hash) ; `block_number`: [`BLOCK_NUMBER`](types.RPC.SPEC.md#block_number) ; `transaction_hash`: [`TXN_HASH`](types.RPC.SPEC.md#txn_hash) }
+Ƭ **EMITTED_EVENT**: [`EVENT`](types.RPC.SPEC.md#event) & \{ `block_hash`: [`BLOCK_HASH`](types.RPC.SPEC.md#block_hash) ; `block_number`: [`BLOCK_NUMBER`](types.RPC.SPEC.md#block_number) ; `transaction_hash`: [`TXN_HASH`](types.RPC.SPEC.md#txn_hash) \}
 
 #### Defined in
 
@@ -305,7 +305,7 @@ READ API
 
 ### EVENT
 
-Ƭ **EVENT**: { `from_address`: [`ADDRESS`](types.RPC.SPEC.md#address) } & [`EVENT_CONTENT`](types.RPC.SPEC.md#event_content)
+Ƭ **EVENT**: \{ `from_address`: [`ADDRESS`](types.RPC.SPEC.md#address) \} & [`EVENT_CONTENT`](types.RPC.SPEC.md#event_content)
 
 #### Defined in
 
@@ -351,7 +351,7 @@ READ API
 
 ### BLOCK_ID
 
-Ƭ **BLOCK_ID**: { `block_hash?`: [`BLOCK_HASH`](types.RPC.SPEC.md#block_hash) ; `block_number?`: [`BLOCK_NUMBER`](types.RPC.SPEC.md#block_number) } \| [`BLOCK_TAG`](types.RPC.SPEC.md#block_tag)
+Ƭ **BLOCK_ID**: \{ `block_hash?`: [`BLOCK_HASH`](types.RPC.SPEC.md#block_hash) ; `block_number?`: [`BLOCK_NUMBER`](types.RPC.SPEC.md#block_number) \} \| [`BLOCK_TAG`](types.RPC.SPEC.md#block_tag)
 
 #### Defined in
 
@@ -510,9 +510,9 @@ READ API
 
 #### Type declaration
 
-| Name           | Type                                                                                                               |
-| :------------- | :----------------------------------------------------------------------------------------------------------------- |
-| `transactions` | { `transaction`: [`TXN`](types.RPC.SPEC.md#txn) ; `transaction_hash`: [`TXN_HASH`](types.RPC.SPEC.md#txn_hash) }[] |
+| Name           | Type                                                                                                                 |
+| :------------- | :------------------------------------------------------------------------------------------------------------------- |
+| `transactions` | \{ `transaction`: [`TXN`](types.RPC.SPEC.md#txn) ; `transaction_hash`: [`TXN_HASH`](types.RPC.SPEC.md#txn_hash) \}[] |
 
 #### Defined in
 
@@ -565,7 +565,7 @@ READ API
 
 ### BLOCK_WITH_TX_HASHES
 
-Ƭ **BLOCK_WITH_TX_HASHES**: { `status`: [`BLOCK_STATUS`](types.RPC.SPEC.md#block_status) } & [`BLOCK_HEADER`](types.RPC.SPEC.md#block_header) & [`BLOCK_BODY_WITH_TX_HASHES`](types.RPC.SPEC.md#block_body_with_tx_hashes)
+Ƭ **BLOCK_WITH_TX_HASHES**: \{ `status`: [`BLOCK_STATUS`](types.RPC.SPEC.md#block_status) \} & [`BLOCK_HEADER`](types.RPC.SPEC.md#block_header) & [`BLOCK_BODY_WITH_TX_HASHES`](types.RPC.SPEC.md#block_body_with_tx_hashes)
 
 #### Defined in
 
@@ -575,7 +575,7 @@ READ API
 
 ### BLOCK_WITH_TXS
 
-Ƭ **BLOCK_WITH_TXS**: { `status`: [`BLOCK_STATUS`](types.RPC.SPEC.md#block_status) } & [`BLOCK_HEADER`](types.RPC.SPEC.md#block_header) & [`BLOCK_BODY_WITH_TXS`](types.RPC.SPEC.md#block_body_with_txs)
+Ƭ **BLOCK_WITH_TXS**: \{ `status`: [`BLOCK_STATUS`](types.RPC.SPEC.md#block_status) \} & [`BLOCK_HEADER`](types.RPC.SPEC.md#block_header) & [`BLOCK_BODY_WITH_TXS`](types.RPC.SPEC.md#block_body_with_txs)
 
 #### Defined in
 
@@ -934,7 +934,7 @@ READ API
 
 ### L1_HANDLER_TXN
 
-Ƭ **L1_HANDLER_TXN**: { `version`: [`NUM_AS_HEX`](types.RPC.SPEC.md#num_as_hex) ; `type`: `"L1_HANDLER"` ; `nonce`: [`NUM_AS_HEX`](types.RPC.SPEC.md#num_as_hex) } & [`FUNCTION_CALL`](types.RPC.SPEC.md#function_call)
+Ƭ **L1_HANDLER_TXN**: \{ `version`: [`NUM_AS_HEX`](types.RPC.SPEC.md#num_as_hex) ; `type`: `"L1_HANDLER"` ; `nonce`: [`NUM_AS_HEX`](types.RPC.SPEC.md#num_as_hex) \} & [`FUNCTION_CALL`](types.RPC.SPEC.md#function_call)
 
 #### Defined in
 
@@ -993,7 +993,7 @@ READ API
 
 ### INVOKE_TXN_RECEIPT
 
-Ƭ **INVOKE_TXN_RECEIPT**: { `type`: `"INVOKE"` } & [`COMMON_RECEIPT_PROPERTIES`](types.RPC.SPEC.md#common_receipt_properties)
+Ƭ **INVOKE_TXN_RECEIPT**: \{ `type`: `"INVOKE"` \} & [`COMMON_RECEIPT_PROPERTIES`](types.RPC.SPEC.md#common_receipt_properties)
 
 #### Defined in
 
@@ -1003,7 +1003,7 @@ READ API
 
 ### PENDING_INVOKE_TXN_RECEIPT
 
-Ƭ **PENDING_INVOKE_TXN_RECEIPT**: { `type`: `"INVOKE"` } & [`PENDING_COMMON_RECEIPT_PROPERTIES`](types.RPC.SPEC.md#pending_common_receipt_properties)
+Ƭ **PENDING_INVOKE_TXN_RECEIPT**: \{ `type`: `"INVOKE"` \} & [`PENDING_COMMON_RECEIPT_PROPERTIES`](types.RPC.SPEC.md#pending_common_receipt_properties)
 
 #### Defined in
 
@@ -1013,7 +1013,7 @@ READ API
 
 ### DECLARE_TXN_RECEIPT
 
-Ƭ **DECLARE_TXN_RECEIPT**: { `type`: `"DECLARE"` } & [`COMMON_RECEIPT_PROPERTIES`](types.RPC.SPEC.md#common_receipt_properties)
+Ƭ **DECLARE_TXN_RECEIPT**: \{ `type`: `"DECLARE"` \} & [`COMMON_RECEIPT_PROPERTIES`](types.RPC.SPEC.md#common_receipt_properties)
 
 #### Defined in
 
@@ -1023,7 +1023,7 @@ READ API
 
 ### PENDING_DECLARE_TXN_RECEIPT
 
-Ƭ **PENDING_DECLARE_TXN_RECEIPT**: { `type`: `"DECLARE"` } & [`PENDING_COMMON_RECEIPT_PROPERTIES`](types.RPC.SPEC.md#pending_common_receipt_properties)
+Ƭ **PENDING_DECLARE_TXN_RECEIPT**: \{ `type`: `"DECLARE"` \} & [`PENDING_COMMON_RECEIPT_PROPERTIES`](types.RPC.SPEC.md#pending_common_receipt_properties)
 
 #### Defined in
 
@@ -1033,7 +1033,7 @@ READ API
 
 ### DEPLOY_ACCOUNT_TXN_RECEIPT
 
-Ƭ **DEPLOY_ACCOUNT_TXN_RECEIPT**: { `type`: `"DEPLOY_ACCOUNT"` ; `contract_address`: [`FELT`](types.RPC.SPEC.md#felt) } & [`COMMON_RECEIPT_PROPERTIES`](types.RPC.SPEC.md#common_receipt_properties)
+Ƭ **DEPLOY_ACCOUNT_TXN_RECEIPT**: \{ `type`: `"DEPLOY_ACCOUNT"` ; `contract_address`: [`FELT`](types.RPC.SPEC.md#felt) \} & [`COMMON_RECEIPT_PROPERTIES`](types.RPC.SPEC.md#common_receipt_properties)
 
 #### Defined in
 
@@ -1043,7 +1043,7 @@ READ API
 
 ### PENDING_DEPLOY_ACCOUNT_TXN_RECEIPT
 
-Ƭ **PENDING_DEPLOY_ACCOUNT_TXN_RECEIPT**: { `type`: `"DEPLOY_ACCOUNT"` ; `contract_address`: [`FELT`](types.RPC.SPEC.md#felt) } & [`PENDING_COMMON_RECEIPT_PROPERTIES`](types.RPC.SPEC.md#pending_common_receipt_properties)
+Ƭ **PENDING_DEPLOY_ACCOUNT_TXN_RECEIPT**: \{ `type`: `"DEPLOY_ACCOUNT"` ; `contract_address`: [`FELT`](types.RPC.SPEC.md#felt) \} & [`PENDING_COMMON_RECEIPT_PROPERTIES`](types.RPC.SPEC.md#pending_common_receipt_properties)
 
 #### Defined in
 
@@ -1053,7 +1053,7 @@ READ API
 
 ### DEPLOY_TXN_RECEIPT
 
-Ƭ **DEPLOY_TXN_RECEIPT**: { `type`: `"DEPLOY"` ; `contract_address`: [`FELT`](types.RPC.SPEC.md#felt) } & [`COMMON_RECEIPT_PROPERTIES`](types.RPC.SPEC.md#common_receipt_properties)
+Ƭ **DEPLOY_TXN_RECEIPT**: \{ `type`: `"DEPLOY"` ; `contract_address`: [`FELT`](types.RPC.SPEC.md#felt) \} & [`COMMON_RECEIPT_PROPERTIES`](types.RPC.SPEC.md#common_receipt_properties)
 
 #### Defined in
 
@@ -1063,7 +1063,7 @@ READ API
 
 ### L1_HANDLER_TXN_RECEIPT
 
-Ƭ **L1_HANDLER_TXN_RECEIPT**: { `type`: `"L1_HANDLER"` ; `message_hash`: [`NUM_AS_HEX`](types.RPC.SPEC.md#num_as_hex) } & [`COMMON_RECEIPT_PROPERTIES`](types.RPC.SPEC.md#common_receipt_properties)
+Ƭ **L1_HANDLER_TXN_RECEIPT**: \{ `type`: `"L1_HANDLER"` ; `message_hash`: [`NUM_AS_HEX`](types.RPC.SPEC.md#num_as_hex) \} & [`COMMON_RECEIPT_PROPERTIES`](types.RPC.SPEC.md#common_receipt_properties)
 
 #### Defined in
 
@@ -1073,7 +1073,7 @@ READ API
 
 ### PENDING_L1_HANDLER_TXN_RECEIPT
 
-Ƭ **PENDING_L1_HANDLER_TXN_RECEIPT**: { `type`: `"L1_HANDLER"` ; `message_hash`: [`NUM_AS_HEX`](types.RPC.SPEC.md#num_as_hex) } & [`PENDING_COMMON_RECEIPT_PROPERTIES`](types.RPC.SPEC.md#pending_common_receipt_properties)
+Ƭ **PENDING_L1_HANDLER_TXN_RECEIPT**: \{ `type`: `"L1_HANDLER"` ; `message_hash`: [`NUM_AS_HEX`](types.RPC.SPEC.md#num_as_hex) \} & [`PENDING_COMMON_RECEIPT_PROPERTIES`](types.RPC.SPEC.md#pending_common_receipt_properties)
 
 #### Defined in
 
@@ -1162,15 +1162,15 @@ READ API
 
 #### Type declaration
 
-| Name                               | Type                                                                                                                                                                                                                                          |
-| :--------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `sierra_program`                   | [`FELT`](types.RPC.SPEC.md#felt)[]                                                                                                                                                                                                            |
-| `contract_class_version`           | `string`                                                                                                                                                                                                                                      |
-| `entry_points_by_type`             | { `CONSTRUCTOR`: [`SIERRA_ENTRY_POINT`](types.RPC.SPEC.md#sierra_entry_point)[] ; `EXTERNAL`: [`SIERRA_ENTRY_POINT`](types.RPC.SPEC.md#sierra_entry_point)[] ; `L1_HANDLER`: [`SIERRA_ENTRY_POINT`](types.RPC.SPEC.md#sierra_entry_point)[] } |
-| `entry_points_by_type.CONSTRUCTOR` | [`SIERRA_ENTRY_POINT`](types.RPC.SPEC.md#sierra_entry_point)[]                                                                                                                                                                                |
-| `entry_points_by_type.EXTERNAL`    | [`SIERRA_ENTRY_POINT`](types.RPC.SPEC.md#sierra_entry_point)[]                                                                                                                                                                                |
-| `entry_points_by_type.L1_HANDLER`  | [`SIERRA_ENTRY_POINT`](types.RPC.SPEC.md#sierra_entry_point)[]                                                                                                                                                                                |
-| `abi`                              | `string`                                                                                                                                                                                                                                      |
+| Name                               | Type                                                                                                                                                                                                                                            |
+| :--------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `sierra_program`                   | [`FELT`](types.RPC.SPEC.md#felt)[]                                                                                                                                                                                                              |
+| `contract_class_version`           | `string`                                                                                                                                                                                                                                        |
+| `entry_points_by_type`             | \{ `CONSTRUCTOR`: [`SIERRA_ENTRY_POINT`](types.RPC.SPEC.md#sierra_entry_point)[] ; `EXTERNAL`: [`SIERRA_ENTRY_POINT`](types.RPC.SPEC.md#sierra_entry_point)[] ; `L1_HANDLER`: [`SIERRA_ENTRY_POINT`](types.RPC.SPEC.md#sierra_entry_point)[] \} |
+| `entry_points_by_type.CONSTRUCTOR` | [`SIERRA_ENTRY_POINT`](types.RPC.SPEC.md#sierra_entry_point)[]                                                                                                                                                                                  |
+| `entry_points_by_type.EXTERNAL`    | [`SIERRA_ENTRY_POINT`](types.RPC.SPEC.md#sierra_entry_point)[]                                                                                                                                                                                  |
+| `entry_points_by_type.L1_HANDLER`  | [`SIERRA_ENTRY_POINT`](types.RPC.SPEC.md#sierra_entry_point)[]                                                                                                                                                                                  |
+| `abi`                              | `string`                                                                                                                                                                                                                                        |
 
 #### Defined in
 
@@ -1184,14 +1184,14 @@ READ API
 
 #### Type declaration
 
-| Name                               | Type                                                                                                                                                                                                                                                                                                      |
-| :--------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `program`                          | `string`                                                                                                                                                                                                                                                                                                  |
-| `entry_points_by_type`             | { `CONSTRUCTOR`: [`DEPRECATED_CAIRO_ENTRY_POINT`](types.RPC.SPEC.md#deprecated_cairo_entry_point)[] ; `EXTERNAL`: [`DEPRECATED_CAIRO_ENTRY_POINT`](types.RPC.SPEC.md#deprecated_cairo_entry_point)[] ; `L1_HANDLER`: [`DEPRECATED_CAIRO_ENTRY_POINT`](types.RPC.SPEC.md#deprecated_cairo_entry_point)[] } |
-| `entry_points_by_type.CONSTRUCTOR` | [`DEPRECATED_CAIRO_ENTRY_POINT`](types.RPC.SPEC.md#deprecated_cairo_entry_point)[]                                                                                                                                                                                                                        |
-| `entry_points_by_type.EXTERNAL`    | [`DEPRECATED_CAIRO_ENTRY_POINT`](types.RPC.SPEC.md#deprecated_cairo_entry_point)[]                                                                                                                                                                                                                        |
-| `entry_points_by_type.L1_HANDLER`  | [`DEPRECATED_CAIRO_ENTRY_POINT`](types.RPC.SPEC.md#deprecated_cairo_entry_point)[]                                                                                                                                                                                                                        |
-| `abi`                              | [`CONTRACT_ABI`](types.RPC.SPEC.md#contract_abi)                                                                                                                                                                                                                                                          |
+| Name                               | Type                                                                                                                                                                                                                                                                                                        |
+| :--------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `program`                          | `string`                                                                                                                                                                                                                                                                                                    |
+| `entry_points_by_type`             | \{ `CONSTRUCTOR`: [`DEPRECATED_CAIRO_ENTRY_POINT`](types.RPC.SPEC.md#deprecated_cairo_entry_point)[] ; `EXTERNAL`: [`DEPRECATED_CAIRO_ENTRY_POINT`](types.RPC.SPEC.md#deprecated_cairo_entry_point)[] ; `L1_HANDLER`: [`DEPRECATED_CAIRO_ENTRY_POINT`](types.RPC.SPEC.md#deprecated_cairo_entry_point)[] \} |
+| `entry_points_by_type.CONSTRUCTOR` | [`DEPRECATED_CAIRO_ENTRY_POINT`](types.RPC.SPEC.md#deprecated_cairo_entry_point)[]                                                                                                                                                                                                                          |
+| `entry_points_by_type.EXTERNAL`    | [`DEPRECATED_CAIRO_ENTRY_POINT`](types.RPC.SPEC.md#deprecated_cairo_entry_point)[]                                                                                                                                                                                                                          |
+| `entry_points_by_type.L1_HANDLER`  | [`DEPRECATED_CAIRO_ENTRY_POINT`](types.RPC.SPEC.md#deprecated_cairo_entry_point)[]                                                                                                                                                                                                                          |
+| `abi`                              | [`CONTRACT_ABI`](types.RPC.SPEC.md#contract_abi)                                                                                                                                                                                                                                                            |
 
 #### Defined in
 
@@ -1282,7 +1282,7 @@ READ API
 
 ### STRUCT_MEMBER
 
-Ƭ **STRUCT_MEMBER**: [`TYPED_PARAMETER`](types.RPC.SPEC.md#typed_parameter) & { `offset`: `number` }
+Ƭ **STRUCT_MEMBER**: [`TYPED_PARAMETER`](types.RPC.SPEC.md#typed_parameter) & \{ `offset`: `number` \}
 
 #### Defined in
 
@@ -1459,13 +1459,13 @@ TRACE API
 
 #### Type declaration
 
-| Name                       | Type                                                                                            |
-| :------------------------- | :---------------------------------------------------------------------------------------------- |
-| `type`                     | `"INVOKE"`                                                                                      |
-| `execute_invocation`       | [`FUNCTION_INVOCATION`](types.RPC.SPEC.md#function_invocation) \| { `revert_reason`: `string` } |
-| `validate_invocation?`     | [`FUNCTION_INVOCATION`](types.RPC.SPEC.md#function_invocation)                                  |
-| `fee_transfer_invocation?` | [`FUNCTION_INVOCATION`](types.RPC.SPEC.md#function_invocation)                                  |
-| `state_diff?`              | [`STATE_DIFF`](types.RPC.SPEC.md#state_diff)                                                    |
+| Name                       | Type                                                                                              |
+| :------------------------- | :------------------------------------------------------------------------------------------------ |
+| `type`                     | `"INVOKE"`                                                                                        |
+| `execute_invocation`       | [`FUNCTION_INVOCATION`](types.RPC.SPEC.md#function_invocation) \| \{ `revert_reason`: `string` \} |
+| `validate_invocation?`     | [`FUNCTION_INVOCATION`](types.RPC.SPEC.md#function_invocation)                                    |
+| `fee_transfer_invocation?` | [`FUNCTION_INVOCATION`](types.RPC.SPEC.md#function_invocation)                                    |
+| `state_diff?`              | [`STATE_DIFF`](types.RPC.SPEC.md#state_diff)                                                      |
 
 #### Defined in
 
