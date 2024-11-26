@@ -137,9 +137,11 @@ describeIfDevnet('Cairo 1 Devnet', () => {
       );
       await account.waitForTransaction(tx.transaction_hash);
 
-      const balance = await cairo1Contract.get_balance({
-        parseResponse: false,
-      });
+      const balance = await cairo1Contract
+        .withOptions({
+          parseResponse: false,
+        })
+        .get_balance();
 
       expect(num.toBigInt(balance[0])).toBe(100n);
     });
@@ -285,9 +287,11 @@ describeIfDevnet('Cairo 1 Devnet', () => {
     test('Cairo 1 more complex structs', async () => {
       const tx = await cairo1Contract.set_bet();
       await account.waitForTransaction(tx.transaction_hash);
-      const status = await cairo1Contract.get_bet(1, {
-        formatResponse: { name: 'string', description: 'string' },
-      });
+      const status = await cairo1Contract
+        .withOptions({
+          formatResponse: { name: 'string', description: 'string' },
+        })
+        .get_bet(1);
 
       const expected = {
         name: 'test',

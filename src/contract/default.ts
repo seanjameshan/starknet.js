@@ -5,8 +5,8 @@ import { ProviderInterface, defaultProvider } from '../provider';
 import {
   Abi,
   AbiEvents,
+  AbiStruct,
   ArgsOrCalldata,
-  ArgsOrCalldataWithOptions,
   AsyncContractFunction,
   Call,
   CallOptions,
@@ -21,7 +21,6 @@ import {
   ParsedEvents,
   RawArgs,
   Result,
-  AbiStruct,
   ValidateType,
 } from '../types';
 import assert from '../utils/assert';
@@ -29,39 +28,23 @@ import { CallData, cairo } from '../utils/calldata';
 import { createAbiParser } from '../utils/calldata/parser';
 import { getAbiEvents, parseEvents as parseRawEvents } from '../utils/events/index';
 import { cleanHex } from '../utils/num';
-import { ContractInterface } from './interface';
 import type { GetTransactionReceiptResponse } from '../utils/transactionReceipt';
+import { ContractInterface } from './interface';
 
 export type TypedContractV2<TAbi extends AbiKanabi> = AbiWanTypedContract<TAbi> & Contract;
-
-export const splitArgsAndOptions = (args: ArgsOrCalldataWithOptions) => {
-  const options = [
-    'blockIdentifier',
-    'parseRequest',
-    'parseResponse',
-    'formatResponse',
-    'maxFee',
-    'nonce',
-    'signature',
-    'addressSalt',
-  ];
-  const lastArg = args[args.length - 1];
-  if (typeof lastArg === 'object' && options.some((x) => x in lastArg)) {
-    return { args: args as ArgsOrCalldata, options: args.pop() as ContractOptions };
-  }
-  return { args: args as ArgsOrCalldata };
-};
 
 /**
  * Adds call methods to the contract
  */
 function buildCall(contract: Contract, functionAbi: FunctionAbi): AsyncContractFunction {
-  return async function (...args: ArgsOrCalldataWithOptions): Promise<any> {
-    const params = splitArgsAndOptions(args);
-    return contract.call(functionAbi.name, params.args, {
+  return async function (...args: ArgsOrCalldata): Promise<any> {
+    const options = { ...contract.contractOptions };
+    // eslint-disable-next-line no-param-reassign
+    contract.contractOptions = undefined;
+    return contract.call(functionAbi.name, args, {
       parseRequest: true,
       parseResponse: true,
-      ...params.options,
+      ...options,
     });
   };
 }
@@ -70,11 +53,13 @@ function buildCall(contract: Contract, functionAbi: FunctionAbi): AsyncContractF
  * Adds invoke methods to the contract
  */
 function buildInvoke(contract: Contract, functionAbi: FunctionAbi): AsyncContractFunction {
-  return async function (...args: Array<any>): Promise<any> {
-    const params = splitArgsAndOptions(args);
-    return contract.invoke(functionAbi.name, params.args, {
+  return async function (...args: ArgsOrCalldata): Promise<any> {
+    const options = { ...contract.contractOptions };
+    // eslint-disable-next-line no-param-reassign
+    contract.contractOptions = undefined;
+    return contract.invoke(functionAbi.name, args, {
       parseRequest: true,
-      ...params.options,
+      ...options,
     });
   };
 }
@@ -140,6 +125,8 @@ export class Contract implements ContractInterface {
 
   private callData: CallData;
 
+  public contractOptions?: ContractOptions;
+
   /**
    * Contract class to handle contract methods
    *
@@ -201,6 +188,11 @@ export class Contract implements ContractInterface {
         });
       }
     });
+  }
+
+  public withOptions(options: ContractOptions) {
+    this.contractOptions = options;
+    return this;
   }
 
   public attach(address: string): void {

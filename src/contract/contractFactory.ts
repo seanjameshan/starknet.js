@@ -1,14 +1,15 @@
 import { AccountInterface } from '../account';
 import {
   Abi,
-  ArgsOrCalldataWithOptions,
+  ArgsOrCalldata,
   CairoAssembly,
   CompiledContract,
+  ContractOptions,
   ValidateType,
 } from '../types';
 import assert from '../utils/assert';
 import { CallData } from '../utils/calldata';
-import { Contract, getCalldata, splitArgsAndOptions } from './default';
+import { Contract, getCalldata } from './default';
 
 export type ContractFactoryParams = {
   compiledContract: CompiledContract;
@@ -17,6 +18,7 @@ export type ContractFactoryParams = {
   classHash?: string;
   compiledClassHash?: string;
   abi?: Abi;
+  contractOptions?: ContractOptions;
 };
 
 export class ContractFactory {
@@ -33,6 +35,8 @@ export class ContractFactory {
   compiledClassHash?: string;
 
   private CallData: CallData;
+
+  public contractOptions?: ContractOptions;
 
   /**
    * @param params CFParams
@@ -51,6 +55,7 @@ export class ContractFactory {
     this.classHash = params.classHash;
     this.compiledClassHash = params.compiledClassHash;
     this.CallData = new CallData(this.abi);
+    this.contractOptions = params.contractOptions;
   }
 
   /**
@@ -58,17 +63,17 @@ export class ContractFactory {
    *
    * If contract is not declared it will first declare it, and then deploy
    */
-  public async deploy(...args: ArgsOrCalldataWithOptions): Promise<Contract> {
-    const { args: param, options = { parseRequest: true } } = splitArgsAndOptions(args);
+  public async deploy(...args: ArgsOrCalldata): Promise<Contract> {
+    // const { args: param, options = { parseRequest: true } } = args; // splitArgsAndOptions(args);
 
-    const constructorCalldata = getCalldata(param, () => {
-      if (options.parseRequest) {
-        this.CallData.validate(ValidateType.DEPLOY, 'constructor', param);
-        return this.CallData.compile('constructor', param);
+    const constructorCalldata = getCalldata(args, () => {
+      if (this.contractOptions?.parseRequest) {
+        this.CallData.validate(ValidateType.DEPLOY, 'constructor', args);
+        return this.CallData.compile('constructor', args);
       }
       // eslint-disable-next-line no-console
       console.warn('Call skipped parsing but provided rawArgs, possible malfunction request');
-      return param;
+      return args;
     });
 
     const {
@@ -79,7 +84,7 @@ export class ContractFactory {
       classHash: this.classHash,
       compiledClassHash: this.compiledClassHash,
       constructorCalldata,
-      salt: options.addressSalt,
+      salt: this.contractOptions?.addressSalt,
     });
     assert(Boolean(contract_address), 'Deployment of the contract failed');
 

@@ -155,11 +155,9 @@ describe('Ethereum signer', () => {
 
     test('ETH account transaction V2', async () => {
       const ethContract2 = new Contract(contracts.Erc20.abi, devnetETHtokenAddress, ethAccount);
-      const respTransfer = await ethContract2.transfer(
-        account.address,
-        cairo.uint256(1 * 10 ** 4),
-        { maxFee: 1 * 10 ** 16 }
-      );
+      const respTransfer = await ethContract2
+        .withOptions({ maxFee: 1 * 10 ** 16 })
+        .transfer(account.address, cairo.uint256(1 * 10 ** 4));
       const txR = await provider.waitForTransaction(respTransfer.transaction_hash);
       if (txR.isSuccess()) {
         expect(txR.execution_status).toBe('SUCCEEDED');
