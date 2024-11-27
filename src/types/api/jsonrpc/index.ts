@@ -23,3 +23,5 @@ export type Error = {
   message: string;
   data?: unknown;
 };
+
+export type WebSocketEvent = Omit<RequestBody, 'id'> & { params: {} };

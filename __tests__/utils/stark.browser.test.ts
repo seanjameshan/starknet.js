@@ -8,9 +8,14 @@ import * as json from '../../src/utils/json';
 
 const { IS_BROWSER } = constants;
 
+// isows has faulty module resolution in the browser emulation environment which prevents test execution
+// it is not required for these tests so removing it with a mock circumvents the issue
+jest.mock('isows', () => jest.fn());
+
 test('isBrowser', () => {
   expect(IS_BROWSER).toBe(true);
 });
+
 describe('compressProgram()', () => {
   // the @noble/curves dependency that is included in this file through utils/stark executes precomputations
   // that rely on TextEncoder. The jsdom environment does not expose TextEncoder and it also overrides

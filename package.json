@@ -69,6 +69,7 @@
     "@types/jest": "^29.5.0",
     "@types/jest-json-schema": "^6.1.1",
     "@types/pako": "^2.0.0",
+    "@types/ws": "^8.5.12",
     "@typescript-eslint/eslint-plugin": "^7.4.0",
     "@typescript-eslint/parser": "^7.4.0",
     "ajv": "^8.12.0",
@@ -104,10 +105,13 @@
     "abi-wan-kanabi": "^2.2.3",
     "fetch-cookie": "^3.0.0",
     "isomorphic-fetch": "^3.0.0",
+    "isows": "^1.0.6",
     "lossless-json": "^4.0.1",
     "pako": "^2.0.4",
     "starknet-types-07": "npm:@starknet-io/types-js@^0.7.7",
-    "ts-mixer": "^6.0.3"
+    "starknet-types-08": "npm:@starknet-io/types-js@0.8.0-beta.4",
+    "ts-mixer": "^6.0.3",
+    "ws": "^8.18.0"
   },
   "lint-staged": {
     "*.ts": "eslint --cache --fix",
