@@ -6,36 +6,47 @@ import { BigNumberish } from '../types';
 import { addHexPrefix, removeHexPrefix } from './encode';
 import { keccakBn } from './hash';
 import { assertInRange, toHex } from './num';
+import { isString } from './typed';
 
 /**
  * Format a hex number to '0x' and 64 characters, adding leading zeros if necessary.
  *
  * @param {BigNumberish} address
- * @returns {string} Hex string : 0x followed by 64 characters. No upper case characters in the response.
+ * @returns {string} Hex string: 0x followed by 64 characters. No upper case characters in the response.
  * @example
  * ```typescript
- * const address = "0x90591d9fa3efc87067d95a643f8455e0b8190eb8cb7bfd39e4fb7571fdf";
- * const result = addAddressPadding(address);
- * // result = "0x0000090591d9fa3efc87067d95a643f8455e0b8190eb8cb7bfd39e4fb7571fdf"
+ * const result = [31, 0x1f, '31', '0x1f', '0x90591d9fa3efc87067d95a643f8455e0b8190eb8cb7bfd39e4fb7571fdf'].map(addAddressPadding);
+ * // result = [
+ * //   '0x000000000000000000000000000000000000000000000000000000000000001f',
+ * //   '0x000000000000000000000000000000000000000000000000000000000000001f',
+ * //   '0x0000000000000000000000000000000000000000000000000000000000000031',
+ * //   '0x000000000000000000000000000000000000000000000000000000000000001f',
+ * //   '0x0000090591d9fa3efc87067d95a643f8455e0b8190eb8cb7bfd39e4fb7571fdf'
+ * // ]
  * ```
  */
 export function addAddressPadding(address: BigNumberish): string {
-  const hex = toHex(addHexPrefix(address.toString()));
+  const hex = toHex(isString(address) ? addHexPrefix(address) : address);
   const padded = removeHexPrefix(hex).padStart(64, '0');
   return addHexPrefix(padded);
 }
 
 /**
- * Check the validity of a Starknet address, and format it as a hex number : '0x' and 64 characters, adding leading zeros if necessary.
+ * Check the validity of a Starknet address, and format it as a hex number: '0x' and 64 characters, adding leading zeros if necessary.
  *
  * @param {BigNumberish} address
- * @returns {string} Hex string : 0x followed by 64 characters. No upper case characters in the response.
+ * @returns {string} Hex string: 0x followed by 64 characters. No upper case characters in the response.
  * @throws address argument must be a valid address inside the address range bound
  * @example
  * ```typescript
- * const address = "0x90591d9fa3efc87067d95a643f8455e0b8190eb8cb7bfd39e4fb7571fdf";
- * const result = validateAndParseAddress(address);
- * // result = "0x0000090591d9fa3efc87067d95a643f8455e0b8190eb8cb7bfd39e4fb7571fdf"
+ * const result = [31, 0x1f, '31', '0x1f', '0x90591d9fa3efc87067d95a643f8455e0b8190eb8cb7bfd39e4fb7571fdf'].map(addAddressPadding);
+ * // result = [
+ * //   '0x000000000000000000000000000000000000000000000000000000000000001f',
+ * //   '0x000000000000000000000000000000000000000000000000000000000000001f',
+ * //   '0x0000000000000000000000000000000000000000000000000000000000000031',
+ * //   '0x000000000000000000000000000000000000000000000000000000000000001f',
+ * //   '0x0000090591d9fa3efc87067d95a643f8455e0b8190eb8cb7bfd39e4fb7571fdf'
+ * // ]
  * ```
  */
 export function validateAndParseAddress(address: BigNumberish): string {

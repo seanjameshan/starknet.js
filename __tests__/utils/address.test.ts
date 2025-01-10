@@ -20,6 +20,22 @@ describe('addAddressPadding', () => {
 
     return expect(addAddressPadding(addr)).toBe(padded);
   });
+
+  test('should pad a number value', () => {
+    const addr1 = 31;
+    const addr2 = 0x1f;
+    const padded = '0x000000000000000000000000000000000000000000000000000000000000001f';
+
+    expect(addAddressPadding(addr1)).toBe(padded);
+    expect(addAddressPadding(addr2)).toBe(padded);
+  });
+
+  test('should pad a bigint value', () => {
+    const addr = constants.ADDR_BOUND;
+    const padded = '0x07ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00';
+
+    expect(addAddressPadding(addr)).toBe(padded);
+  });
 });
 
 describe('validateAndParseAddress', () => {
