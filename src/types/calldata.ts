@@ -18,7 +18,17 @@ export const Uint = {
   u512: 'core::integer::u512', // This one is struct
 } as const;
 
+export const IntVal = {
+  i8: 'core::integer::i8',
+  i16: 'core::integer::i16',
+  i32: 'core::integer::i32',
+  i64: 'core::integer::i64',
+  i128: 'core::integer::i128',
+} as const;
+
 export type Uint = ValuesType<typeof Uint>;
+
+export type IntVal = ValuesType<typeof IntVal>;
 
 export const Literal = {
   ClassHash: 'core::starknet::class_hash::ClassHash',

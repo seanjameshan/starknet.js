@@ -9,6 +9,11 @@ import {
   ParsedStruct,
   Tupled,
 } from '../../types';
+import { CairoInt128 } from '../cairoDataTypes/int128';
+import { CairoInt16 } from '../cairoDataTypes/int16';
+import { CairoInt32 } from '../cairoDataTypes/int32';
+import { CairoInt64 } from '../cairoDataTypes/int64';
+import { CairoInt8 } from '../cairoDataTypes/int8';
 import { CairoUint256 } from '../cairoDataTypes/uint256';
 import { CairoUint512 } from '../cairoDataTypes/uint512';
 import { addHexPrefix, removeHexPrefix } from '../encode';
@@ -53,6 +58,17 @@ function parseBaseTypes(type: string, val: BigNumberish): AllowArray<string> {
       return new CairoUint256(val).toApiRequest();
     case CairoUint512.isAbiType(type):
       return new CairoUint512(val).toApiRequest();
+    case CairoInt8.isAbiType(type):
+      return new CairoInt8(val).toApiRequest();
+    case CairoInt16.isAbiType(type):
+      return new CairoInt16(val).toApiRequest();
+    case CairoInt32.isAbiType(type):
+      return new CairoInt32(val).toApiRequest();
+    case CairoInt64.isAbiType(type):
+      return new CairoInt64(val).toApiRequest();
+    case CairoInt128.isAbiType(type):
+      return new CairoInt128(val).toApiRequest();
+
     case isTypeBytes31(type):
       return encodeShortString(val.toString());
     case isTypeSecp256k1Point(type): {
@@ -178,6 +194,26 @@ function parseCalldataValue(
   // check if u512
   if (CairoUint512.isAbiType(type)) {
     return new CairoUint512(element as any).toApiRequest();
+  }
+  // check if i8
+  if (CairoInt8.isAbiType(type)) {
+    return new CairoInt8(element as any).toApiRequest();
+  }
+  // check if i16
+  if (CairoInt16.isAbiType(type)) {
+    return new CairoInt16(element as any).toApiRequest();
+  }
+  // check if i32
+  if (CairoInt32.isAbiType(type)) {
+    return new CairoInt32(element as any).toApiRequest();
+  }
+  // check if i64
+  if (CairoInt64.isAbiType(type)) {
+    return new CairoInt64(element as any).toApiRequest();
+  }
+  // check if i128
+  if (CairoInt128.isAbiType(type)) {
+    return new CairoInt128(element as any).toApiRequest();
   }
   // check if Enum
   if (isTypeEnum(type, enums)) {

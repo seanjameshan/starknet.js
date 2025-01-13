@@ -45,6 +45,13 @@ export interface Uint512 {
   // The higher 128 bits of the value
   limb3: BigNumberish;
 }
+/**
+ * Represents an integer in the range [0, 2^256)
+ */
+export interface Int {
+  // The lowest 128 bits of the value
+  int: BigNumberish;
+}
 
 /**
  * BigNumberish array

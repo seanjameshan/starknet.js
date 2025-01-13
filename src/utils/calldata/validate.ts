@@ -6,8 +6,14 @@ import {
   FunctionAbi,
   Literal,
   Uint,
+  IntVal,
 } from '../../types';
 import assert from '../assert';
+import { CairoInt128 } from '../cairoDataTypes/int128';
+import { CairoInt16 } from '../cairoDataTypes/int16';
+import { CairoInt32 } from '../cairoDataTypes/int32';
+import { CairoInt64 } from '../cairoDataTypes/int64';
+import { CairoInt8 } from '../cairoDataTypes/int8';
 import { CairoUint256 } from '../cairoDataTypes/uint256';
 import { CairoUint512 } from '../cairoDataTypes/uint512';
 import { isHex, toBigInt } from '../num';
@@ -137,6 +143,40 @@ const validateUint = (parameter: any, input: AbiEntry) => {
       );
       break;
 
+    case IntVal.i8:
+      assert(
+        CairoInt8.is(param),
+        `Validate: arg ${input.name} is ${input.type} should be in range 0 - `
+      );
+      break;
+
+    case IntVal.i16:
+      assert(
+        CairoInt16.is(param),
+        `Validate: arg ${input.name} is ${input.type} should be in range 0 - `
+      );
+      break;
+
+    case IntVal.i32:
+      assert(
+        CairoInt32.is(param),
+        `Validate: arg ${input.name} is ${input.type} should be in range 0 - `
+      );
+      break;
+
+    case IntVal.i64:
+      assert(
+        CairoInt64.is(param),
+        `Validate: arg ${input.name} is ${input.type} should be in range 0 - `
+      );
+      break;
+
+    case IntVal.i128:
+      assert(
+        CairoInt128.is(param),
+        `Validate: arg ${input.name} is ${input.type} should be in range 0 - `
+      );
+      break;
     case Literal.ClassHash:
       assert(
         // from : https://github.com/starkware-libs/starknet-specs/blob/29bab650be6b1847c92d4461d4c33008b5e50b1a/api/starknet_api_openrpc.json#L1670
