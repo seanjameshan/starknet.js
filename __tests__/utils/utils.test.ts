@@ -1,7 +1,30 @@
 import * as starkCurve from '@scure/starknet';
-import { constants, ec, hash, num, stark } from '../../src';
+
+import { constants, ec, hash, num, stark, units } from '../../src';
 
 const { IS_BROWSER } = constants;
+
+test('units', () => {
+  expect(units(1n, 'fri')).toEqual('0.000000000000000001');
+  expect(units(1000n, 'fri')).toEqual('0.000000000000001');
+  expect(units(123123123n, 'fri')).toEqual('0.000000000123123123');
+  expect(units('123123123', 'fri')).toEqual('0.000000000123123123');
+  expect(units(10n ** 18n, 'fri')).toEqual('1');
+  expect(units(30n * 10n ** 16n, 'fri')).toEqual('0.3');
+  expect(units(30n * 10n ** 22n, 'fri')).toEqual('300000');
+  expect(units('0x40ff', 'fri')).toEqual('0.000000000000016639');
+
+  expect(units('0.3', 'strk')).toEqual('300000000000000000');
+  expect(units('1', 'strk')).toEqual('1000000000000000000');
+  expect(units('1000', 'strk')).toEqual('1000000000000000000000');
+  expect(units('123123123.123', 'strk')).toEqual('123123123123000000000000000');
+  expect(units('0x40ff', 'strk')).toEqual('16639000000000000000000');
+
+  const toTest = ['0.333', '123123123.123', '1000.1', '123123123.123123', '0.0000003'];
+  toTest.forEach((element) => {
+    expect(units(units(element, 'strk'), 'fri')).toEqual(element);
+  });
+});
 
 test('isNode', () => {
   expect(IS_BROWSER).toBe(false);
