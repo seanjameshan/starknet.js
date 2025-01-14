@@ -1,0 +1,33 @@
+{
+  "types": {
+    "StarknetDomain": [
+      { "name": "name", "type": "shortstring" },
+      { "name": "version", "type": "shortstring" },
+      { "name": "chainId", "type": "shortstring" },
+      { "name": "revision", "type": "shortstring" }
+    ],
+    "Example": [{ "name": "someEnum", "type": "enum", "contains": "EnumA" }],
+    "EnumA": [
+      { "name": "Variant 1", "type": "()" },
+      { "name": "Variant 2", "type": "(u128,StructA)" }
+    ],
+    "StructA": [{ "name": "nestedEnum", "type": "enum", "contains": "EnumB" }],
+    "EnumB": [
+      { "name": "Variant A", "type": "()" },
+      { "name": "Variant B", "type": "(StructB*)" }
+    ],
+    "StructB": [{ "name": "flag", "type": "bool" }]
+  },
+  "primaryType": "Example",
+  "domain": {
+    "name": "StarkNet Mail",
+    "version": "1",
+    "chainId": "1",
+    "revision": "1"
+  },
+  "message": {
+    "someEnum": {
+      "Variant 2": [2, { "nestedEnum": { "Variant B": [[{ "flag": true }, { "flag": false }]] } }]
+    }
+  }
+}

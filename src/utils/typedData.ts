@@ -167,36 +167,46 @@ export function getDependencies(
   contains: string = '',
   revision: Revision = Revision.LEGACY
 ): string[] {
+  let dependencyTypes: string[] = [type];
+
   // Include pointers (struct arrays)
   if (type[type.length - 1] === '*') {
-    type = type.slice(0, -1);
+    dependencyTypes = [type.slice(0, -1)];
   } else if (revision === Revision.ACTIVE) {
     // enum base
     if (type === 'enum') {
-      type = contains;
+      dependencyTypes = [contains];
     }
     // enum element types
     else if (type.match(/^\(.*\)$/)) {
-      type = type.slice(1, -1);
+      dependencyTypes = type
+        .slice(1, -1)
+        .split(',')
+        .map((depType) => (depType[depType.length - 1] === '*' ? depType.slice(0, -1) : depType));
     }
   }
 
-  if (dependencies.includes(type) || !types[type]) {
-    return dependencies;
-  }
-
-  return [
-    type,
-    ...(types[type] as StarknetEnumType[]).reduce<string[]>(
-      (previous, t) => [
-        ...previous,
-        ...getDependencies(types, t.type, previous, t.contains, revision).filter(
-          (dependency) => !previous.includes(dependency)
-        ),
+  return dependencyTypes
+    .filter((t) => !dependencies.includes(t) && types[t])
+    .reduce<string[]>(
+      // This comment prevents prettier from rolling everything here into a single line.
+      (p, depType) => [
+        ...p,
+        ...[
+          depType,
+          ...(types[depType] as StarknetEnumType[]).reduce<string[]>(
+            (previous, t) => [
+              ...previous,
+              ...getDependencies(types, t.type, previous, t.contains, revision).filter(
+                (dependency) => !previous.includes(dependency)
+              ),
+            ],
+            []
+          ),
+        ].filter((dependency) => !p.includes(dependency)),
       ],
       []
-    ),
-  ];
+    );
 }
 
 function getMerkleTreeType(types: TypedData['types'], ctx: Context) {
@@ -266,8 +276,8 @@ export function encodeType(
               .split(',')
               .map((e) => (e ? esc(e) : e))
               .join(',')})`
-          : esc(targetType);
-        return `${esc(t.name)}:${typeString}`;
+          : `:${esc(targetType)}`;
+        return `${esc(t.name)}${typeString}`;
       });
       return `${esc(dependency)}(${dependencyElements})`;
     })
@@ -357,11 +367,13 @@ export function encodeValue(
       if (revision === Revision.ACTIVE) {
         const [variantKey, variantData] = Object.entries(data as TypedData['message'])[0];
 
-        const parentType = types[ctx.parent as string].find((t) => t.name === ctx.key);
-        const enumType = types[(parentType as StarknetEnumType).contains];
+        const parentType = types[ctx.parent as string].find((t) => t.name === ctx.key)!;
+        const enumName = (parentType as StarknetEnumType).contains;
+        const enumType = types[enumName];
         const variantType = enumType.find((t) => t.name === variantKey) as StarknetType;
         const variantIndex = enumType.indexOf(variantType);
 
+        const typeHash = getTypeHash(types, enumName, revision);
         const encodedSubtypes = variantType.type
           .slice(1, -1)
           .split(',')
@@ -372,7 +384,7 @@ export function encodeValue(
           });
         return [
           type,
-          revisionConfiguration[revision].hashMethod([variantIndex, ...encodedSubtypes]),
+          revisionConfiguration[revision].hashMethod([typeHash, variantIndex, ...encodedSubtypes]),
         ];
       } // else fall through to default
       return [type, getHex(data as string)];

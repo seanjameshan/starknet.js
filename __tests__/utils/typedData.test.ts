@@ -3,6 +3,7 @@ import * as starkCurve from '@scure/starknet';
 import typedDataExample from '../../__mocks__/typedData/baseExample.json';
 import exampleBaseTypes from '../../__mocks__/typedData/example_baseTypes.json';
 import exampleEnum from '../../__mocks__/typedData/example_enum.json';
+import exampleEnumNested from '../../__mocks__/typedData/example_enumNested.json';
 import examplePresetTypes from '../../__mocks__/typedData/example_presetTypes.json';
 import typedDataStructArrayExample from '../../__mocks__/typedData/mail_StructArray.json';
 import typedDataSessionExample from '../../__mocks__/typedData/session_MerkleTree.json';
@@ -64,7 +65,11 @@ describe('typedData', () => {
     );
     encoded = encodeType(exampleEnum.types, 'Example', TypedDataRevision.ACTIVE);
     expect(encoded).toMatchInlineSnapshot(
-      `"\\"Example\\"(\\"someEnum1\\":\\"EnumA\\",\\"someEnum2\\":\\"EnumB\\")\\"EnumA\\"(\\"Variant 1\\":(),\\"Variant 2\\":(\\"u128\\",\\"u128*\\"),\\"Variant 3\\":(\\"u128\\"))\\"EnumB\\"(\\"Variant 1\\":(),\\"Variant 2\\":(\\"u128\\"))"`
+      `"\\"Example\\"(\\"someEnum1\\":\\"EnumA\\",\\"someEnum2\\":\\"EnumB\\")\\"EnumA\\"(\\"Variant 1\\"(),\\"Variant 2\\"(\\"u128\\",\\"u128*\\"),\\"Variant 3\\"(\\"u128\\"))\\"EnumB\\"(\\"Variant 1\\"(),\\"Variant 2\\"(\\"u128\\"))"`
+    );
+    encoded = encodeType(exampleEnumNested.types, 'Example', TypedDataRevision.ACTIVE);
+    expect(encoded).toMatchInlineSnapshot(
+      `"\\"Example\\"(\\"someEnum\\":\\"EnumA\\")\\"EnumA\\"(\\"Variant 1\\"(),\\"Variant 2\\"(\\"u128\\",\\"StructA\\"))\\"EnumB\\"(\\"Variant A\\"(),\\"Variant B\\"(\\"StructB*\\"))\\"StructA\\"(\\"nestedEnum\\":\\"EnumB\\")\\"StructB\\"(\\"flag\\":\\"bool\\")"`
     );
   });
 
@@ -104,7 +109,11 @@ describe('typedData', () => {
     );
     typeHash = getTypeHash(exampleEnum.types, 'Example', TypedDataRevision.ACTIVE);
     expect(typeHash).toMatchInlineSnapshot(
-      `"0x8eb4aeac64b707f3e843284c4258df6df1f0f7fd38dcffdd8a153a495cd351"`
+      `"0x393bf83422ca8626a2932696cfa0acb19dcad6de2fe84a2dd2ca7607ea5329a"`
+    );
+    typeHash = getTypeHash(exampleEnumNested.types, 'Example', TypedDataRevision.ACTIVE);
+    expect(typeHash).toMatchInlineSnapshot(
+      `"0x267f739fd83d30528a0fafb23df33b6c35ca0a5adbcfb32152721478fa9d0ce"`
     );
   });
 
@@ -326,7 +335,12 @@ describe('typedData', () => {
 
     messageHash = getMessageHash(exampleEnum, exampleAddress);
     expect(messageHash).toMatchInlineSnapshot(
-      `"0x6e61abaf480b1370bbf231f54e298c5f4872f40a6d2dd409ff30accee5bbd1e"`
+      `"0x150a589bb56a4fbf4ee01f52e44fd5adde6af94c02b37e383413fed185321a2"`
+    );
+
+    messageHash = getMessageHash(exampleEnumNested, exampleAddress);
+    expect(messageHash).toMatchInlineSnapshot(
+      `"0x6e70eb4ef625dda451094716eee7f31fa81ca0ba99d390885e9c7b0d64cd22"`
     );
 
     expect(spyPedersen).not.toHaveBeenCalled();
